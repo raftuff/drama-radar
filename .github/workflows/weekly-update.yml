@@ -1,0 +1,38 @@
+name: Weekly update
+
+on:
+  schedule:
+    # 毎週月曜日 09:00 JST = 日曜日 00:00 UTC
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.12 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 依存パッケージをインストール
+        run: pip install anthropic requests beautifulsoup4
+
+      - name: HTMLを自動更新
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python update_drama.py
+
+      - name: 変更をコミット＆プッシュ
+        run: |
+          git config user.email "drama-bot@users.noreply.github.com"
+          git config user.name "Drama Bot"
+          git add index.html
+          git diff --staged --quiet || git commit -m "chore: weekly drama update $(date +%Y-%m-%d)"
+          git push
