@@ -468,33 +468,150 @@ footer a:hover { text-decoration: underline; }
 </footer>
 
 <script>
-/* ===== 設定 ===== */
+/* =================================================================
+   設定
+================================================================= */
 const BASE_URL = 'https://raftuff.github.io/drama-matome/';
 
-/* ===== アイコン SVG ===== */
-const ICON_X = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+/* グローバルデータストア — インライン onclick から参照する */
+let showsData = [];
+
+/* =================================================================
+   SVGアイコン定義
+================================================================= */
+const ICON_X = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="pointer-events:none">
   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
 </svg>`;
 
-const ICON_COPY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+const ICON_COPY = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none">
   <rect x="9" y="9" width="13" height="13" rx="2"/>
   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
 </svg>`;
 
-const ICON_SHARE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+const ICON_SHARE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none">
   <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
   <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
   <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
 </svg>`;
 
-/* ===== データストア ===== */
-let showsData = [];
+/* =================================================================
+   シェア用ヘルパー（グローバルスコープ — inline onclick から呼び出す）
+================================================================= */
 
-/* ===== 初期化 ===== */
+/** slug から show オブジェクトを取得 */
+function _findShow(slug) {
+  return showsData.find(function(s) { return s.slug === slug; });
+}
+
+/** シェアテキストを生成 */
+function _shareText(show) {
+  var url = BASE_URL + '#' + show.slug;
+  return '『' + show.title + '』｜次に観たい海外ドラマ\n'
+       + 'スコア：' + show.rtScore + '%\n'
+       + '配信：' + show.streaming.service + '\n'
+       + url;
+}
+
+/** コピー後フィードバック表示（ボタン要素を渡す） */
+function _showCopied(btn) {
+  var orig = btn.innerHTML;
+  var origTitle = btn.title;
+  btn.innerHTML = '<span style="font-size:10px;font-weight:700;color:#22c55e;pointer-events:none">Copied!</span>';
+  btn.title = 'コピーしました';
+  setTimeout(function() {
+    btn.innerHTML = orig;
+    btn.title = origTitle;
+  }, 2000);
+}
+
+/** clipboard API が使えない環境向けフォールバック */
+function _execCopy(text) {
+  try {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+/* ---------- 各シェアボタンの処理（inline onclick から直接呼ぶ） ---------- */
+
+/** X(Twitter) でシェア */
+function drama_x(slug) {
+  var show = _findShow(slug);
+  if (!show) return;
+  var text = _shareText(show);
+  window.open(
+    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text),
+    '_blank',
+    'noopener,noreferrer,width=600,height=500'
+  );
+}
+
+/** LINE でシェア */
+function drama_line(slug) {
+  var show = _findShow(slug);
+  if (!show) return;
+  var text = _shareText(show);
+  window.open(
+    'https://line.me/R/msg/text/?' + encodeURIComponent(text),
+    '_blank',
+    'noopener,noreferrer'
+  );
+}
+
+/** テキストをクリップボードにコピー */
+function drama_copy(slug, btn) {
+  var show = _findShow(slug);
+  if (!show) return;
+  var text = _shareText(show);
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(function() { _showCopied(btn); })
+      .catch(function() {
+        _execCopy(text);
+        _showCopied(btn);
+      });
+  } else {
+    _execCopy(text);
+    _showCopied(btn);
+  }
+}
+
+/** Web Share API / フォールバックはコピー */
+function drama_share(slug, btn) {
+  var show = _findShow(slug);
+  if (!show) return;
+  var url  = BASE_URL + '#' + show.slug;
+  var text = _shareText(show);
+
+  if (navigator.share) {
+    navigator.share({
+      title: '『' + show.title + '』｜次に観たい海外ドラマ',
+      text:  'スコア：' + show.rtScore + '%　配信：' + show.streaming.service,
+      url:   url
+    }).catch(function() {}); /* キャンセルは無視 */
+  } else {
+    /* navigator.share が使えない環境 → コピーにフォールバック */
+    drama_copy(slug, btn);
+  }
+}
+
+/* =================================================================
+   初期化
+================================================================= */
 async function init() {
   try {
     const res = await fetch('data.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     render(data);
   } catch (e) {
@@ -505,46 +622,56 @@ async function init() {
   }
 }
 
-/* ===== レンダリング ===== */
+/* =================================================================
+   レンダリング
+================================================================= */
 function render(data) {
+  /* グローバルに保存（drama_* 関数が参照する） */
   showsData = data.shows;
   const n = showsData.length;
 
-  // ヘッダー
-  document.getElementById('update-date').textContent = data.updated + '更新';
-  document.getElementById('update-count').textContent = `今週の注目作 ${n}選`;
+  document.getElementById('update-date').textContent  = data.updated + '更新';
+  document.getElementById('update-count').textContent = '今週の注目作 ' + n + '選';
+  document.getElementById('show-count').textContent   = n;
+  document.getElementById('count').textContent        = n + '作品';
 
-  // セクション見出し
-  document.getElementById('show-count').textContent = n;
-  document.getElementById('count').textContent = `${n}作品`;
-
-  // カード描画
   document.getElementById('grid').innerHTML = showsData.map(buildCard).join('');
 
-  // ジャンルフィルター
   setupFilter();
 
-  // シェアハンドラー（イベント委譲）
-  setupShareHandlers();
-
-  // アンカーへ自動スクロール（URLにハッシュがある場合）
+  /* アンカーへ自動スクロール */
   if (location.hash) {
     const el = document.querySelector(location.hash);
-    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+    if (el) setTimeout(function() {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
   }
 }
 
-/* ===== カード生成 ===== */
+/* =================================================================
+   カード生成
+   ポイント: シェアボタンは inline onclick で slug を直接渡す。
+   イベント委譲を使わないことで、SVG子要素クリック時の
+   closest() 失敗を完全に回避する。
+================================================================= */
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g,  '&amp;')
+    .replace(/</g,  '&lt;')
+    .replace(/>/g,  '&gt;')
+    .replace(/"/g,  '&quot;')
+    .replace(/'/g,  '&#39;');
+}
+
 function buildCard(show) {
-  const tags       = show.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('');
-  const yearTag    = show.yearTag   ? `<span class="tag year">${esc(show.yearTag)}</span>`     : '';
-  const seasonTag  = show.seasonTag ? `<span class="tag season">${esc(show.seasonTag)}</span>` : '';
-  const hasNative  = typeof navigator.share === 'function';
-  const nativeBtn  = hasNative
-    ? `<button class="share-btn" data-share="native" title="シェア">${ICON_SHARE}</button>` : '';
+  const tags      = show.tags.map(function(t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
+  const yearTag   = show.yearTag   ? '<span class="tag year">'   + esc(show.yearTag)   + '</span>' : '';
+  const seasonTag = show.seasonTag ? '<span class="tag season">' + esc(show.seasonTag) + '</span>' : '';
+  const slug      = esc(show.slug); /* アルファベット+ハイフンのみなので安全 */
 
   return `
-<article class="card" id="${esc(show.slug)}" data-genre="${esc(show.genre)}">
+<article class="card" id="${slug}" data-genre="${esc(show.genre)}">
   <div class="card-thumb">
     <img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg"
          alt="${esc(show.title)}" loading="lazy">
@@ -575,126 +702,42 @@ function buildCard(show) {
   <div class="card-share">
     <span class="share-label">SHARE</span>
     <div class="share-btns">
-      <button class="share-btn" data-share="x"    title="Xでシェア">${ICON_X}</button>
-      <button class="share-btn" data-share="line"  title="LINEでシェア">LINE</button>
-      <button class="share-btn" data-share="copy"  title="URLをコピー">${ICON_COPY}</button>
-      ${nativeBtn}
+      <button class="share-btn" title="Xでシェア"
+              onclick="drama_x('${slug}')">${ICON_X}</button>
+      <button class="share-btn share-line" title="LINEでシェア"
+              onclick="drama_line('${slug}')">LINE</button>
+      <button class="share-btn" title="テキストをコピー"
+              onclick="drama_copy('${slug}',this)">${ICON_COPY}</button>
+      <button class="share-btn" title="その他の方法でシェア"
+              onclick="drama_share('${slug}',this)">${ICON_SHARE}</button>
     </div>
   </div>
 </article>`;
 }
 
-/* ===== XSS 対策 ===== */
-function esc(str) {
-  if (str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-/* ===== ジャンルフィルター ===== */
+/* =================================================================
+   ジャンルフィルター
+================================================================= */
 function setupFilter() {
-  document.querySelectorAll('.genre-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.genre-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.genre-btn').forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
       const genre = btn.dataset.genre;
       let count = 0;
-      document.querySelectorAll('.card').forEach(card => {
+      document.querySelectorAll('.card').forEach(function(card) {
         const match = genre === 'all' || card.dataset.genre === genre;
         card.classList.toggle('hidden', !match);
         if (match) count++;
       });
-      document.getElementById('count').textContent = `${count}作品`;
+      document.getElementById('count').textContent = count + '作品';
     });
   });
 }
 
-/* ===== シェアハンドラー（イベント委譲） ===== */
-function setupShareHandlers() {
-  document.getElementById('grid').addEventListener('click', e => {
-    const btn = e.target.closest('[data-share]');
-    if (!btn) return;
-    const card = btn.closest('.card');
-    if (!card) return;
-    const show = showsData.find(s => s.slug === card.id);
-    if (!show) return;
-    handleShare(btn.dataset.share, show, btn);
-  });
-}
-
-function getShareUrl(show) {
-  return `${BASE_URL}#${show.slug}`;
-}
-
-function getShareText(show) {
-  const url = getShareUrl(show);
-  return `『${show.title}』｜次に観たい海外ドラマ\nスコア：${show.rtScore}%\n配信：${show.streaming.service}\n${url}`;
-}
-
-function handleShare(action, show, btn) {
-  const url  = getShareUrl(show);
-  const text = getShareText(show);
-
-  switch (action) {
-    case 'x': {
-      const t = encodeURIComponent(text);
-      window.open(`https://twitter.com/intent/tweet?text=${t}`, '_blank', 'noopener,width=600,height=400');
-      break;
-    }
-    case 'line': {
-      const t = encodeURIComponent(text);
-      window.open(`https://line.me/R/msg/text/?${t}`, '_blank', 'noopener');
-      break;
-    }
-    case 'copy': {
-      const copyVal = url; // URLだけコピー（シェア文はXやLINE用）
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(copyVal).then(() => showCopied(btn)).catch(() => fallbackCopy(copyVal, btn));
-      } else {
-        fallbackCopy(copyVal, btn);
-      }
-      break;
-    }
-    case 'native': {
-      if (!navigator.share) return;
-      navigator.share({
-        title: `『${show.title}』｜次に観たい海外ドラマ`,
-        text:  `スコア：${show.rtScore}%  配信：${show.streaming.service}`,
-        url
-      }).catch(() => {}); // キャンセルは無視
-      break;
-    }
-  }
-}
-
-function showCopied(btn) {
-  const orig = btn.innerHTML;
-  btn.innerHTML = '✓';
-  btn.classList.add('copied');
-  setTimeout(() => {
-    btn.innerHTML = orig;
-    btn.classList.remove('copied');
-  }, 2000);
-}
-
-function fallbackCopy(text, btn) {
-  try {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;opacity:0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    showCopied(btn);
-  } catch (_) {}
-}
-
-/* ===== 起動 ===== */
+/* =================================================================
+   起動
+================================================================= */
 init();
 </script>
 </body>
