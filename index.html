@@ -53,8 +53,7 @@
   header::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
+    bottom: 0; left: 0; right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent 0%, rgba(200,140,60,0.35) 40%, rgba(200,140,60,0.35) 60%, transparent 100%);
   }
@@ -110,7 +109,6 @@
   .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
   .card.hidden { display: none; }
 
-  /* thumbnail */
   .card-thumb {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -119,16 +117,13 @@
     flex-shrink: 0;
   }
   .card-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 20%;
     display: block;
     transition: transform 0.3s ease;
   }
   .card:hover .card-thumb img { transform: scale(1.04); }
 
-  /* genre color bar overlaid at bottom of thumb */
   .card[data-genre="suspense"] .card-thumb::after { background: #7c3aed; }
   .card[data-genre="sf"]       .card-thumb::after { background: #0284c7; }
   .card[data-genre="crime"]    .card-thumb::after { background: #dc2626; }
@@ -142,7 +137,6 @@
     background: #ccc;
   }
 
-  /* RT score badge on image */
   .rt-badge {
     position: absolute;
     top: 10px; right: 10px;
@@ -159,15 +153,7 @@
   .rt-badge .tomato { font-size: 14px; line-height: 1; }
   .rt-badge .score { font-size: 13px; font-weight: 800; color: #ff6b35; line-height: 1; }
 
-  .card-body {
-    padding: 16px 18px 12px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-  .card-title-area { flex: 1; }
+  .card-body { padding: 16px 18px 12px; flex: 1; display: flex; flex-direction: column; gap: 9px; }
   .card-title { font-size: 15px; font-weight: 800; line-height: 1.3; color: var(--text); }
   .card-title-ja { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
@@ -178,32 +164,21 @@
 
   .card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.65; flex: 1; }
 
-  /* footer */
-  .card-footer {
-    border-top: 1px solid var(--border);
-    padding: 11px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
+  .card-footer { border-top: 1px solid var(--border); padding: 11px 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   .streaming-meta { display: flex; flex-direction: column; gap: 2px; }
   .streaming-label { font-size: 11px; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
   .streaming-since { font-size: 10px; color: #9ca3af; white-space: nowrap; }
   .streaming-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
 
-  /* badges as links */
   a.streaming-badge {
     display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 11px; font-weight: 700;
     padding: 5px 11px;
     border-radius: 6px;
     color: #fff;
     white-space: nowrap;
     text-decoration: none;
     transition: opacity 0.15s, transform 0.15s;
-    cursor: pointer;
   }
   a.streaming-badge:hover { opacity: 0.85; transform: translateY(-1px); }
   a.streaming-badge.netflix   { background: #e50914; }
@@ -213,8 +188,11 @@
   a.streaming-badge.paramount { background: #0064ff; }
   a.streaming-badge.unext     { background: #3d1f8c; }
 
+  /* ===== STATE ===== */
+  .state-msg { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 14px; grid-column: 1 / -1; }
+
   /* ===== FOOTER ===== */
-  footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); }
+  footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); line-height: 2; }
   footer a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
@@ -229,352 +207,121 @@
       </div>
       <div class="site-title">
         次に観たい海外ドラマ
-        <span class="subtitle-inline">毎週月曜更新 — サスペンス・SF・犯罪・アクション</span>
+        <span class="subtitle-inline">毎週更新 — サスペンス・SF・犯罪・アクション</span>
       </div>
     </div>
     <div class="header-right">
-      <span class="update-date">2026年6月5日更新</span>
-      <span class="update-count">今週の注目作 10選</span>
+      <span class="update-date" id="update-date">読み込み中...</span>
+      <span class="update-count" id="update-count">—</span>
     </div>
   </div>
 </header>
 
 <nav class="genre-nav">
   <div class="genre-nav-inner">
-    <button class="genre-btn active" onclick="filterGenre('all', this)">すべて</button>
-    <button class="genre-btn" onclick="filterGenre('suspense', this)">サスペンス</button>
-    <button class="genre-btn" onclick="filterGenre('crime', this)">犯罪ドラマ</button>
-    <button class="genre-btn" onclick="filterGenre('detective', this)">刑事・探偵</button>
-    <button class="genre-btn" onclick="filterGenre('sf', this)">SF</button>
-    <button class="genre-btn" onclick="filterGenre('action', this)">アクション</button>
+    <button class="genre-btn active" data-genre="all">すべて</button>
+    <button class="genre-btn" data-genre="suspense">サスペンス</button>
+    <button class="genre-btn" data-genre="crime">犯罪ドラマ</button>
+    <button class="genre-btn" data-genre="detective">刑事・探偵</button>
+    <button class="genre-btn" data-genre="sf">SF</button>
+    <button class="genre-btn" data-genre="action">アクション</button>
   </div>
 </nav>
 
 <main>
   <div class="section-header">
     <h2 class="section-title">今週の注目作</h2>
-    <span class="section-count" id="count">10作品</span>
+    <span class="section-count" id="count">読み込み中...</span>
   </div>
-
   <div class="cards-grid" id="grid">
-
-    <!-- 1. BAIT -->
-    <article class="card" data-genre="crime">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/FpAhwL91HyA/mqdefault.jpg" alt="BAIT" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">93%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">BAIT</div>
-          <div class="card-title-ja">ベイト（2026）</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">犯罪ドラマ</span>
-          <span class="tag">サスペンス</span>
-          <span class="tag year">2026</span>
-        </div>
-        <p class="card-desc">リズ・アーメッドが脚本・主演を務める英国製メタサスペンス。英国系パキスタン人俳優がジェームズ・ボンドのオーディションに挑む設定を軸に、人種・アイデンティティ・業界の裏側を鋭く描く。サンダンス映画祭で世界初上映。全6話。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年3月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge prime" href="https://www.amazon.co.jp/gp/product/B0GKTRZHM7/" target="_blank">Prime Video</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 2. Lord of the Flies -->
-    <article class="card" data-genre="suspense">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/ujupEUFDm3E/mqdefault.jpg" alt="Lord of the Flies" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">92%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">Lord of the Flies</div>
-          <div class="card-title-ja">蠅の王（2026）</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">サスペンス</span>
-          <span class="tag">ドラマ</span>
-          <span class="tag year">2026</span>
-        </div>
-        <p class="card-desc">ウィリアム・ゴールディングの古典小説をBBCがドラマ化。無人島に漂着した少年たちが文明崩壊へと転落する過程を、子役の卓越した演技と心理描写で描く。日本ではU-NEXT独占配信、日本語吹替付き。全4話。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年2月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge unext" href="https://video.unext.jp/title/SID0275076" target="_blank">U-NEXT</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 3. Jo Nesbo's Detective Hole -->
-    <article class="card" data-genre="detective">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/QozBsgrEjnE/mqdefault.jpg" alt="Detective Hole" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">91%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">Jo Nesbø's Detective Hole</div>
-          <div class="card-title-ja">刑事ハリー・ホーレ（2026）</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">刑事・探偵</span>
-          <span class="tag">ノルウェー</span>
-          <span class="tag year">2026</span>
-        </div>
-        <p class="card-desc">ノルウェーの国民的犯罪小説をNetflixがドラマ化。天才的だが破滅的な刑事ハリー・ホーレが連続殺人犯を追う。ねじれた伏線と予想外の展開が絶賛され、北欧クライムドラマの最高峰との声も。全9話。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年3月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge netflix" href="https://www.netflix.com/title/81610327" target="_blank">Netflix</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 4. For All Mankind S5 -->
-    <article class="card" data-genre="sf">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/zojwKLlY_H8/mqdefault.jpg" alt="For All Mankind Season 5" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">90%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">For All Mankind S5</div>
-          <div class="card-title-ja">フォー・オール・マンカインド シーズン5</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">SF</span>
-          <span class="tag">宇宙開発</span>
-          <span class="tag season">S5</span>
-        </div>
-        <p class="card-desc">「もし宇宙開発競争が終わらなかったら」という歴史改変SFの第5シーズン。Apple TV+の傑作シリーズ。日本語音声・字幕対応。政治的緊張と宇宙探査の野望が交錯する重厚なサーガが今作でも健在。全10話。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年3月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge apple" href="https://tv.apple.com/jp/show/for-all-mankind/umc.cmc.6wsi780sz5tdbqcf11k76mkp7" target="_blank">Apple TV+</a>
-
-        </div>
-      </div>
-    </article>
-
-    <!-- 5. Paradise S2 -->
-    <article class="card" data-genre="suspense">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/Uud0aiP-MFw/mqdefault.jpg" alt="Paradise Season 2" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">90%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">Paradise S2</div>
-          <div class="card-title-ja">パラダイス シーズン2</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">サスペンス</span>
-          <span class="tag">政治スリラー</span>
-          <span class="tag season">S2</span>
-        </div>
-        <p class="card-desc">核戦争後の地下都市を舞台にした政治サスペンス。シークレットサービス捜査官が大統領暗殺の真相を追う。スターリング・K・ブラウン主演。第2シーズンはさらなる謀略と陰謀が深まり批評家から絶賛。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年2月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge disney" href="https://www.disneyplus.com/ja-jp/series/paradise/hIxcrnoL7fCm" target="_blank">Disney+</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 6. The Night Manager S2 -->
-    <article class="card" data-genre="action">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/Ll6tqZhiZow/mqdefault.jpg" alt="The Night Manager Season 2" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">88%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">The Night Manager S2</div>
-          <div class="card-title-ja">ナイト・マネージャー シーズン2</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">スパイスリラー</span>
-          <span class="tag">アクション</span>
-          <span class="tag season">S2</span>
-        </div>
-        <p class="card-desc">トム・ヒドルストン演じる潜入スパイが戻ってくる英国スパイスリラーの続編。2016年の傑作シリーズから10年越しのシーズン2。新たな謀略と裏切りが絡み合うグラマラスな諜報アクション。全6話。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年1月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge prime" href="https://www.amazon.co.jp/dp/B0FW97G9KY" target="_blank">Prime Video</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 7. The Testaments -->
-    <article class="card" data-genre="sf">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/KpWyxrPqkeA/mqdefault.jpg" alt="The Testaments" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">87%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">The Testaments</div>
-          <div class="card-title-ja">誓証（2026）</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">ディストピア</span>
-          <span class="tag">SF</span>
-          <span class="tag year">2026</span>
-        </div>
-        <p class="card-desc">「ハンドメイズ・テイル」の続編小説をドラマ化。ギレアデ体制下で生きる少女たちの成長と抵抗を描く青春×ディストピア作品。前作とは異なる視点から全体主義国家の内側に迫る。ディズニー+独占配信。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年4月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge disney" href="https://www.disneyplus.com/ja-jp/browse/entity-81036ecb-be97-43cd-8cc9-5f5be1aac40f" target="_blank">Disney+</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 8. Daredevil: Born Again S2 -->
-    <article class="card" data-genre="action">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/U1MqJBVn8Rk/mqdefault.jpg" alt="Daredevil Born Again Season 2" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">86%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">Daredevil: Born Again S2</div>
-          <div class="card-title-ja">デアデビル：ボーン・アゲイン S2</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">アクション</span>
-          <span class="tag">犯罪ドラマ</span>
-          <span class="tag season">S2</span>
-        </div>
-        <p class="card-desc">マーベルの傑作ヒーロードラマ第2弾。チャーリー・コックス演じる盲目の弁護士＆夜の戦士が帰還。前シーズンの欠点を克服し、重厚な犯罪ドラマとしての面白さが増した高完成度のアクション。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年3月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge disney" href="https://www.disneyplus.com/ja-jp/browse/entity-85e7a914-c8e6-41db-95df-c740dc2cf1b7" target="_blank">Disney+</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 9. DTF St. Louis -->
-    <article class="card" data-genre="crime">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/cHeL5Xtqg38/mqdefault.jpg" alt="DTF St. Louis" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">86%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">DTF St. Louis</div>
-          <div class="card-title-ja">DTF セントルイス（2026）</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">犯罪ドラマ</span>
-          <span class="tag">ブラックコメディ</span>
-          <span class="tag year">2026</span>
-        </div>
-        <p class="card-desc">デヴィッド・ハーバーとジェイソン・ベイトマン共演のサバーバン犯罪スリラー。友情を試されるふたりの男が死体をめぐり奇妙な事態に巻き込まれる。「普通の郊外」と「狂気」の境界を描く秀作。HBO Max配信。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年3月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge unext" href="https://video.unext.jp/brand/hbo-max" target="_blank">U-NEXT</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 10. Star Trek Starfleet Academy -->
-    <article class="card" data-genre="sf">
-      <div class="card-thumb">
-        <img src="https://img.youtube.com/vi/FgHkeoyLNt0/mqdefault.jpg" alt="Star Trek Starfleet Academy" loading="lazy">
-        <div class="rt-badge"><span class="tomato">🍅</span><span class="score">85%</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title-area">
-          <div class="card-title">Star Trek: Starfleet Academy</div>
-          <div class="card-title-ja">スタートレック：スターフリート・アカデミー</div>
-        </div>
-        <div class="card-tags">
-          <span class="tag">SF</span>
-          <span class="tag">青春×宇宙</span>
-          <span class="tag year">2026</span>
-        </div>
-        <p class="card-desc">スタートレック・フランチャイズの新作。32世紀を舞台に、スターフリート・アカデミーの新入生たちの挑戦を描く。従来作と異なる明るいトーンと新鮮なキャラクターが好評。Paramount+独占配信、全10話。</p>
-      </div>
-      <div class="card-footer">
-        <div class="streaming-meta">
-          <span class="streaming-label">🇯🇵 日本配信</span>
-          <span class="streaming-since">2026年1月〜</span>
-        </div>
-        <div class="streaming-badges">
-          <a class="streaming-badge paramount" href="https://www.paramountplus.com/shows/star-trek-starfleet-academy/" target="_blank">Paramount+</a>
-        </div>
-      </div>
-    </article>
-
-  </div><!-- /grid -->
+    <p class="state-msg">データを読み込んでいます...</p>
+  </div>
 </main>
 
 <footer>
-  スコアは <a href="https://www.rottentomatoes.com" target="_blank">Rotten Tomatoes</a> の批評家スコアを参照 ·
-  配信情報は2026年6月時点 · 毎週月曜日自動更新
-  <br><br>
+  スコアは <a href="https://www.rottentomatoes.com" target="_blank">Rotten Tomatoes</a> の批評家スコアを参照 · 配信情報は掲載時点<br>
   リンク先はできるだけ日本語配信サイトに遷移するように設定していますが、遷移先が見つからない場合は、タイトルからご自身でお調べください。
 </footer>
 
 <script>
-  function filterGenre(genre, btn) {
-    document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cards = document.querySelectorAll('.card');
-    let count = 0;
-    cards.forEach(card => {
-      if (genre === 'all' || card.dataset.genre === genre) {
-        card.classList.remove('hidden');
-        count++;
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-    document.getElementById('count').textContent = count + '作品';
+  async function init() {
+    try {
+      const res = await fetch('data.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      render(data);
+    } catch (e) {
+      document.getElementById('grid').innerHTML =
+        '<p class="state-msg">データの読み込みに失敗しました。<br>ページを再読み込みしてください。</p>';
+      document.getElementById('count').textContent = 'エラー';
+      console.error(e);
+    }
   }
+
+  function buildCard(show) {
+    const tags = show.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    const yearTag  = show.yearTag   ? `<span class="tag year">${show.yearTag}</span>`     : '';
+    const seasonTag = show.seasonTag ? `<span class="tag season">${show.seasonTag}</span>` : '';
+
+    return `
+      <article class="card" data-genre="${show.genre}">
+        <div class="card-thumb">
+          <img src="https://img.youtube.com/vi/${show.youtubeId}/mqdefault.jpg"
+               alt="${show.title}" loading="lazy">
+          <div class="rt-badge">
+            <span class="tomato">🍅</span>
+            <span class="score">${show.rtScore}%</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="card-title">${show.title}</div>
+            <div class="card-title-ja">${show.titleJa}</div>
+          </div>
+          <div class="card-tags">${tags}${yearTag}${seasonTag}</div>
+          <p class="card-desc">${show.description}</p>
+        </div>
+        <div class="card-footer">
+          <div class="streaming-meta">
+            <span class="streaming-label">🇯🇵 日本配信</span>
+            <span class="streaming-since">${show.streaming.since}〜</span>
+          </div>
+          <div class="streaming-badges">
+            <a class="streaming-badge ${show.streaming.class}"
+               href="${show.streaming.url}"
+               target="_blank"
+               rel="noopener noreferrer">${show.streaming.service}</a>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function render(data) {
+    document.getElementById('update-date').textContent = data.updated + '更新';
+    document.getElementById('update-count').textContent = `今週の注目作 ${data.shows.length}選`;
+    document.getElementById('count').textContent = `${data.shows.length}作品`;
+    document.getElementById('grid').innerHTML = data.shows.map(buildCard).join('');
+    setupFilter();
+  }
+
+  function setupFilter() {
+    document.querySelectorAll('.genre-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const genre = btn.dataset.genre;
+        let count = 0;
+        document.querySelectorAll('.card').forEach(card => {
+          const match = genre === 'all' || card.dataset.genre === genre;
+          card.classList.toggle('hidden', !match);
+          if (match) count++;
+        });
+        document.getElementById('count').textContent = `${count}作品`;
+      });
+    });
+  }
+
+  init();
 </script>
 </body>
 </html>
