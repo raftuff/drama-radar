@@ -4,220 +4,432 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>次に観たい海外ドラマ | 週刊ピックアップ</title>
+<meta name="description" content="海外レビューと日本配信情報をもとに、いま注目の海外ドラマをピックアップ。サスペンス・SF・犯罪・アクションを中心に毎週更新。">
 <style>
-  :root {
-    color-scheme: light;
-    --bg: #f7f8fa;
-    --surface: #ffffff;
-    --border: #e2e6ea;
-    --text: #1a1d23;
-    --text-muted: #6b7280;
-    --accent: #e63946;
-    --rt-fresh: #fa320a;
-    --tag-bg: #eef2ff;
-    --tag-text: #3730a3;
-    --shadow: 0 2px 12px rgba(0,0,0,0.08);
-    --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
-  }
+/* ===== RESET & BASE ===== */
+:root {
+  color-scheme: light;
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --border: #e2e6ea;
+  --text: #1a1d23;
+  --text-muted: #6b7280;
+  --accent: #e63946;
+  --accent-dark: #c0303c;
+  --tag-bg: #eef2ff;
+  --tag-text: #3730a3;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow: 0 2px 14px rgba(0,0,0,0.09);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.16);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  /* hero.jpg がない場合のフォールバックグラデーション */
+  background-color: #0c0c10;
+  background-image:
+    linear-gradient(175deg, rgba(8,5,3,0.30) 0%, rgba(6,6,10,0.78) 55%, rgba(4,4,8,0.96) 100%),
+    url('hero.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+}
+/* ノイズテクスチャ */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+/* 底辺のアクセントライン */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(200,140,60,0.4) 40%, rgba(200,140,60,0.4) 60%, transparent 100%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-left { flex: 1; min-width: 260px; }
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.eyebrow-line {
+  width: 28px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.eyebrow-text {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--accent);
+}
+.hero-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.hero-subtitle {
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.5px;
+}
+/* ジャンルピル */
+.hero-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+.hero-genre-pill {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.07);
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.hero-update-date {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.3px;
+}
+.hero-update-count {
+  font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 5px 14px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+/* ===== GENRE NAV ===== */
+.genre-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+.genre-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.genre-nav-inner::-webkit-scrollbar { display: none; }
+.genre-btn {
+  background: none; border: none;
+  padding: 14px 18px;
+  font-size: 13px; font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+.genre-btn:hover { color: var(--text); }
+.genre-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-  /* ===== HEADER ===== */
-  header {
-    position: relative;
-    color: #fff;
-    padding: 0 24px;
-    overflow: hidden;
-    background:
-      radial-gradient(ellipse 120% 100% at 50% 0%, transparent 40%, rgba(0,0,0,0.72) 100%),
-      radial-gradient(ellipse 55% 80% at 72% 60%, rgba(180,100,30,0.28) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 70% at 8% 40%, rgba(60,90,60,0.18) 0%, transparent 65%),
-      linear-gradient(160deg, #1a1208 0%, #0d0d0f 45%, #111008 100%);
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    opacity: 0.6;
-  }
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(200,140,60,0.35) 40%, rgba(200,140,60,0.35) 60%, transparent 100%);
-  }
-  .header-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 36px 0 30px;
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .header-left { display: flex; flex-direction: column; gap: 6px; }
-  .header-eyebrow { display: flex; align-items: center; gap: 10px; }
-  .eyebrow-line { width: 24px; height: 2px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
-  .eyebrow-text { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
-  .site-title { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #fff; line-height: 1.15; }
-  .site-title .subtitle-inline { display: block; font-size: 12px; font-weight: 500; color: #6b7280; letter-spacing: 0.5px; margin-top: 4px; }
-  .header-right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-  .update-date { font-size: 11px; color: #4b5563; letter-spacing: 0.3px; }
-  .update-count { font-size: 11px; font-weight: 700; color: #374151; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 6px; letter-spacing: 0.3px; }
+/* ===== MAIN ===== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
 
-  /* ===== GENRE NAV ===== */
-  .genre-nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-  .genre-nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
-  .genre-nav-inner::-webkit-scrollbar { display: none; }
-  .genre-btn { background: none; border: none; padding: 13px 16px; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.15s; font-family: inherit; }
-  .genre-btn:hover { color: var(--text); }
-  .genre-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+/* ===== EDITORIAL SECTION HEADER ===== */
+.section-editorial {
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.editorial-label {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 2.5px;
+  padding: 4px 11px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+.editorial-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.editorial-title {
+  font-size: clamp(20px, 2.8vw, 28px);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  line-height: 1.2;
+}
+.editorial-title .hl { color: var(--accent); }
+.editorial-count {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.editorial-rule {
+  width: 36px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+.editorial-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
 
-  /* ===== MAIN ===== */
-  main { max-width: 1100px; margin: 0 auto; padding: 28px 24px 48px; }
-  .section-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
-  .section-title { font-size: 18px; font-weight: 800; color: var(--text); }
-  .section-count { font-size: 13px; color: var(--text-muted); }
+/* ===== CARDS GRID ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
 
-  /* ===== GRID ===== */
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+/* ===== CARD ===== */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 80px; /* sticky nav の高さ分 */
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.card.hidden { display: none; }
 
-  /* ===== CARD ===== */
-  .card {
-    background: var(--surface);
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-  .card.hidden { display: none; }
+/* サムネ */
+.card-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+  flex-shrink: 0;
+}
+.card-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.card:hover .card-thumb img { transform: scale(1.05); }
 
-  .card-thumb {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: #111;
-    flex-shrink: 0;
-  }
-  .card-thumb img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center 20%;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .card:hover .card-thumb img { transform: scale(1.04); }
+/* ジャンル別カラーバー */
+.card[data-genre="suspense"] .card-thumb::after { background: #7c3aed; }
+.card[data-genre="sf"]       .card-thumb::after { background: #0284c7; }
+.card[data-genre="crime"]    .card-thumb::after { background: #dc2626; }
+.card[data-genre="action"]   .card-thumb::after { background: #ea580c; }
+.card[data-genre="detective"].card-thumb::after { background: #0891b2; }
+.card-thumb::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: #aaa;
+}
 
-  .card[data-genre="suspense"] .card-thumb::after { background: #7c3aed; }
-  .card[data-genre="sf"]       .card-thumb::after { background: #0284c7; }
-  .card[data-genre="crime"]    .card-thumb::after { background: #dc2626; }
-  .card[data-genre="action"]   .card-thumb::after { background: #ea580c; }
-  .card[data-genre="detective"].card-thumb::after { background: #0891b2; }
-  .card-thumb::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: #ccc;
-  }
+/* RTバッジ（サムネ上） */
+.rt-badge {
+  position: absolute; top: 10px; right: 10px;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 5px 9px;
+  display: flex; align-items: center; gap: 5px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.rt-badge .tomato { font-size: 13px; line-height: 1; }
+.rt-badge .score { font-size: 13px; font-weight: 800; color: #ff6b35; line-height: 1; }
 
-  .rt-badge {
-    position: absolute;
-    top: 10px; right: 10px;
-    background: rgba(0,0,0,0.72);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: 8px;
-    padding: 5px 9px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-  .rt-badge .tomato { font-size: 14px; line-height: 1; }
-  .rt-badge .score { font-size: 13px; font-weight: 800; color: #ff6b35; line-height: 1; }
+/* カード本文 */
+.card-body { padding: 16px 18px 12px; flex: 1; display: flex; flex-direction: column; gap: 9px; }
+.card-title { font-size: 15px; font-weight: 800; line-height: 1.3; color: var(--text); }
+.card-title-ja { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
-  .card-body { padding: 16px 18px 12px; flex: 1; display: flex; flex-direction: column; gap: 9px; }
-  .card-title { font-size: 15px; font-weight: 800; line-height: 1.3; color: var(--text); }
-  .card-title-ja { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { background: var(--tag-bg); color: var(--tag-text); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+.tag.year   { background: #fef3c7; color: #92400e; }
+.tag.season { background: #f0fdf4; color: #166534; }
 
-  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .tag { background: var(--tag-bg); color: var(--tag-text); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
-  .tag.year { background: #fef3c7; color: #92400e; }
-  .tag.season { background: #f0fdf4; color: #166534; }
+.card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; flex: 1; }
 
-  .card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.65; flex: 1; }
+/* 配信フッター */
+.card-footer {
+  border-top: 1px solid var(--border);
+  padding: 10px 18px;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 10px;
+}
+.streaming-meta { display: flex; flex-direction: column; gap: 2px; }
+.streaming-label { font-size: 11px; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+.streaming-since { font-size: 10px; color: #9ca3af; white-space: nowrap; }
+.streaming-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+a.streaming-badge {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 12px; border-radius: 6px;
+  color: #fff; white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+a.streaming-badge:hover { opacity: 0.82; transform: translateY(-1px); }
+a.streaming-badge.netflix   { background: #e50914; }
+a.streaming-badge.prime     { background: #00a8e0; }
+a.streaming-badge.disney    { background: #113ccf; }
+a.streaming-badge.apple     { background: #444; }
+a.streaming-badge.paramount { background: #0064ff; }
+a.streaming-badge.unext     { background: #3d1f8c; }
 
-  .card-footer { border-top: 1px solid var(--border); padding: 11px 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .streaming-meta { display: flex; flex-direction: column; gap: 2px; }
-  .streaming-label { font-size: 11px; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
-  .streaming-since { font-size: 10px; color: #9ca3af; white-space: nowrap; }
-  .streaming-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+/* ===== シェアバー ===== */
+.card-share {
+  border-top: 1px solid var(--border);
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fafafa;
+}
+.share-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #c4c9d4;
+  margin-right: 2px;
+  flex-shrink: 0;
+}
+.share-btns { display: flex; gap: 2px; margin-left: auto; }
+.share-btn {
+  background: none; border: none;
+  cursor: pointer;
+  width: 32px; height: 32px;
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  color: #9ca3af;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+  font-size: 11px; font-weight: 700;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.share-btn:hover { background: #f0f2f5; color: var(--text); transform: scale(1.08); }
+.share-btn:active { transform: scale(0.95); }
+.share-btn.copied { color: #22c55e !important; }
+.share-btn svg { width: 13px; height: 13px; pointer-events: none; }
 
-  a.streaming-badge {
-    display: inline-block;
-    font-size: 11px; font-weight: 700;
-    padding: 5px 11px;
-    border-radius: 6px;
-    color: #fff;
-    white-space: nowrap;
-    text-decoration: none;
-    transition: opacity 0.15s, transform 0.15s;
-  }
-  a.streaming-badge:hover { opacity: 0.85; transform: translateY(-1px); }
-  a.streaming-badge.netflix   { background: #e50914; }
-  a.streaming-badge.prime     { background: #00a8e0; }
-  a.streaming-badge.disney    { background: #113ccf; }
-  a.streaming-badge.apple     { background: #444; }
-  a.streaming-badge.paramount { background: #0064ff; }
-  a.streaming-badge.unext     { background: #3d1f8c; }
+/* ===== STATE ===== */
+.state-msg { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 14px; grid-column: 1 / -1; }
 
-  /* ===== STATE ===== */
-  .state-msg { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 14px; grid-column: 1 / -1; }
+/* ===== FOOTER ===== */
+footer {
+  text-align: center; padding: 28px 24px;
+  color: var(--text-muted); font-size: 12px;
+  border-top: 1px solid var(--border);
+  line-height: 2;
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
 
-  /* ===== FOOTER ===== */
-  footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border); line-height: 2; }
-  footer a { color: var(--accent); text-decoration: none; }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero { min-height: 280px; }
+  .hero-inner { padding: 36px 20px 32px; gap: 16px; }
+  .hero-title { font-size: 24px; letter-spacing: -0.5px; }
+  .hero-right { display: none; } /* モバイルは更新情報を非表示（heroが窮屈になるため） */
+  .genre-nav-inner { padding: 0 16px; }
+  main { padding: 28px 16px 48px; }
+  .editorial-title { font-size: 19px; }
+  .cards-grid { grid-template-columns: 1fr; gap: 16px; }
+  .card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .streaming-badges { justify-content: flex-start; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="header-left">
-      <div class="header-eyebrow">
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
         <div class="eyebrow-line"></div>
         <span class="eyebrow-text">週刊ピックアップ</span>
       </div>
-      <div class="site-title">
-        次に観たい海外ドラマ
-        <span class="subtitle-inline">毎週更新 — サスペンス・SF・犯罪・アクション</span>
+      <h1 class="hero-title">次に観たい海外ドラマ</h1>
+      <p class="hero-subtitle">毎週更新 — Rotten Tomatoes × 日本配信情報</p>
+      <div class="hero-genres">
+        <span class="hero-genre-pill">サスペンス</span>
+        <span class="hero-genre-pill">SF</span>
+        <span class="hero-genre-pill">犯罪ドラマ</span>
+        <span class="hero-genre-pill">刑事・探偵</span>
+        <span class="hero-genre-pill">アクション</span>
       </div>
     </div>
-    <div class="header-right">
-      <span class="update-date" id="update-date">読み込み中...</span>
-      <span class="update-count" id="update-count">—</span>
+    <div class="hero-right">
+      <span class="hero-update-date" id="update-date">読み込み中...</span>
+      <span class="hero-update-count" id="update-count">—</span>
     </div>
   </div>
 </header>
 
-<nav class="genre-nav">
+<!-- ===== GENRE NAV ===== -->
+<nav class="genre-nav" aria-label="ジャンルフィルター">
   <div class="genre-nav-inner">
     <button class="genre-btn active" data-genre="all">すべて</button>
     <button class="genre-btn" data-genre="suspense">サスペンス</button>
@@ -228,100 +440,262 @@
   </div>
 </nav>
 
+<!-- ===== MAIN ===== -->
 <main>
-  <div class="section-header">
-    <h2 class="section-title">今週の注目作</h2>
-    <span class="section-count" id="count">読み込み中...</span>
+  <!-- 編集部的セクション見出し -->
+  <div class="section-editorial">
+    <span class="editorial-label">PICK UP</span>
+    <div class="editorial-heading-row">
+      <h2 class="editorial-title" id="editorial-title">
+        <span class="hl">"今"</span>話題の注目作品 <span id="show-count">10</span>選
+      </h2>
+      <span class="editorial-count" id="count">—作品</span>
+    </div>
+    <div class="editorial-rule"></div>
+    <p class="editorial-desc">海外レビューと日本配信情報をもとに、いま注目の作品をピックアップ。</p>
   </div>
+
+  <!-- カードグリッド -->
   <div class="cards-grid" id="grid">
     <p class="state-msg">データを読み込んでいます...</p>
   </div>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
-  スコアは <a href="https://www.rottentomatoes.com" target="_blank">Rotten Tomatoes</a> の批評家スコアを参照 · 配信情報は掲載時点<br>
+  スコアは <a href="https://www.rottentomatoes.com" target="_blank" rel="noopener">Rotten Tomatoes</a> の批評家スコアを参照 · 配信情報は掲載時点<br>
   リンク先はできるだけ日本語配信サイトに遷移するように設定していますが、遷移先が見つからない場合は、タイトルからご自身でお調べください。
 </footer>
 
 <script>
-  async function init() {
-    try {
-      const res = await fetch('data.json');
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      render(data);
-    } catch (e) {
-      document.getElementById('grid').innerHTML =
-        '<p class="state-msg">データの読み込みに失敗しました。<br>ページを再読み込みしてください。</p>';
-      document.getElementById('count').textContent = 'エラー';
-      console.error(e);
+/* ===== 設定 ===== */
+const BASE_URL = 'https://raftuff.github.io/drama-matome/';
+
+/* ===== アイコン SVG ===== */
+const ICON_X = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+</svg>`;
+
+const ICON_COPY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="9" y="9" width="13" height="13" rx="2"/>
+  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+</svg>`;
+
+const ICON_SHARE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+</svg>`;
+
+/* ===== データストア ===== */
+let showsData = [];
+
+/* ===== 初期化 ===== */
+async function init() {
+  try {
+    const res = await fetch('data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    render(data);
+  } catch (e) {
+    document.getElementById('grid').innerHTML =
+      '<p class="state-msg">データの読み込みに失敗しました。<br>ページを再読み込みしてください。</p>';
+    document.getElementById('count').textContent = 'エラー';
+    console.error(e);
+  }
+}
+
+/* ===== レンダリング ===== */
+function render(data) {
+  showsData = data.shows;
+  const n = showsData.length;
+
+  // ヘッダー
+  document.getElementById('update-date').textContent = data.updated + '更新';
+  document.getElementById('update-count').textContent = `今週の注目作 ${n}選`;
+
+  // セクション見出し
+  document.getElementById('show-count').textContent = n;
+  document.getElementById('count').textContent = `${n}作品`;
+
+  // カード描画
+  document.getElementById('grid').innerHTML = showsData.map(buildCard).join('');
+
+  // ジャンルフィルター
+  setupFilter();
+
+  // シェアハンドラー（イベント委譲）
+  setupShareHandlers();
+
+  // アンカーへ自動スクロール（URLにハッシュがある場合）
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+  }
+}
+
+/* ===== カード生成 ===== */
+function buildCard(show) {
+  const tags       = show.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('');
+  const yearTag    = show.yearTag   ? `<span class="tag year">${esc(show.yearTag)}</span>`     : '';
+  const seasonTag  = show.seasonTag ? `<span class="tag season">${esc(show.seasonTag)}</span>` : '';
+  const hasNative  = typeof navigator.share === 'function';
+  const nativeBtn  = hasNative
+    ? `<button class="share-btn" data-share="native" title="シェア">${ICON_SHARE}</button>` : '';
+
+  return `
+<article class="card" id="${esc(show.slug)}" data-genre="${esc(show.genre)}">
+  <div class="card-thumb">
+    <img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg"
+         alt="${esc(show.title)}" loading="lazy">
+    <div class="rt-badge">
+      <span class="tomato">🍅</span>
+      <span class="score">${show.rtScore}%</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div>
+      <div class="card-title">${esc(show.title)}</div>
+      <div class="card-title-ja">${esc(show.titleJa)}</div>
+    </div>
+    <div class="card-tags">${tags}${yearTag}${seasonTag}</div>
+    <p class="card-desc">${esc(show.description)}</p>
+  </div>
+  <div class="card-footer">
+    <div class="streaming-meta">
+      <span class="streaming-label">🇯🇵 日本配信</span>
+      <span class="streaming-since">${esc(show.streaming.since)}〜</span>
+    </div>
+    <div class="streaming-badges">
+      <a class="streaming-badge ${esc(show.streaming.class)}"
+         href="${esc(show.streaming.url)}"
+         target="_blank" rel="noopener noreferrer">${esc(show.streaming.service)}</a>
+    </div>
+  </div>
+  <div class="card-share">
+    <span class="share-label">SHARE</span>
+    <div class="share-btns">
+      <button class="share-btn" data-share="x"    title="Xでシェア">${ICON_X}</button>
+      <button class="share-btn" data-share="line"  title="LINEでシェア">LINE</button>
+      <button class="share-btn" data-share="copy"  title="URLをコピー">${ICON_COPY}</button>
+      ${nativeBtn}
+    </div>
+  </div>
+</article>`;
+}
+
+/* ===== XSS 対策 ===== */
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/* ===== ジャンルフィルター ===== */
+function setupFilter() {
+  document.querySelectorAll('.genre-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const genre = btn.dataset.genre;
+      let count = 0;
+      document.querySelectorAll('.card').forEach(card => {
+        const match = genre === 'all' || card.dataset.genre === genre;
+        card.classList.toggle('hidden', !match);
+        if (match) count++;
+      });
+      document.getElementById('count').textContent = `${count}作品`;
+    });
+  });
+}
+
+/* ===== シェアハンドラー（イベント委譲） ===== */
+function setupShareHandlers() {
+  document.getElementById('grid').addEventListener('click', e => {
+    const btn = e.target.closest('[data-share]');
+    if (!btn) return;
+    const card = btn.closest('.card');
+    if (!card) return;
+    const show = showsData.find(s => s.slug === card.id);
+    if (!show) return;
+    handleShare(btn.dataset.share, show, btn);
+  });
+}
+
+function getShareUrl(show) {
+  return `${BASE_URL}#${show.slug}`;
+}
+
+function getShareText(show) {
+  const url = getShareUrl(show);
+  return `『${show.title}』｜次に観たい海外ドラマ\nスコア：${show.rtScore}%\n配信：${show.streaming.service}\n${url}`;
+}
+
+function handleShare(action, show, btn) {
+  const url  = getShareUrl(show);
+  const text = getShareText(show);
+
+  switch (action) {
+    case 'x': {
+      const t = encodeURIComponent(text);
+      window.open(`https://twitter.com/intent/tweet?text=${t}`, '_blank', 'noopener,width=600,height=400');
+      break;
+    }
+    case 'line': {
+      const t = encodeURIComponent(text);
+      window.open(`https://line.me/R/msg/text/?${t}`, '_blank', 'noopener');
+      break;
+    }
+    case 'copy': {
+      const copyVal = url; // URLだけコピー（シェア文はXやLINE用）
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(copyVal).then(() => showCopied(btn)).catch(() => fallbackCopy(copyVal, btn));
+      } else {
+        fallbackCopy(copyVal, btn);
+      }
+      break;
+    }
+    case 'native': {
+      if (!navigator.share) return;
+      navigator.share({
+        title: `『${show.title}』｜次に観たい海外ドラマ`,
+        text:  `スコア：${show.rtScore}%  配信：${show.streaming.service}`,
+        url
+      }).catch(() => {}); // キャンセルは無視
+      break;
     }
   }
+}
 
-  function buildCard(show) {
-    const tags = show.tags.map(t => `<span class="tag">${t}</span>`).join('');
-    const yearTag  = show.yearTag   ? `<span class="tag year">${show.yearTag}</span>`     : '';
-    const seasonTag = show.seasonTag ? `<span class="tag season">${show.seasonTag}</span>` : '';
+function showCopied(btn) {
+  const orig = btn.innerHTML;
+  btn.innerHTML = '✓';
+  btn.classList.add('copied');
+  setTimeout(() => {
+    btn.innerHTML = orig;
+    btn.classList.remove('copied');
+  }, 2000);
+}
 
-    return `
-      <article class="card" data-genre="${show.genre}">
-        <div class="card-thumb">
-          <img src="https://img.youtube.com/vi/${show.youtubeId}/mqdefault.jpg"
-               alt="${show.title}" loading="lazy">
-          <div class="rt-badge">
-            <span class="tomato">🍅</span>
-            <span class="score">${show.rtScore}%</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <div>
-            <div class="card-title">${show.title}</div>
-            <div class="card-title-ja">${show.titleJa}</div>
-          </div>
-          <div class="card-tags">${tags}${yearTag}${seasonTag}</div>
-          <p class="card-desc">${show.description}</p>
-        </div>
-        <div class="card-footer">
-          <div class="streaming-meta">
-            <span class="streaming-label">🇯🇵 日本配信</span>
-            <span class="streaming-since">${show.streaming.since}〜</span>
-          </div>
-          <div class="streaming-badges">
-            <a class="streaming-badge ${show.streaming.class}"
-               href="${show.streaming.url}"
-               target="_blank"
-               rel="noopener noreferrer">${show.streaming.service}</a>
-          </div>
-        </div>
-      </article>`;
-  }
+function fallbackCopy(text, btn) {
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopied(btn);
+  } catch (_) {}
+}
 
-  function render(data) {
-    document.getElementById('update-date').textContent = data.updated + '更新';
-    document.getElementById('update-count').textContent = `今週の注目作 ${data.shows.length}選`;
-    document.getElementById('count').textContent = `${data.shows.length}作品`;
-    document.getElementById('grid').innerHTML = data.shows.map(buildCard).join('');
-    setupFilter();
-  }
-
-  function setupFilter() {
-    document.querySelectorAll('.genre-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const genre = btn.dataset.genre;
-        let count = 0;
-        document.querySelectorAll('.card').forEach(card => {
-          const match = genre === 'all' || card.dataset.genre === genre;
-          card.classList.toggle('hidden', !match);
-          if (match) count++;
-        });
-        document.getElementById('count').textContent = `${count}作品`;
-      });
-    });
-  }
-
-  init();
+/* ===== 起動 ===== */
+init();
 </script>
 </body>
 </html>

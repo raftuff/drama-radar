@@ -2,6 +2,7 @@
   "updated": "2026年6月5日",
   "shows": [
     {
+      "slug": "bait",
       "title": "BAIT",
       "titleJa": "ベイト（2026）",
       "genre": "crime",
@@ -19,6 +20,7 @@
       }
     },
     {
+      "slug": "lord-of-the-flies",
       "title": "Lord of the Flies",
       "titleJa": "蠅の王（2026）",
       "genre": "suspense",
@@ -36,6 +38,7 @@
       }
     },
     {
+      "slug": "detective-hole",
       "title": "Jo Nesbø's Detective Hole",
       "titleJa": "刑事ハリー・ホーレ（2026）",
       "genre": "detective",
@@ -53,6 +56,7 @@
       }
     },
     {
+      "slug": "for-all-mankind-s5",
       "title": "For All Mankind S5",
       "titleJa": "フォー・オール・マンカインド シーズン5",
       "genre": "sf",
@@ -70,6 +74,7 @@
       }
     },
     {
+      "slug": "paradise-s2",
       "title": "Paradise S2",
       "titleJa": "パラダイス シーズン2",
       "genre": "suspense",
@@ -87,6 +92,7 @@
       }
     },
     {
+      "slug": "night-manager-s2",
       "title": "The Night Manager S2",
       "titleJa": "ナイト・マネージャー シーズン2",
       "genre": "action",
@@ -104,6 +110,7 @@
       }
     },
     {
+      "slug": "the-testaments",
       "title": "The Testaments",
       "titleJa": "誓証（2026）",
       "genre": "sf",
@@ -121,6 +128,7 @@
       }
     },
     {
+      "slug": "daredevil-born-again-s2",
       "title": "Daredevil: Born Again S2",
       "titleJa": "デアデビル：ボーン・アゲイン S2",
       "genre": "action",
@@ -138,6 +146,7 @@
       }
     },
     {
+      "slug": "dtf-st-louis",
       "title": "DTF St. Louis",
       "titleJa": "DTF セントルイス（2026）",
       "genre": "crime",
@@ -155,6 +164,7 @@
       }
     },
     {
+      "slug": "starfleet-academy",
       "title": "Star Trek: Starfleet Academy",
       "titleJa": "スタートレック：スターフリート・アカデミー",
       "genre": "sf",
