@@ -198,29 +198,27 @@ body {
   border-radius: 20px;
 }
 
-/* 今週タブ — 常時赤背景でメインタブとして強調 */
+/* 今週タブ — 非選択時は他タブと同様、選択中のみ赤背景 */
 .tab-btn.tab-weekly {
+  font-weight: 700;
+  /* 非選択時は .tab-btn 共通スタイル（白背景・グレー文字）を継承 */
+}
+.tab-btn.tab-weekly:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(230,57,70,0.04);
+}
+.tab-btn.tab-weekly.active {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
-  font-weight: 700;
-}
-.tab-btn.tab-weekly:not(.active) { opacity: 0.82; }
-.tab-btn.tab-weekly:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
-  color: #fff;
-  opacity: 1;
-}
-.tab-btn.tab-weekly.active {
-  opacity: 1;
   box-shadow: 0 2px 10px rgba(230,57,70,0.28);
 }
 
-/* NEWバッジ（赤背景上に重ねるため半透明白） */
+/* NEWバッジ — 非選択時は赤バッジ、選択時（赤背景上）は半透明白 */
 .tab-new-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.25);
+  background: var(--accent);
   color: #fff;
   font-size: 8px;
   font-weight: 800;
@@ -229,6 +227,9 @@ body {
   border-radius: 3px;
   line-height: 13px;
   flex-shrink: 0;
+}
+.tab-btn.tab-weekly.active .tab-new-badge {
+  background: rgba(255,255,255,0.25);
 }
 
 /* ===== MAIN ===== */
