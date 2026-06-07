@@ -121,27 +121,6 @@ body {
   letter-spacing: 0.5px;
   margin-top: 4px;
 }
-.hero-genres {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 16px;
-}
-.hero-genre-pill {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.65);
-  background: rgba(255,255,255,0.07);
-}
-.hero-genre-pill--weekly {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  font-weight: 800;
-}
 .hero-right {
   display: flex;
   flex-direction: column;
@@ -171,68 +150,77 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
 }
 .genre-nav-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 12px 24px;
   display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 }
-.genre-nav-inner::-webkit-scrollbar { display: none; }
 
-/* 共通タブボタン */
+/* 共通タブボタン（ピル型） */
 .tab-btn {
-  background: none; border: none;
-  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 7px 16px;
   font-size: 13px; font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  border-radius: 20px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s, box-shadow 0.15s, opacity 0.15s;
   font-family: inherit;
-  flex-shrink: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  white-space: nowrap;
+  line-height: 1.4;
 }
-.tab-btn:hover { color: var(--accent); }
-/* アクティブ: 赤文字 + 赤い下線のみ。背景は白のまま */
-.tab-btn.active {
+.tab-btn:hover {
+  border-color: var(--accent);
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  background: rgba(230,57,70,0.04);
 }
-/* ブラウザデフォルトの青アウトラインを除去 */
+.tab-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(230,57,70,0.07);
+}
+/* ブラウザデフォルト青アウトライン除去 */
 .tab-btn:focus { outline: none; }
-/* focus-visible: 控えめな赤系アウトライン（アクセシビリティ維持） */
+/* focus-visible: 赤系アウトライン（アクセシビリティ維持） */
 .tab-btn:focus-visible {
   outline: 2px solid rgba(230,57,70,0.45);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: 20px;
 }
 
-/* 今週タブ — デザイン言語はジャンルタブと統一、特別感はNEWバッジで表現 */
+/* 今週タブ — 常時赤背景でメインタブとして強調 */
 .tab-btn.tab-weekly {
-  color: var(--accent);
-  font-weight: 800;
-  padding-left: 22px;
-  padding-right: 22px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
 }
-.tab-btn.tab-weekly:hover { color: var(--accent-dark); }
+.tab-btn.tab-weekly:not(.active) { opacity: 0.82; }
+.tab-btn.tab-weekly:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+  opacity: 1;
+}
 .tab-btn.tab-weekly.active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-  /* 背景なし — 他のジャンルタブと同じ白背景 */
+  opacity: 1;
+  box-shadow: 0 2px 10px rgba(230,57,70,0.28);
 }
-/* NEWバッジ */
+
+/* NEWバッジ（赤背景上に重ねるため半透明白） */
 .tab-new-badge {
   display: inline-block;
-  background: var(--accent);
+  background: rgba(255,255,255,0.25);
   color: #fff;
   font-size: 8px;
   font-weight: 800;
@@ -241,20 +229,6 @@ body {
   border-radius: 3px;
   line-height: 13px;
   flex-shrink: 0;
-}
-/* 区切り線 */
-.tab-divider {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  margin: 0 6px;
-}
-.tab-divider::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 20px;
-  background: var(--border);
 }
 
 /* ===== MAIN ===== */
@@ -532,7 +506,11 @@ footer a:hover { text-decoration: underline; }
   .hero-inner { padding: 36px 20px 32px; gap: 16px; }
   .hero-title { font-size: 24px; letter-spacing: 0.02em; }
   .hero-right { display: none; }
-  .genre-nav-inner { padding: 0 16px; }
+  /* SP: ピルが折り返し2〜3段になる想定。余白・サイズを小さめに */
+  .genre-nav-inner { padding: 10px 16px; gap: 7px; }
+  .tab-btn { font-size: 12px; padding: 6px 12px; }
+  /* SP: 折り返し時のナビ高さを考慮したスクロールマージン */
+  .card { scroll-margin-top: 160px; }
   main { padding: 28px 16px 48px; }
   .editorial-title { font-size: 19px; }
   .cards-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -553,15 +531,6 @@ footer a:hover { text-decoration: underline; }
       </div>
       <h1 class="hero-title">次に観たい海外ドラマ</h1>
       <p class="hero-subtitle">毎週更新 — Rotten Tomatoes × 日本配信情報</p>
-      <div class="hero-genres">
-        <span class="hero-genre-pill hero-genre-pill--weekly">週刊ピックアップ</span>
-        <span class="hero-genre-pill">サスペンス・ミステリー</span>
-        <span class="hero-genre-pill">犯罪ドラマ</span>
-        <span class="hero-genre-pill">SF</span>
-        <span class="hero-genre-pill">アクション</span>
-        <span class="hero-genre-pill">ドキュメンタリー</span>
-        <span class="hero-genre-pill">ホラー</span>
-      </div>
     </div>
     <div class="hero-right">
       <span class="hero-update-date" id="update-date">読み込み中...</span>
@@ -572,17 +541,16 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ===== TAB NAV ===== -->
 <nav class="genre-nav" aria-label="タブナビゲーション">
-  <div class="genre-nav-inner">
-    <button class="tab-btn tab-weekly active" data-tab="weekly">
+  <div class="genre-nav-inner" role="tablist">
+    <button class="tab-btn tab-weekly active" data-tab="weekly" role="tab" aria-selected="true">
       今週の注目作品10選<span class="tab-new-badge">NEW</span>
     </button>
-    <span class="tab-divider" aria-hidden="true"></span>
-    <button class="tab-btn" data-tab="suspense">サスペンス・ミステリー</button>
-    <button class="tab-btn" data-tab="crime">犯罪ドラマ</button>
-    <button class="tab-btn" data-tab="sf">SF</button>
-    <button class="tab-btn" data-tab="action">アクション</button>
-    <button class="tab-btn" data-tab="documentary">ドキュメンタリー</button>
-    <button class="tab-btn" data-tab="horror">ホラー</button>
+    <button class="tab-btn" data-tab="suspense" role="tab" aria-selected="false">サスペンス・ミステリー</button>
+    <button class="tab-btn" data-tab="crime" role="tab" aria-selected="false">犯罪ドラマ</button>
+    <button class="tab-btn" data-tab="sf" role="tab" aria-selected="false">SF</button>
+    <button class="tab-btn" data-tab="action" role="tab" aria-selected="false">アクション</button>
+    <button class="tab-btn" data-tab="documentary" role="tab" aria-selected="false">ドキュメンタリー</button>
+    <button class="tab-btn" data-tab="horror" role="tab" aria-selected="false">ホラー</button>
   </div>
 </nav>
 
@@ -838,9 +806,11 @@ function render(data, archive) {
    タブ切り替え
 ================================================================= */
 function showTab(tabKey) {
-  /* アクティブ状態の更新 */
+  /* アクティブ状態の更新（class + aria-selected） */
   document.querySelectorAll('.tab-btn').forEach(function(b) {
-    b.classList.toggle('active', b.dataset.tab === tabKey);
+    var isActive = b.dataset.tab === tabKey;
+    b.classList.toggle('active', isActive);
+    b.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
 
   var weeklyHeader = document.getElementById('section-weekly-header');
