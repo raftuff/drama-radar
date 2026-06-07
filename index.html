@@ -83,16 +83,16 @@ body {
 }
 .hero-brand-bar {
   display: block;
-  width: 3px; height: 15px;
+  width: 3px; height: 20px;
   background: var(--accent);
   border-radius: 2px;
   flex-shrink: 0;
 }
 .hero-brand-name {
-  font-size: 11px; font-weight: 900;
+  font-size: 15px; font-weight: 900;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.50);
 }
 .hero-pickup-label {
   display: inline-block;
@@ -194,8 +194,16 @@ body {
 }
 .tab-btn:hover { color: var(--text); }
 .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+/* ブラウザデフォルトの青いアウトラインを除去 */
+.tab-btn:focus { outline: none; }
+/* アクセシビリティ用 focus-visible はサイトのアクセントカラーで統一 */
+.tab-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: 3px;
+}
 
-/* 今週タブ — 特別感 */
+/* 今週タブ — 特別感（デザイン言語はジャンルタブと統一） */
 .tab-btn.tab-weekly {
   color: var(--accent);
   font-weight: 800;
@@ -493,11 +501,12 @@ footer a:hover { text-decoration: underline; }
       <h1 class="hero-title">次に観たい海外ドラマ</h1>
       <p class="hero-subtitle">毎週更新 — Rotten Tomatoes × 日本配信情報</p>
       <div class="hero-genres">
-        <span class="hero-genre-pill">サスペンス</span>
-        <span class="hero-genre-pill">SF</span>
+        <span class="hero-genre-pill">サスペンス・ミステリー</span>
         <span class="hero-genre-pill">犯罪ドラマ</span>
-        <span class="hero-genre-pill">刑事・探偵</span>
+        <span class="hero-genre-pill">SF</span>
         <span class="hero-genre-pill">アクション</span>
+        <span class="hero-genre-pill">ドキュメンタリー</span>
+        <span class="hero-genre-pill">ホラー</span>
       </div>
     </div>
     <div class="hero-right">
@@ -531,7 +540,7 @@ footer a:hover { text-decoration: underline; }
     <span class="editorial-label">PICK UP</span>
     <div class="editorial-heading-row">
       <h2 class="editorial-title">
-        <span class="hl">"今"</span>話題の注目作品 <span id="show-count">10</span>選
+        今週の注目作品 <span id="show-count">10</span>選
       </h2>
       <span class="editorial-count" id="count">—作品</span>
     </div>
