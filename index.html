@@ -110,7 +110,7 @@ body {
 .hero-title {
   font-size: clamp(26px, 4vw, 40px);
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: 0.03em;
   color: #fff;
   line-height: 1.15;
   margin-bottom: 8px;
@@ -135,6 +135,12 @@ body {
   border: 1px solid rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.65);
   background: rgba(255,255,255,0.07);
+}
+.hero-genre-pill--weekly {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 800;
 }
 .hero-right {
   display: flex;
@@ -524,7 +530,7 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .hero { min-height: 280px; }
   .hero-inner { padding: 36px 20px 32px; gap: 16px; }
-  .hero-title { font-size: 24px; letter-spacing: -0.5px; }
+  .hero-title { font-size: 24px; letter-spacing: 0.02em; }
   .hero-right { display: none; }
   .genre-nav-inner { padding: 0 16px; }
   main { padding: 28px 16px 48px; }
@@ -545,10 +551,10 @@ footer a:hover { text-decoration: underline; }
         <span class="hero-brand-bar"></span>
         <span class="hero-brand-name">DRAMA RADAR</span>
       </div>
-      <div class="hero-pickup-label">週刊ピックアップ</div>
       <h1 class="hero-title">次に観たい海外ドラマ</h1>
       <p class="hero-subtitle">毎週更新 — Rotten Tomatoes × 日本配信情報</p>
       <div class="hero-genres">
+        <span class="hero-genre-pill hero-genre-pill--weekly">週刊ピックアップ</span>
         <span class="hero-genre-pill">サスペンス・ミステリー</span>
         <span class="hero-genre-pill">犯罪ドラマ</span>
         <span class="hero-genre-pill">SF</span>
