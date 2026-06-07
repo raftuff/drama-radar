@@ -40,7 +40,6 @@ body {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  /* hero.jpg がない場合のフォールバックグラデーション */
   background-color: #0c0c10;
   background-image:
     linear-gradient(175deg, rgba(8,5,3,0.30) 0%, rgba(6,6,10,0.78) 55%, rgba(4,4,8,0.96) 100%),
@@ -49,7 +48,6 @@ body {
   background-position: center 35%;
   background-repeat: no-repeat;
 }
-/* ノイズテクスチャ */
 .hero::before {
   content: '';
   position: absolute;
@@ -57,7 +55,6 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
 }
-/* 底辺のアクセントライン */
 .hero::after {
   content: '';
   position: absolute;
@@ -78,7 +75,6 @@ body {
   flex-wrap: wrap;
 }
 .hero-left { flex: 1; min-width: 260px; }
-/* DRAMA RADAR ブランドロゴ */
 .hero-brand {
   display: flex;
   align-items: center;
@@ -98,7 +94,6 @@ body {
   text-transform: uppercase;
   color: rgba(255,255,255,0.40);
 }
-/* 週刊ピックアップ ラベル */
 .hero-pickup-label {
   display: inline-block;
   background: var(--accent);
@@ -123,7 +118,6 @@ body {
   letter-spacing: 0.5px;
   margin-top: 4px;
 }
-/* ジャンルピル */
 .hero-genres {
   display: flex;
   flex-wrap: wrap;
@@ -161,7 +155,7 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* ===== GENRE NAV ===== */
+/* ===== TAB NAV ===== */
 .genre-nav {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -175,24 +169,72 @@ body {
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  gap: 2px;
+  gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
+  align-items: stretch;
 }
 .genre-nav-inner::-webkit-scrollbar { display: none; }
-.genre-btn {
+
+/* 共通タブボタン */
+.tab-btn {
   background: none; border: none;
-  padding: 14px 18px;
+  padding: 14px 16px;
   font-size: 13px; font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
   font-family: inherit;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-.genre-btn:hover { color: var(--text); }
-.genre-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* 今週タブ — 特別感 */
+.tab-btn.tab-weekly {
+  color: var(--accent);
+  font-weight: 800;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tab-btn.tab-weekly:hover { color: var(--accent-dark); }
+.tab-btn.tab-weekly.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: rgba(230,57,70,0.04);
+}
+/* NEWバッジ */
+.tab-new-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  line-height: 13px;
+  flex-shrink: 0;
+}
+/* 区切り線 */
+.tab-divider {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0 6px;
+}
+.tab-divider::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+}
 
 /* ===== MAIN ===== */
 main {
@@ -216,6 +258,9 @@ main {
   padding: 4px 11px;
   border-radius: 3px;
   margin-bottom: 14px;
+}
+.editorial-label.archive-label {
+  background: #374151;
 }
 .editorial-heading-row {
   display: flex;
@@ -268,7 +313,7 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  scroll-margin-top: 80px; /* sticky nav の高さ分 */
+  scroll-margin-top: 80px;
 }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .card.hidden { display: none; }
@@ -324,6 +369,24 @@ main {
 .tag { background: var(--tag-bg); color: var(--tag-text); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
 .tag.year   { background: #fef3c7; color: #92400e; }
 .tag.season { background: #f0fdf4; color: #166534; }
+
+/* ピックアップ日表示（アーカイブタブのみ） */
+.card-picked-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #9ca3af;
+  font-weight: 600;
+}
+.picked-dot {
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
 
 .card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; flex: 1; }
 
@@ -406,7 +469,7 @@ footer a:hover { text-decoration: underline; }
   .hero { min-height: 280px; }
   .hero-inner { padding: 36px 20px 32px; gap: 16px; }
   .hero-title { font-size: 24px; letter-spacing: -0.5px; }
-  .hero-right { display: none; } /* モバイルは更新情報を非表示（heroが窮屈になるため） */
+  .hero-right { display: none; }
   .genre-nav-inner { padding: 0 16px; }
   main { padding: 28px 16px 48px; }
   .editorial-title { font-size: 19px; }
@@ -422,16 +485,12 @@ footer a:hover { text-decoration: underline; }
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <!-- 1. ブランド名 -->
       <div class="hero-brand">
         <span class="hero-brand-bar"></span>
         <span class="hero-brand-name">DRAMA RADAR</span>
       </div>
-      <!-- 2. 週刊ピックアップ ラベル -->
       <div class="hero-pickup-label">週刊ピックアップ</div>
-      <!-- 3. メインタイトル -->
       <h1 class="hero-title">次に観たい海外ドラマ</h1>
-      <!-- 4. サブコピー -->
       <p class="hero-subtitle">毎週更新 — Rotten Tomatoes × 日本配信情報</p>
       <div class="hero-genres">
         <span class="hero-genre-pill">サスペンス</span>
@@ -448,25 +507,30 @@ footer a:hover { text-decoration: underline; }
   </div>
 </header>
 
-<!-- ===== GENRE NAV ===== -->
-<nav class="genre-nav" aria-label="ジャンルフィルター">
+<!-- ===== TAB NAV ===== -->
+<nav class="genre-nav" aria-label="タブナビゲーション">
   <div class="genre-nav-inner">
-    <button class="genre-btn active" data-genre="all">すべて</button>
-    <button class="genre-btn" data-genre="suspense">サスペンス</button>
-    <button class="genre-btn" data-genre="crime">犯罪ドラマ</button>
-    <button class="genre-btn" data-genre="detective">刑事・探偵</button>
-    <button class="genre-btn" data-genre="sf">SF</button>
-    <button class="genre-btn" data-genre="action">アクション</button>
+    <button class="tab-btn tab-weekly active" data-tab="weekly">
+      今週の注目作品10選<span class="tab-new-badge">NEW</span>
+    </button>
+    <span class="tab-divider" aria-hidden="true"></span>
+    <button class="tab-btn" data-tab="suspense">サスペンス・ミステリー</button>
+    <button class="tab-btn" data-tab="crime">犯罪ドラマ</button>
+    <button class="tab-btn" data-tab="sf">SF</button>
+    <button class="tab-btn" data-tab="action">アクション</button>
+    <button class="tab-btn" data-tab="documentary">ドキュメンタリー</button>
+    <button class="tab-btn" data-tab="horror">ホラー</button>
   </div>
 </nav>
 
 <!-- ===== MAIN ===== -->
 <main>
-  <!-- 編集部的セクション見出し -->
-  <div class="section-editorial">
+
+  <!-- 週間ピックアップ セクションヘッダー（weeklyタブ時のみ表示） -->
+  <div class="section-editorial" id="section-weekly-header">
     <span class="editorial-label">PICK UP</span>
     <div class="editorial-heading-row">
-      <h2 class="editorial-title" id="editorial-title">
+      <h2 class="editorial-title">
         <span class="hl">"今"</span>話題の注目作品 <span id="show-count">10</span>選
       </h2>
       <span class="editorial-count" id="count">—作品</span>
@@ -475,10 +539,22 @@ footer a:hover { text-decoration: underline; }
     <p class="editorial-desc">海外レビューと日本配信情報をもとに、いま注目の作品をピックアップ。</p>
   </div>
 
-  <!-- カードグリッド -->
+  <!-- ジャンル別 セクションヘッダー（ジャンルタブ時のみ表示） -->
+  <div class="section-editorial" id="section-genre-header" style="display:none">
+    <span class="editorial-label archive-label">ARCHIVE</span>
+    <div class="editorial-heading-row">
+      <h2 class="editorial-title" id="genre-title-text"></h2>
+      <span class="editorial-count" id="genre-count-text">—作品</span>
+    </div>
+    <div class="editorial-rule"></div>
+    <p class="editorial-desc" id="genre-desc-text"></p>
+  </div>
+
+  <!-- カードグリッド（タブ共通） -->
   <div class="cards-grid" id="grid">
     <p class="state-msg">データを読み込んでいます...</p>
   </div>
+
 </main>
 
 <!-- ===== FOOTER ===== -->
@@ -493,8 +569,23 @@ footer a:hover { text-decoration: underline; }
 ================================================================= */
 const BASE_URL = 'https://raftuff.github.io/drama-radar/';
 
-/* グローバルデータストア — インライン onclick から参照する */
-let showsData = [];
+/* =================================================================
+   ジャンルタブ定義
+================================================================= */
+const GENRE_TABS = {
+  suspense:    { name: 'サスペンス・ミステリー', category: 'サスペンス・ミステリー', desc: '心理戦、陰謀、謎解き、緊張感のある海外ドラマをアーカイブ。' },
+  crime:       { name: '犯罪ドラマ',             category: '犯罪ドラマ',             desc: '事件、組織犯罪、捜査、社会の裏側を描く海外ドラマをアーカイブ。' },
+  sf:          { name: 'SF',                     category: 'SF',                     desc: '未来、宇宙、テクノロジー、ディストピアを描く海外ドラマをアーカイブ。' },
+  action:      { name: 'アクション',             category: 'アクション',             desc: 'スパイ、逃亡劇、戦闘、サバイバル要素のある海外ドラマをアーカイブ。' },
+  documentary: { name: 'ドキュメンタリー',       category: 'ドキュメンタリー',       desc: '実話、事件、カルチャー、社会問題を扱うドキュメンタリー作品をアーカイブ。' },
+  horror:      { name: 'ホラー',                 category: 'ホラー',                 desc: '怪奇、スリラー、オカルト、不穏な空気を持つ海外ドラマをアーカイブ。' }
+};
+
+/* =================================================================
+   グローバルデータストア — inline onclick から参照する
+================================================================= */
+let showsData   = []; /* 全作品（週間 + アーカイブ合算、dedup済み）*/
+let weeklyShows = []; /* 今週分（data.json）*/
 
 /* =================================================================
    SVGアイコン定義
@@ -518,12 +609,10 @@ const ICON_SHARE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" 
    シェア用ヘルパー（グローバルスコープ — inline onclick から呼び出す）
 ================================================================= */
 
-/** slug から show オブジェクトを取得 */
 function _findShow(slug) {
   return showsData.find(function(s) { return s.slug === slug; });
 }
 
-/** シェアテキストを生成 */
 function _shareText(show) {
   var url = BASE_URL + '#' + show.slug;
   return '『' + show.title + '』｜次に観たい海外ドラマ\n'
@@ -532,7 +621,6 @@ function _shareText(show) {
        + url;
 }
 
-/** コピー後フィードバック表示（ボタン要素を渡す） */
 function _showCopied(btn) {
   var orig = btn.innerHTML;
   var origTitle = btn.title;
@@ -544,7 +632,6 @@ function _showCopied(btn) {
   }, 2000);
 }
 
-/** clipboard API が使えない環境向けフォールバック */
 function _execCopy(text) {
   try {
     var ta = document.createElement('textarea');
@@ -561,83 +648,84 @@ function _execCopy(text) {
   }
 }
 
-/* ---------- 各シェアボタンの処理（inline onclick から直接呼ぶ） ---------- */
-
-/** X(Twitter) でシェア */
 function drama_x(slug) {
   var show = _findShow(slug);
   if (!show) return;
-  var text = _shareText(show);
   window.open(
-    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text),
+    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(_shareText(show)),
     '_blank',
     'noopener,noreferrer,width=600,height=500'
   );
 }
 
-/** LINE でシェア */
 function drama_line(slug) {
   var show = _findShow(slug);
   if (!show) return;
-  var text = _shareText(show);
   window.open(
-    'https://line.me/R/msg/text/?' + encodeURIComponent(text),
+    'https://line.me/R/msg/text/?' + encodeURIComponent(_shareText(show)),
     '_blank',
     'noopener,noreferrer'
   );
 }
 
-/** テキストをクリップボードにコピー */
 function drama_copy(slug, btn) {
   var show = _findShow(slug);
   if (!show) return;
   var text = _shareText(show);
-
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text)
       .then(function() { _showCopied(btn); })
-      .catch(function() {
-        _execCopy(text);
-        _showCopied(btn);
-      });
+      .catch(function() { _execCopy(text); _showCopied(btn); });
   } else {
     _execCopy(text);
     _showCopied(btn);
   }
 }
 
-/** Web Share API / フォールバックはコピー */
 function drama_share(slug, btn) {
   var show = _findShow(slug);
   if (!show) return;
-  var url  = BASE_URL + '#' + show.slug;
-  var text = _shareText(show);
-
   if (navigator.share) {
     navigator.share({
       title: '『' + show.title + '』｜次に観たい海外ドラマ',
       text:  'スコア：' + show.rtScore + '%　配信：' + show.streaming.service,
-      url:   url
-    }).catch(function() {}); /* キャンセルは無視 */
+      url:   BASE_URL + '#' + show.slug
+    }).catch(function() {});
   } else {
-    /* navigator.share が使えない環境 → コピーにフォールバック */
     drama_copy(slug, btn);
   }
 }
 
 /* =================================================================
-   初期化
+   日付文字列変換  "2026年6月5日" → "2026-06-05"
+================================================================= */
+function parseDateStr(str) {
+  var m = str.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+  if (!m) return str;
+  return m[1] + '-' + m[2].padStart(2,'0') + '-' + m[3].padStart(2,'0');
+}
+
+/* =================================================================
+   初期化（data.json + archive.json を並列フェッチ）
 ================================================================= */
 async function init() {
   try {
-    const res = await fetch('data.json');
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    render(data);
+    const [dataRes, archiveRes] = await Promise.all([
+      fetch('data.json'),
+      fetch('archive.json')
+    ]);
+    if (!dataRes.ok) throw new Error('data.json: HTTP ' + dataRes.status);
+    const data = await dataRes.json();
+
+    var archive = [];
+    if (archiveRes.ok) {
+      archive = await archiveRes.json();
+    }
+
+    render(data, archive);
   } catch (e) {
     document.getElementById('grid').innerHTML =
       '<p class="state-msg">データの読み込みに失敗しました。<br>ページを再読み込みしてください。</p>';
-    document.getElementById('count').textContent = 'エラー';
     console.error(e);
   }
 }
@@ -645,23 +733,37 @@ async function init() {
 /* =================================================================
    レンダリング
 ================================================================= */
-function render(data) {
-  /* グローバルに保存（drama_* 関数が参照する） */
-  showsData = data.shows;
-  const n = showsData.length;
+function render(data, archive) {
+  weeklyShows = data.shows;
 
+  /* 今週分に pickedAt / pickedLabel を付与して正規化 */
+  var dataDate  = parseDateStr(data.updated);
+  var dataLabel = data.updated + 'ピックアップ';
+  var weeklyNorm = weeklyShows.map(function(s) {
+    return Object.assign({}, s, { pickedAt: dataDate, pickedLabel: dataLabel });
+  });
+
+  /* archive + 今週分をマージ（同一 slug は今週分を優先） */
+  var map = new Map();
+  archive.forEach(function(s) { map.set(s.slug, s); });
+  weeklyNorm.forEach(function(s) { map.set(s.slug, s); });
+
+  /* showsData = 全作品（シェアボタンが参照） */
+  showsData = Array.from(map.values());
+
+  /* ヒーロー更新 */
   document.getElementById('update-date').textContent  = data.updated + '更新';
-  document.getElementById('update-count').textContent = '"今"話題の' + n + '選';
-  document.getElementById('show-count').textContent   = n;
-  document.getElementById('count').textContent        = n + '作品';
+  document.getElementById('update-count').textContent = '"今"話題の' + weeklyShows.length + '選';
 
-  document.getElementById('grid').innerHTML = showsData.map(buildCard).join('');
+  /* デフォルトタブを表示 */
+  showTab('weekly');
 
-  setupFilter();
+  /* タブクリック登録 */
+  setupTabs();
 
-  /* アンカーへ自動スクロール */
+  /* アンカー自動スクロール */
   if (location.hash) {
-    const el = document.querySelector(location.hash);
+    var el = document.querySelector(location.hash);
     if (el) setTimeout(function() {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 200);
@@ -669,10 +771,67 @@ function render(data) {
 }
 
 /* =================================================================
+   タブ切り替え
+================================================================= */
+function showTab(tabKey) {
+  /* アクティブ状態の更新 */
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === tabKey);
+  });
+
+  var weeklyHeader = document.getElementById('section-weekly-header');
+  var genreHeader  = document.getElementById('section-genre-header');
+  var grid         = document.getElementById('grid');
+
+  if (tabKey === 'weekly') {
+    /* === 今週タブ === */
+    weeklyHeader.style.display = '';
+    genreHeader.style.display  = 'none';
+
+    document.getElementById('show-count').textContent = weeklyShows.length;
+    document.getElementById('count').textContent      = weeklyShows.length + '作品';
+
+    grid.innerHTML = weeklyShows.map(function(s) { return buildCard(s, null); }).join('');
+
+  } else {
+    /* === ジャンルタブ === */
+    var tabInfo = GENRE_TABS[tabKey];
+    weeklyHeader.style.display = 'none';
+    genreHeader.style.display  = '';
+
+    document.getElementById('genre-title-text').textContent = tabInfo.name;
+    document.getElementById('genre-desc-text').textContent  = tabInfo.desc;
+
+    /* primaryCategory でフィルタして pickedAt 降順ソート */
+    var filtered = showsData
+      .filter(function(s) { return s.primaryCategory === tabInfo.category; })
+      .sort(function(a, b) {
+        return (b.pickedAt || '').localeCompare(a.pickedAt || '');
+      });
+
+    document.getElementById('genre-count-text').textContent = filtered.length + '作品';
+
+    grid.innerHTML = filtered.length > 0
+      ? filtered.map(function(s) { return buildCard(s, s.pickedLabel); }).join('')
+      : '<p class="state-msg">まだ作品がありません。</p>';
+  }
+}
+
+/* =================================================================
+   タブクリックイベント登録
+================================================================= */
+function setupTabs() {
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      showTab(btn.dataset.tab);
+    });
+  });
+}
+
+/* =================================================================
    カード生成
-   ポイント: シェアボタンは inline onclick で slug を直接渡す。
-   イベント委譲を使わないことで、SVG子要素クリック時の
-   closest() 失敗を完全に回避する。
+   - pickedLabel が null のとき：ピックアップ日表示なし（週間タブ）
+   - pickedLabel が文字列のとき：ピックアップ日バッジを表示（ジャンルタブ）
 ================================================================= */
 function esc(str) {
   if (str == null) return '';
@@ -684,11 +843,15 @@ function esc(str) {
     .replace(/'/g,  '&#39;');
 }
 
-function buildCard(show) {
-  const tags      = show.tags.map(function(t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
-  const yearTag   = show.yearTag   ? '<span class="tag year">'   + esc(show.yearTag)   + '</span>' : '';
-  const seasonTag = show.seasonTag ? '<span class="tag season">' + esc(show.seasonTag) + '</span>' : '';
-  const slug      = esc(show.slug); /* アルファベット+ハイフンのみなので安全 */
+function buildCard(show, pickedLabel) {
+  var tags      = show.tags.map(function(t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
+  var yearTag   = show.yearTag   ? '<span class="tag year">'   + esc(show.yearTag)   + '</span>' : '';
+  var seasonTag = show.seasonTag ? '<span class="tag season">' + esc(show.seasonTag) + '</span>' : '';
+  var slug      = esc(show.slug);
+
+  var pickedHtml = pickedLabel
+    ? '<div class="card-picked-label"><span class="picked-dot"></span>' + esc(pickedLabel) + '</div>'
+    : '';
 
   return `
 <article class="card" id="${slug}" data-genre="${esc(show.genre)}">
@@ -706,6 +869,7 @@ function buildCard(show) {
       <div class="card-title-ja">${esc(show.titleJa)}</div>
     </div>
     <div class="card-tags">${tags}${yearTag}${seasonTag}</div>
+    ${pickedHtml}
     <p class="card-desc">${esc(show.description)}</p>
   </div>
   <div class="card-footer">
@@ -733,26 +897,6 @@ function buildCard(show) {
     </div>
   </div>
 </article>`;
-}
-
-/* =================================================================
-   ジャンルフィルター
-================================================================= */
-function setupFilter() {
-  document.querySelectorAll('.genre-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.genre-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      const genre = btn.dataset.genre;
-      let count = 0;
-      document.querySelectorAll('.card').forEach(function(card) {
-        const match = genre === 'all' || card.dataset.genre === genre;
-        card.classList.toggle('hidden', !match);
-        if (match) count++;
-      });
-      document.getElementById('count').textContent = count + '作品';
-    });
-  });
 }
 
 /* =================================================================
