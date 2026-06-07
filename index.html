@@ -42,7 +42,10 @@ body {
   overflow: hidden;
   background-color: #0c0c10;
   background-image:
-    linear-gradient(175deg, rgba(8,5,3,0.30) 0%, rgba(6,6,10,0.78) 55%, rgba(4,4,8,0.96) 100%),
+    /* 縦方向: 上部を明るく、テキストのある下部は読みやすさを確保 */
+    linear-gradient(to bottom, rgba(4,4,8,0.10) 0%, rgba(4,4,8,0.52) 50%, rgba(4,4,8,0.90) 100%),
+    /* 横方向: 左（森・窓）は明るく、右（テレビ側）はやや暗め */
+    linear-gradient(to right, transparent 0%, rgba(4,4,8,0.28) 100%),
     url('hero.jpg');
   background-size: cover;
   background-position: center 35%;
@@ -78,7 +81,7 @@ body {
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   margin-bottom: 18px;
 }
 .hero-brand-bar {
@@ -92,7 +95,7 @@ body {
   font-size: 15px; font-weight: 900;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.50);
+  color: rgba(255,255,255,0.70);
 }
 .hero-pickup-label {
   display: inline-block;
@@ -192,29 +195,33 @@ body {
   align-items: center;
   gap: 5px;
 }
-.tab-btn:hover { color: var(--text); }
-.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-/* ブラウザデフォルトの青いアウトラインを除去 */
+.tab-btn:hover { color: var(--accent); }
+/* アクティブ: 赤文字 + 赤い下線のみ。背景は白のまま */
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+/* ブラウザデフォルトの青アウトラインを除去 */
 .tab-btn:focus { outline: none; }
-/* アクセシビリティ用 focus-visible はサイトのアクセントカラーで統一 */
+/* focus-visible: 控えめな赤系アウトライン（アクセシビリティ維持） */
 .tab-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  outline: 2px solid rgba(230,57,70,0.45);
+  outline-offset: 3px;
   border-radius: 3px;
 }
 
-/* 今週タブ — 特別感（デザイン言語はジャンルタブと統一） */
+/* 今週タブ — デザイン言語はジャンルタブと統一、特別感はNEWバッジで表現 */
 .tab-btn.tab-weekly {
   color: var(--accent);
   font-weight: 800;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 .tab-btn.tab-weekly:hover { color: var(--accent-dark); }
 .tab-btn.tab-weekly.active {
   color: var(--accent);
   border-bottom-color: var(--accent);
-  background: rgba(230,57,70,0.04);
+  /* 背景なし — 他のジャンルタブと同じ白背景 */
 }
 /* NEWバッジ */
 .tab-new-badge {
@@ -461,6 +468,28 @@ a.streaming-badge.unext     { background: #3d1f8c; }
 
 /* ===== STATE ===== */
 .state-msg { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 14px; grid-column: 1 / -1; }
+
+/* 空ジャンルタブ用メッセージ */
+.state-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 72px 24px 80px;
+}
+.state-empty-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  opacity: 0.45;
+}
+.state-empty-msg {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.state-empty-sub {
+  font-size: 12px;
+  color: #b0b8c4;
+  line-height: 1.8;
+}
 
 /* ===== FOOTER ===== */
 footer {
@@ -822,7 +851,7 @@ function showTab(tabKey) {
 
     grid.innerHTML = filtered.length > 0
       ? filtered.map(function(s) { return buildCard(s, s.pickedLabel); }).join('')
-      : '<p class="state-msg">まだ作品がありません。</p>';
+      : '<div class="state-empty"><div class="state-empty-icon">📡</div><p class="state-empty-msg">このジャンルのアーカイブはまだありません。</p><p class="state-empty-sub">今後の週刊ピックアップで追加予定です。</p></div>';
   }
 }
 
