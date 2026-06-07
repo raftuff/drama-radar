@@ -500,6 +500,24 @@ footer {
 }
 footer a { color: var(--accent); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
+.footer-nav {
+  margin-bottom: 14px;
+}
+.footer-about-link {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border);
+  padding: 5px 16px; border-radius: 20px;
+  text-decoration: none !important;
+  transition: color 0.15s, border-color 0.15s;
+  letter-spacing: 0.3px;
+}
+.footer-about-link:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  text-decoration: none !important;
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
@@ -595,6 +613,9 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ===== FOOTER ===== -->
 <footer>
+  <div class="footer-nav">
+    <a href="about.html" class="footer-about-link">About / Contact</a>
+  </div>
   スコアは <a href="https://www.rottentomatoes.com" target="_blank" rel="noopener">Rotten Tomatoes</a> の批評家スコアを参照 · 配信情報は掲載時点<br>
   リンク先はできるだけ日本語配信サイトに遷移するように設定していますが、遷移先が見つからない場合は、タイトルからご自身でお調べください。
 </footer>
