@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | DRAMA RADAR — 次に観たい海外ドラマ</title>
+<meta name="description" content="DRAMA RADARについて。海外レビューと日本配信情報をもとに、次に観たい海外ドラマを毎週ピックアップする個人運営のWebマガジンです。">
+<style>
+/* ===== RESET & BASE ===== */
+:root {
+  color-scheme: light;
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --border: #e2e6ea;
+  --text: #1a1d23;
+  --text-muted: #6b7280;
+  --accent: #e63946;
+  --accent-dark: #c0303c;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow: 0 2px 14px rgba(0,0,0,0.09);
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: #0c0c10;
+  background-image: linear-gradient(160deg, #0f0d14 0%, #0c0c10 60%, #0e0a0b 100%);
+  overflow: hidden;
+}
+/* ノイズテクスチャ */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+/* 底辺アクセントライン */
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(200,140,60,0.35) 40%, rgba(200,140,60,0.35) 60%, transparent 100%);
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 52px 24px 44px;
+}
+
+/* ナビ */
+.hero-nav {
+  margin-bottom: 36px;
+}
+.hero-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px; font-weight: 700;
+  color: rgba(255,255,255,0.40);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.15s;
+}
+.hero-nav a:hover { color: rgba(255,255,255,0.75); }
+.hero-nav a svg { flex-shrink: 0; }
+
+/* ブランドロゴ */
+.hero-brand {
+  display: flex; align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.hero-brand-bar {
+  display: block;
+  width: 3px; height: 20px;
+  background: var(--accent);
+  border-radius: 2px; flex-shrink: 0;
+}
+.hero-brand-name {
+  font-size: 15px; font-weight: 900;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+}
+
+/* ページタイトル */
+.hero-page-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.50);
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 4px 11px; border-radius: 3px;
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 900; letter-spacing: -0.5px;
+  color: #fff; line-height: 1.2;
+}
+
+/* ===== MAIN ===== */
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+/* ===== セクション ===== */
+.about-section {
+  margin-bottom: 52px;
+}
+.about-section:last-child { margin-bottom: 0; }
+
+.section-label {
+  display: inline-block;
+  font-size: 9px; font-weight: 800;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.section-heading {
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 900; letter-spacing: -0.3px;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.section-body {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.9;
+}
+.section-body p + p { margin-top: 12px; }
+
+/* 区切り線 */
+.about-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 52px 0;
+}
+
+/* ジャンルタグ群 */
+.genre-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 16px;
+}
+.genre-tag {
+  background: #eef2ff; color: #3730a3;
+  font-size: 12px; font-weight: 700;
+  padding: 5px 12px; border-radius: 20px;
+}
+
+/* Contactブロック */
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 36px;
+  margin-top: 20px;
+}
+.contact-card-heading {
+  font-size: 13px; font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.contact-card-use {
+  font-size: 14px; color: #374151; line-height: 1.8;
+  margin-bottom: 20px;
+}
+.contact-email-row {
+  display: flex; align-items: center;
+  gap: 10px; flex-wrap: wrap;
+}
+.contact-email-label {
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.contact-email {
+  font-size: 14px; font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.2px;
+  word-break: break-all;
+}
+.contact-note {
+  margin-top: 14px;
+  font-size: 12px; color: #9ca3af;
+  line-height: 1.7;
+}
+
+/* 免責ブロック */
+.disclaimer-box {
+  background: #f8f9fb;
+  border: 1px solid var(--border);
+  border-left: 3px solid #d1d5db;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 20px;
+  font-size: 13px; color: var(--text-muted);
+  line-height: 1.85;
+}
+
+/* トップへ戻るリンク */
+.back-link-wrap {
+  margin-top: 56px;
+  text-align: center;
+}
+.back-link {
+  display: inline-flex; align-items: center;
+  gap: 8px;
+  background: var(--accent); color: #fff;
+  font-size: 13px; font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 12px 28px; border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.back-link:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.back-link svg { flex-shrink: 0; }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center; padding: 28px 24px;
+  color: var(--text-muted); font-size: 12px;
+  border-top: 1px solid var(--border);
+  line-height: 2;
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero-inner { padding: 40px 20px 36px; }
+  main { padding: 40px 20px 60px; }
+  .contact-card { padding: 24px 20px; }
+  .about-divider { margin: 40px 0; }
+  .about-section { margin-bottom: 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-inner">
+
+    <!-- トップへのパンくず -->
+    <nav class="hero-nav" aria-label="パンくず">
+      <a href="index.html">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        DRAMA RADAR トップ
+      </a>
+    </nav>
+
+    <!-- ブランドロゴ -->
+    <div class="hero-brand">
+      <span class="hero-brand-bar"></span>
+      <span class="hero-brand-name">DRAMA RADAR</span>
+    </div>
+
+    <!-- ページタイトル -->
+    <div class="hero-page-label">About</div>
+    <h1 class="hero-title">About DRAMA RADAR</h1>
+
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+  <!-- 1. サイトについて -->
+  <section class="about-section" aria-labelledby="about-what">
+    <span class="section-label">WHAT IS THIS</span>
+    <h2 class="section-heading" id="about-what">DRAMA RADAR とは</h2>
+    <div class="section-body">
+      <p>DRAMA RADARは、海外レビューと日本配信情報をもとに、<strong>次に観たい海外ドラマ</strong>を毎週ピックアップする個人運営のWebマガジンです。</p>
+      <p>「観たいドラマはたくさんあるのに、どこで観られるかわからない」「レビューは英語が多くて調べにくい」という声をもとに、日本語で読める形にまとめることをコンセプトにしています。</p>
+    </div>
+  </section>
+
+  <hr class="about-divider">
+
+  <!-- 2. 扱うジャンル -->
+  <section class="about-section" aria-labelledby="about-genre">
+    <span class="section-label">GENRE</span>
+    <h2 class="section-heading" id="about-genre">扱うジャンル</h2>
+    <div class="section-body">
+      <p>以下の6ジャンルを中心に紹介しています。恋愛・ロマンス系は対象外です。</p>
+    </div>
+    <div class="genre-tags" role="list">
+      <span class="genre-tag" role="listitem">サスペンス・ミステリー</span>
+      <span class="genre-tag" role="listitem">犯罪ドラマ</span>
+      <span class="genre-tag" role="listitem">SF</span>
+      <span class="genre-tag" role="listitem">アクション</span>
+      <span class="genre-tag" role="listitem">ドキュメンタリー</span>
+      <span class="genre-tag" role="listitem">ホラー</span>
+    </div>
+  </section>
+
+  <hr class="about-divider">
+
+  <!-- 3. 選定方針 -->
+  <section class="about-section" aria-labelledby="about-policy">
+    <span class="section-label">EDITORIAL POLICY</span>
+    <h2 class="section-heading" id="about-policy">選定方針</h2>
+    <div class="section-body">
+      <p>Rotten Tomatoesなどの海外レビューサイトの批評家スコア、日本での配信状況、話題性、ジャンル性を参考に選定しています。</p>
+      <p>国内にいながら「次に観たい一本」を探しやすくすることを目的としており、スコアが高くても日本未配信の作品は原則として対象外としています。</p>
+    </div>
+  </section>
+
+  <hr class="about-divider">
+
+  <!-- 4. 掲載情報について -->
+  <section class="about-section" aria-labelledby="about-info">
+    <span class="section-label">INFORMATION</span>
+    <h2 class="section-heading" id="about-info">掲載情報について</h2>
+    <div class="section-body">
+      <p>配信状況、スコア、作品情報はすべて掲載時点の情報です。配信終了・スコア更新等が発生している場合があります。</p>
+      <p>最新情報は各配信サービスや公式サイトをご確認ください。</p>
+    </div>
+  </section>
+
+  <hr class="about-divider">
+
+  <!-- 5. Contact -->
+  <section class="about-section" aria-labelledby="about-contact">
+    <span class="section-label">CONTACT</span>
+    <h2 class="section-heading" id="about-contact">お問い合わせ</h2>
+    <div class="section-body">
+      <p>以下のご相談・ご連絡はメールにてお気軽にどうぞ。</p>
+    </div>
+
+    <div class="contact-card">
+      <p class="contact-card-heading">こんな相談を受け付けています</p>
+      <p class="contact-card-use">
+        掲載情報の修正・補足 / 作品情報のご連絡 / 企画・コンテンツのご相談<br>
+        Web制作・編集・コンテンツ企画に関するお仕事のご相談
+      </p>
+      <div class="contact-email-row">
+        <span class="contact-email-label">メールアドレス</span>
+        <span class="contact-email">raftuff.drama.radar [at] gmail.com</span>
+      </div>
+      <p class="contact-note">
+        ※ [at] を @ に変換してご利用ください。<br>
+        ※ 返信には数日かかる場合があります。あらかじめご了承ください。
+      </p>
+    </div>
+  </section>
+
+  <hr class="about-divider">
+
+  <!-- 6. 免責 -->
+  <section class="about-section" aria-labelledby="about-disclaimer">
+    <span class="section-label">DISCLAIMER</span>
+    <h2 class="section-heading" id="about-disclaimer">免責事項</h2>
+    <div class="disclaimer-box" role="note">
+      本サイトは、各配信サービス、映画・ドラマ制作会社、Rotten Tomatoes等とは一切関係のない個人運営サイトです。掲載している画像・作品情報・スコア等の権利は各権利者に帰属します。情報の正確性については万全を期していますが、内容を保証するものではありません。
+    </div>
+  </section>
+
+  <!-- トップへ戻る -->
+  <div class="back-link-wrap">
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      DRAMA RADAR へ戻る
+    </a>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <a href="index.html">DRAMA RADAR</a> — 次に観たい海外ドラマ<br>
+  スコアは <a href="https://www.rottentomatoes.com" target="_blank" rel="noopener">Rotten Tomatoes</a> の批評家スコアを参照 · 配信情報は掲載時点
+</footer>
+
+</body>
+</html>
