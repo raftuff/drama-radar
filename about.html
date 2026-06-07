@@ -107,7 +107,14 @@ body {
 .hero-title {
   font-size: clamp(22px, 3.5vw, 34px);
   font-weight: 900; letter-spacing: -0.5px;
-  color: #fff; line-height: 1.2;
+  color: #fff; line-height: 1.25;
+}
+/* サブタイトル（正式名称の副題部分） */
+.hero-title-sub {
+  font-size: clamp(15px, 2.2vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: rgba(255,255,255,0.65);
 }
 
 /* ===== MAIN ===== */
@@ -180,6 +187,35 @@ main {
 .contact-card-use {
   font-size: 14px; color: #374151; line-height: 1.8;
   margin-bottom: 20px;
+}
+/* Contact introテキスト */
+.contact-intro {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+/* Contact 相談リスト */
+.contact-list {
+  list-style: none;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.contact-list li {
+  font-size: 13px;
+  color: #374151;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+.contact-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 .contact-email-row {
   display: flex; align-items: center;
@@ -276,7 +312,7 @@ footer a:hover { text-decoration: underline; }
 
     <!-- ページタイトル -->
     <div class="hero-page-label">About</div>
-    <h1 class="hero-title">About DRAMA RADAR</h1>
+    <h1 class="hero-title">About DRAMA RADAR<br><span class="hero-title-sub">- 次に観たい海外ドラマ</span></h1>
 
   </div>
 </header>
@@ -287,7 +323,7 @@ footer a:hover { text-decoration: underline; }
   <!-- 1. サイトについて -->
   <section class="about-section" aria-labelledby="about-what">
     <span class="section-label">WHAT IS THIS</span>
-    <h2 class="section-heading" id="about-what">DRAMA RADAR とは</h2>
+    <h2 class="section-heading" id="about-what">DRAMA RADAR - 次に観たい海外ドラマ とは</h2>
     <div class="section-body">
       <p><strong>DRAMA RADAR - 次に観たい海外ドラマ</strong>は、海外レビューと日本配信情報をもとに、次に観たい海外ドラマを毎週ピックアップする個人運営のWebマガジンです。</p>
       <p>「観たいドラマはたくさんあるのに、どこで観られるかわからない」「レビューは英語が多くて調べにくい」という声をもとに、日本語で読める形にまとめることをコンセプトにしています。</p>
@@ -349,10 +385,17 @@ footer a:hover { text-decoration: underline; }
 
     <div class="contact-card">
       <p class="contact-card-heading">こんな相談を受け付けています</p>
-      <p class="contact-card-use">
-        企画・コンテンツのご相談<br>
-        Web制作・編集・PM・コンテンツ企画に関するお仕事のご相談
+      <p class="contact-intro">
+        DRAMA RADARは個人運営のサイトですが、運営者は本職で編集・Webディレクション・プロジェクトマネジメント・コンテンツ企画・サイト改善などに関わっています。以下のようなご相談があればお気軽にどうぞ。
       </p>
+      <ul class="contact-list">
+        <li>Webメディア・LP・特設サイトの企画・構成</li>
+        <li>編集視点を活かしたコンテンツ企画</li>
+        <li>サイト改善、情報設計、導線整理</li>
+        <li>小規模なWeb制作・運用のご相談</li>
+        <li>プロジェクト進行・PM・外部パートナーとの制作進行</li>
+        <li>海外ドラマ・映像コンテンツに関する企画相談</li>
+      </ul>
       <div class="contact-email-row">
         <span class="contact-email-label">メールアドレス</span>
         <span class="contact-email">raftuff.drama.radar [at] gmail.com</span>
