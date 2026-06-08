@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://raftuff.github.io/drama-radar/sitemap.xml
