@@ -803,9 +803,10 @@ function parseDateStr(str) {
 ================================================================= */
 async function init() {
   try {
+    const SITE_VERSION = '20260612';
     const [dataRes, archiveRes] = await Promise.all([
-      fetch('data.json'),
-      fetch('archive.json')
+      fetch(`./data.json?v=${SITE_VERSION}`),
+      fetch(`./archive.json?v=${SITE_VERSION}`)
     ]);
     if (!dataRes.ok) throw new Error('data.json: HTTP ' + dataRes.status);
     const data = await dataRes.json();
