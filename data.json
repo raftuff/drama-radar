@@ -2,22 +2,22 @@
   "updated": "2026年6月12日",
   "shows": [
     {
-      "slug": "vampire-lestat-s3",
-      "title": "The Vampire Lestat",
-      "titleJa": "ヴァンパイア・レスタ（IWTV S3）",
-      "genre": "horror",
-      "primaryCategory": "ホラー",
-      "rtScore": 100,
-      "youtubeId": "7c7JFMTBeVk",
-      "tags": ["ホラー", "ゴシック"],
+      "slug": "slow-horses-s5",
+      "title": "Slow Horses S5",
+      "titleJa": "窓際のスパイ シーズン5",
+      "genre": "suspense",
+      "primaryCategory": "サスペンス・ミステリー",
+      "rtScore": 96,
+      "youtubeId": "A9BCtrziWtg",
+      "tags": ["スパイスリラー", "英国ドラマ"],
       "yearTag": null,
-      "seasonTag": "S3",
-      "description": "アン・ライスの不朽の名作が新章へ。「インタビュー・ウィズ・ヴァンパイア」S3はヴァンパイア・レスタが主役に。自身の物語を語り直すため、なんとロックバンドを結成してワールドツアーに出るという奇抜な設定。ゴシックホラーとグラムロックが融合した異色の最高傑作。全7話、週次更新。",
+      "seasonTag": "S5",
+      "description": "ゲイリー・オールドマン率いるMI5の落ちこぼれチームが帰還。ロドニー・ホのあやしい新彼女と、ロンドン各地で起きる奇妙な事件の繋がりを追う。CWAゴールドダガー賞受賞スパイ小説のドラマ化。全シーズンRotten Tomatoesが90%以上という傑作シリーズ。Apple TV+配信中。全6話。",
       "streaming": {
-        "service": "U-NEXT",
-        "class": "unext",
-        "url": "https://video.unext.jp/",
-        "since": "2026年6月"
+        "service": "Apple TV+",
+        "class": "apple",
+        "url": "https://tv.apple.com/jp/show/%E7%AA%93%E9%9A%9B%E3%81%AE%E3%82%B9%E3%83%8F%E3%82%A4/umc.cmc.2szz3fdt71tl1ulnbp8utgq5o",
+        "since": "2025年9月"
       }
     },
     {
@@ -130,7 +130,7 @@
       "streaming": {
         "service": "Netflix",
         "class": "netflix",
-        "url": "https://www.netflix.com/jp/",
+        "url": "https://www.netflix.com/jp/title/81447461",
         "since": "2026年4月"
       }
     },
@@ -179,7 +179,7 @@
       "genre": "documentary",
       "primaryCategory": "ドキュメンタリー",
       "rtScore": 78,
-      "youtubeId": "kPk6gMI-fLY",
+      "youtubeId": "KcvpLYMpxGY",
       "tags": ["ドキュメンタリー", "実話"],
       "yearTag": "2026",
       "seasonTag": null,
