@@ -442,6 +442,7 @@ main {
 }
 
 .card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; flex: 1; }
+.card-highlight { font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 8px; padding: 6px 10px; background: rgba(230,57,70,0.06); border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0; line-height: 1.6; }
 
 /* 配信フッター */
 .card-footer {
@@ -972,6 +973,7 @@ function buildCard(show, pickedLabel) {
     <div class="card-tags">${tags}${yearTag}${seasonTag}</div>
     ${pickedHtml}
     <p class="card-desc">${esc(show.description)}</p>
+    ${show.highlight ? `<p class="card-highlight">▶ ${esc(show.highlight)}</p>` : ''}
   </div>
   <div class="card-footer">
     <div class="streaming-meta">
