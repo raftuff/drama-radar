@@ -208,5 +208,215 @@
     },
     "pickedAt": "2026-06-05",
     "pickedLabel": "2026年6月5日ピックアップ"
+  },
+  {
+    "slug": "slow-horses-s5",
+    "title": "Slow Horses S5",
+    "titleJa": "窓際のスパイ シーズン5",
+    "genre": "suspense",
+    "primaryCategory": "サスペンス・ミステリー",
+    "rtScore": 96,
+    "youtubeId": "A9BCtrziWtg",
+    "tags": ["スパイスリラー", "英国ドラマ"],
+    "yearTag": null,
+    "seasonTag": "S5",
+    "description": "ゲイリー・オールドマン率いるMI5の落ちこぼれチームが帰還。ロドニー・ホのあやしい新彼女と、ロンドン各地で起きる奇妙な事件の繋がりを追う。CWAゴールドダガー賞受賞スパイ小説のドラマ化。全シーズンRotten Tomatoesが90%以上という傑作シリーズ。Apple TV+配信中。全6話。",
+    "streaming": {
+      "service": "Apple TV+",
+      "class": "apple",
+      "url": "https://tv.apple.com/jp/show/%E7%AA%93%E9%9A%9B%E3%81%AE%E3%82%B9%E3%83%8F%E3%82%A4/umc.cmc.2szz3fdt71tl1ulnbp8utgq5o",
+      "since": "2025年9月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "chestnut-man-s2",
+    "title": "The Chestnut Man: Hide and Seek",
+    "titleJa": "チェスナットマン：かくれんぼ",
+    "genre": "crime",
+    "primaryCategory": "犯罪ドラマ",
+    "rtScore": 100,
+    "youtubeId": "SkxPlXTnRiM",
+    "tags": ["犯罪ドラマ", "北欧ノワール"],
+    "yearTag": "2026",
+    "seasonTag": null,
+    "description": "デンマーク発の北欧クライムスリラーの傑作が4年ぶりに復活。子供たちを標的に、学校の遊び場での残酷なゲームを強要する連続殺人犯にスーリンとヘス刑事が立ち向かう。前作同様Rotten Tomatoes 100%の高評価。全6話配信中。",
+    "streaming": {
+      "service": "Netflix",
+      "class": "netflix",
+      "url": "https://www.netflix.com/title/81039388",
+      "since": "2026年5月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "maul-shadow-lord",
+    "title": "Star Wars: Maul – Shadow Lord",
+    "titleJa": "スター・ウォーズ：モール ―影の支配者―",
+    "genre": "sf",
+    "primaryCategory": "SF",
+    "rtScore": 98,
+    "youtubeId": "DkVepshZhGc",
+    "tags": ["SF", "スター・ウォーズ"],
+    "yearTag": "2026",
+    "seasonTag": null,
+    "description": "スター・ウォーズ・セレブレーション・ジャパンで発表されたアニメ新作。帝国の支配が及ばない辺境の星でシンジケート再建を狙うモールが、迷える若きジェダイの弟子と因縁の対決へ。全10話完結、Disney+配信中。",
+    "streaming": {
+      "service": "Disney+",
+      "class": "disney",
+      "url": "https://www.disneyplus.com/ja-jp/browse/entity-9ba0f41b-6173-4ff1-8967-71cad0620244",
+      "since": "2026年4月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "the-pitt-s2",
+    "title": "The Pitt S2",
+    "titleJa": "ザ・ピット シーズン2",
+    "genre": "suspense",
+    "primaryCategory": "サスペンス・ミステリー",
+    "rtScore": 98,
+    "youtubeId": "Xq8x47ky2Tw",
+    "tags": ["医療ドラマ", "サスペンス"],
+    "yearTag": null,
+    "seasonTag": "S2",
+    "description": "エミー賞5冠のピッツバーグ救急ドラマの続編。ノア・ワイリー主演。救急救命室の1日を1話1時間、全15時間でリアルに描くノンストップ構成。S1の高水準を維持しつつ医療×人間ドラマがさらに深化。U-NEXT独占、全15話配信中。",
+    "streaming": {
+      "service": "U-NEXT",
+      "class": "unext",
+      "url": "https://video.unext.jp/title/SID0252682",
+      "since": "2026年1月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "the-boys-s5",
+    "title": "The Boys S5",
+    "titleJa": "ザ・ボーイズ シーズン5（最終章）",
+    "genre": "action",
+    "primaryCategory": "アクション",
+    "rtScore": 97,
+    "youtubeId": "UPHz1oUU_J8",
+    "tags": ["アクション", "サタイア"],
+    "yearTag": null,
+    "seasonTag": "S5",
+    "description": "スーパーヒーロー批判サタイアの最高傑作、堂々完結。ファシスト的支配を強めるホームランダーに対し、ブッチャー率いるボーイズが絶望的な最終決戦を挑む。数々のタブーを破ってきたシリーズがどんな結末を迎えるか。全8話完結、Prime Video配信中。",
+    "streaming": {
+      "service": "Prime Video",
+      "class": "prime",
+      "url": "https://www.amazon.co.jp/%E3%82%B6%E3%83%BB%E3%83%9C%E3%83%BC%E3%82%A4%E3%82%BA-%E3%82%B7%E3%83%BC%E3%82%BA%E3%83%B35/dp/B0G3D13CQP",
+      "since": "2026年4月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "spider-noir",
+    "title": "Spider-Noir",
+    "titleJa": "スパイダー・ノワール",
+    "genre": "action",
+    "primaryCategory": "アクション",
+    "rtScore": 91,
+    "youtubeId": "xuiiBFxCSF4",
+    "tags": ["アクション", "ノワール"],
+    "yearTag": "2026",
+    "seasonTag": null,
+    "description": "ニコラス・ケイジ主演・声優によるMCUスピンオフ。1930年代ニューヨークの暗黒街を舞台に活躍するスパイダーマン（グリザルド）のノワール活劇。往年のフィルム・ノワールへの愛が滲む、他に類を見ない異色ヒーロードラマ。Prime Video配信中。全5話。",
+    "streaming": {
+      "service": "Prime Video",
+      "class": "prime",
+      "url": "https://www.amazon.co.jp/-/en/Spider-Noir-Season-1/dp/B0GHR9BR1N",
+      "since": "2026年5月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "beef-s2",
+    "title": "Beef S2",
+    "titleJa": "ビーフ シーズン2",
+    "genre": "crime",
+    "primaryCategory": "犯罪ドラマ",
+    "rtScore": 88,
+    "youtubeId": "ZtQoofDhJOM",
+    "tags": ["犯罪ドラマ", "ブラックコメディ"],
+    "yearTag": null,
+    "seasonTag": "S2",
+    "description": "エミー賞席巻作の続編。怒りとすれ違いが連鎖する「ビーフ（口論）」をテーマに、今作も新キャラクターの絡み合う人生が交差する。스티ーブン・ユンとプロデューサーのリー・サン・ジン再タッグ。ブラックコメディ×心理スリラーの融合は健在。Netflix配信中。",
+    "streaming": {
+      "service": "Netflix",
+      "class": "netflix",
+      "url": "https://www.netflix.com/jp/title/81447461",
+      "since": "2026年4月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "house-of-the-dragon-s3",
+    "title": "House of the Dragon S3",
+    "titleJa": "ハウス・オブ・ザ・ドラゴン S3",
+    "genre": "action",
+    "primaryCategory": "アクション",
+    "rtScore": 82,
+    "youtubeId": "gCna2m-dKEE",
+    "tags": ["ファンタジー", "アクション"],
+    "yearTag": null,
+    "seasonTag": "S3",
+    "description": "「ゲーム・オブ・スローンズ」前日譚のクライマックスへ突入。ターガリエン家の継承戦争「双竜の舞踏」が最大局面を迎え、壮絶な海上戦「ガレットの海戦」など史上最大スケールの展開が幕を開ける。U-NEXT独占、6月22日より配信開始。",
+    "streaming": {
+      "service": "U-NEXT",
+      "class": "unext",
+      "url": "https://video.unext.jp/title/SID0071046",
+      "since": "2026年6月（6/22〜）"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "sugar-s2",
+    "title": "Sugar S2",
+    "titleJa": "シュガー シーズン2",
+    "genre": "suspense",
+    "primaryCategory": "サスペンス・ミステリー",
+    "rtScore": 81,
+    "youtubeId": "WJMbHySi5eQ",
+    "tags": ["ハードボイルド", "サスペンス"],
+    "yearTag": null,
+    "seasonTag": "S2",
+    "description": "コリン・ファレル主演の現代ハードボイルド探偵ドラマ続編。S1でSF的な衝撃の秘密が明かされたジョン・シュガーが、新たな謎に挑む。S1の81%からさらなる進化に期待大。Apple TV+にて6月19日より配信開始。（RT: S1 81%、S2公開直前）",
+    "streaming": {
+      "service": "Apple TV+",
+      "class": "apple",
+      "url": "https://tv.apple.com/jp/show/%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC/umc.cmc.4r6q7tdquewehwvb3rzl0k3dt",
+      "since": "2026年6月（6/19〜）"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
+  },
+  {
+    "slug": "mj-the-verdict",
+    "title": "Michael Jackson: The Verdict",
+    "titleJa": "マイケル・ジャクソン：ザ・ヴェルディクト",
+    "genre": "documentary",
+    "primaryCategory": "ドキュメンタリー",
+    "rtScore": 78,
+    "youtubeId": "KcvpLYMpxGY",
+    "tags": ["ドキュメンタリー", "実話"],
+    "yearTag": "2026",
+    "seasonTag": null,
+    "description": "2005年のマイケル・ジャクソン裁判を全3話で徹底解剖するNetflixドキュメンタリー。陪審員・目撃者・報道記者へのインタビューと膨大なアーカイブ映像で12週間の審理の真相に迫る。公開初週に世界61か国でNo.1、1780万人が視聴。Netflix配信中。",
+    "streaming": {
+      "service": "Netflix",
+      "class": "netflix",
+      "url": "https://www.netflix.com/title/81929201",
+      "since": "2026年6月"
+    },
+    "pickedAt": "2026-06-12",
+    "pickedLabel": "2026年6月12日ピックアップ"
   }
 ]
