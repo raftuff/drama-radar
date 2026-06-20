@@ -7,7 +7,10 @@
     "primaryCategory": "犯罪ドラマ",
     "rtScore": 93,
     "youtubeId": "FpAhwL91HyA",
-    "tags": ["犯罪ドラマ", "サスペンス"],
+    "tags": [
+      "犯罪ドラマ",
+      "サスペンス"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "リズ・アーメッドが脚本・主演を務める英国製メタサスペンス。英国系パキスタン人俳優がジェームズ・ボンドのオーディションに挑む設定を軸に、人種・アイデンティティ・業界の裏側を鋭く描く。サンダンス映画祭で世界初上映。全6話。",
@@ -18,7 +21,8 @@
       "since": "2026年3月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "lord-of-the-flies",
@@ -28,7 +32,10 @@
     "primaryCategory": "サスペンス・ミステリー",
     "rtScore": 92,
     "youtubeId": "ujupEUFDm3E",
-    "tags": ["サスペンス", "ドラマ"],
+    "tags": [
+      "サスペンス",
+      "ドラマ"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "ウィリアム・ゴールディングの古典小説をBBCがドラマ化。無人島に漂着した少年たちが文明崩壊へと転落する過程を、子役の卓越した演技と心理描写で描く。日本ではU-NEXT独占配信、日本語吹替付き。全4話。",
@@ -39,7 +46,8 @@
       "since": "2026年2月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "detective-hole",
@@ -49,7 +57,10 @@
     "primaryCategory": "犯罪ドラマ",
     "rtScore": 91,
     "youtubeId": "QozBsgrEjnE",
-    "tags": ["刑事・探偵", "ノルウェー"],
+    "tags": [
+      "刑事・探偵",
+      "ノルウェー"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "ノルウェーの国民的犯罪小説をNetflixがドラマ化。天才的だが破滅的な刑事ハリー・ホーレが連続殺人犯を追う。ねじれた伏線と予想外の展開が絶賛され、北欧クライムドラマの最高峰との声も。全9話。",
@@ -60,7 +71,8 @@
       "since": "2026年3月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "for-all-mankind-s5",
@@ -70,7 +82,10 @@
     "primaryCategory": "SF",
     "rtScore": 90,
     "youtubeId": "zojwKLlY_H8",
-    "tags": ["SF", "宇宙開発"],
+    "tags": [
+      "SF",
+      "宇宙開発"
+    ],
     "yearTag": null,
     "seasonTag": "S5",
     "description": "「もし宇宙開発競争が終わらなかったら」という歴史改変SFの第5シーズン。Apple TV+の傑作シリーズ。日本語音声・字幕対応。政治的緊張と宇宙探査の野望が交錯する重厚なサーガが今作でも健在。全10話。",
@@ -81,7 +96,8 @@
       "since": "2026年3月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "paradise-s2",
@@ -91,7 +107,10 @@
     "primaryCategory": "サスペンス・ミステリー",
     "rtScore": 90,
     "youtubeId": "Uud0aiP-MFw",
-    "tags": ["サスペンス", "政治スリラー"],
+    "tags": [
+      "サスペンス",
+      "政治スリラー"
+    ],
     "yearTag": null,
     "seasonTag": "S2",
     "description": "核戦争後の地下都市を舞台にした政治サスペンス。シークレットサービス捜査官が大統領暗殺の真相を追う。スターリング・K・ブラウン主演。第2シーズンはさらなる謀略と陰謀が深まり批評家から絶賛。",
@@ -102,7 +121,8 @@
       "since": "2026年2月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "night-manager-s2",
@@ -112,7 +132,10 @@
     "primaryCategory": "アクション",
     "rtScore": 88,
     "youtubeId": "Ll6tqZhiZow",
-    "tags": ["スパイスリラー", "アクション"],
+    "tags": [
+      "スパイスリラー",
+      "アクション"
+    ],
     "yearTag": null,
     "seasonTag": "S2",
     "description": "トム・ヒドルストン演じる潜入スパイが戻ってくる英国スパイスリラーの続編。2016年の傑作シリーズから10年越しのシーズン2。新たな謀略と裏切りが絡み合うグラマラスな諜報アクション。全6話。",
@@ -123,7 +146,8 @@
       "since": "2026年1月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "the-testaments",
@@ -133,7 +157,10 @@
     "primaryCategory": "SF",
     "rtScore": 87,
     "youtubeId": "KpWyxrPqkeA",
-    "tags": ["ディストピア", "SF"],
+    "tags": [
+      "ディストピア",
+      "SF"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "「ハンドメイズ・テイル」の続編小説をドラマ化。ギレアデ体制下で生きる少女たちの成長と抵抗を描く青春×ディストピア作品。前作とは異なる視点から全体主義国家の内側に迫る。ディズニー+独占配信。",
@@ -144,7 +171,8 @@
       "since": "2026年4月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "daredevil-born-again-s2",
@@ -154,7 +182,10 @@
     "primaryCategory": "アクション",
     "rtScore": 86,
     "youtubeId": "U1MqJBVn8Rk",
-    "tags": ["アクション", "犯罪ドラマ"],
+    "tags": [
+      "アクション",
+      "犯罪ドラマ"
+    ],
     "yearTag": null,
     "seasonTag": "S2",
     "description": "マーベルの傑作ヒーロードラマ第2弾。チャーリー・コックス演じる盲目の弁護士＆夜の戦士が帰還。前シーズンの欠点を克服し、重厚な犯罪ドラマとしての面白さが増した高完成度のアクション。",
@@ -165,7 +196,8 @@
       "since": "2026年3月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "dtf-st-louis",
@@ -175,7 +207,10 @@
     "primaryCategory": "犯罪ドラマ",
     "rtScore": 86,
     "youtubeId": "cHeL5Xtqg38",
-    "tags": ["犯罪ドラマ", "ブラックコメディ"],
+    "tags": [
+      "犯罪ドラマ",
+      "ブラックコメディ"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "デヴィッド・ハーバーとジェイソン・ベイトマン共演のサバーバン犯罪スリラー。友情を試されるふたりの男が死体をめぐり奇妙な事態に巻き込まれる。「普通の郊外」と「狂気」の境界を描く秀作。HBO Max配信。",
@@ -186,7 +221,8 @@
       "since": "2026年3月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "starfleet-academy",
@@ -196,7 +232,10 @@
     "primaryCategory": "SF",
     "rtScore": 85,
     "youtubeId": "FgHkeoyLNt0",
-    "tags": ["SF", "青春×宇宙"],
+    "tags": [
+      "SF",
+      "青春×宇宙"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "スタートレック・フランチャイズの新作。32世紀を舞台に、スターフリート・アカデミーの新入生たちの挑戦を描く。従来作と異なる明るいトーンと新鮮なキャラクターが好評。Paramount+独占配信、全10話。",
@@ -207,7 +246,8 @@
       "since": "2026年1月"
     },
     "pickedAt": "2026-06-05",
-    "pickedLabel": "2026年6月5日ピックアップ"
+    "pickedLabel": "2026年6月5日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "slow-horses-s5",
@@ -217,7 +257,10 @@
     "primaryCategory": "サスペンス・ミステリー",
     "rtScore": 96,
     "youtubeId": "A9BCtrziWtg",
-    "tags": ["スパイスリラー", "英国ドラマ"],
+    "tags": [
+      "スパイスリラー",
+      "英国ドラマ"
+    ],
     "yearTag": null,
     "seasonTag": "S5",
     "description": "ゲイリー・オールドマン率いるMI5の落ちこぼれチームが帰還。ロドニー・ホのあやしい新彼女と、ロンドン各地で起きる奇妙な事件の繋がりを追う。CWAゴールドダガー賞受賞スパイ小説のドラマ化。全シーズンRotten Tomatoesが90%以上という傑作シリーズ。Apple TV+配信中。全6話。",
@@ -228,7 +271,8 @@
       "since": "2025年9月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "chestnut-man-s2",
@@ -238,7 +282,10 @@
     "primaryCategory": "犯罪ドラマ",
     "rtScore": 100,
     "youtubeId": "SkxPlXTnRiM",
-    "tags": ["犯罪ドラマ", "北欧ノワール"],
+    "tags": [
+      "犯罪ドラマ",
+      "北欧ノワール"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "デンマーク発の北欧クライムスリラーの傑作が4年ぶりに復活。子供たちを標的に、学校の遊び場での残酷なゲームを強要する連続殺人犯にスーリンとヘス刑事が立ち向かう。前作同様Rotten Tomatoes 100%の高評価。全6話配信中。",
@@ -249,7 +296,8 @@
       "since": "2026年5月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "maul-shadow-lord",
@@ -259,7 +307,10 @@
     "primaryCategory": "SF",
     "rtScore": 98,
     "youtubeId": "DkVepshZhGc",
-    "tags": ["SF", "スター・ウォーズ"],
+    "tags": [
+      "SF",
+      "スター・ウォーズ"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "スター・ウォーズ・セレブレーション・ジャパンで発表されたアニメ新作。帝国の支配が及ばない辺境の星でシンジケート再建を狙うモールが、迷える若きジェダイの弟子と因縁の対決へ。全10話完結、Disney+配信中。",
@@ -270,7 +321,8 @@
       "since": "2026年4月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "the-pitt-s2",
@@ -280,7 +332,10 @@
     "primaryCategory": "サスペンス・ミステリー",
     "rtScore": 98,
     "youtubeId": "Xq8x47ky2Tw",
-    "tags": ["医療ドラマ", "サスペンス"],
+    "tags": [
+      "医療ドラマ",
+      "サスペンス"
+    ],
     "yearTag": null,
     "seasonTag": "S2",
     "description": "エミー賞5冠のピッツバーグ救急ドラマの続編。ノア・ワイリー主演。救急救命室の1日を1話1時間、全15時間でリアルに描くノンストップ構成。S1の高水準を維持しつつ医療×人間ドラマがさらに深化。U-NEXT独占、全15話配信中。",
@@ -291,7 +346,8 @@
       "since": "2026年1月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "the-boys-s5",
@@ -301,7 +357,10 @@
     "primaryCategory": "アクション",
     "rtScore": 97,
     "youtubeId": "UPHz1oUU_J8",
-    "tags": ["アクション", "サタイア"],
+    "tags": [
+      "アクション",
+      "サタイア"
+    ],
     "yearTag": null,
     "seasonTag": "S5",
     "description": "スーパーヒーロー批判サタイアの最高傑作、堂々完結。ファシスト的支配を強めるホームランダーに対し、ブッチャー率いるボーイズが絶望的な最終決戦を挑む。数々のタブーを破ってきたシリーズがどんな結末を迎えるか。全8話完結、Prime Video配信中。",
@@ -312,7 +371,8 @@
       "since": "2026年4月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "spider-noir",
@@ -322,7 +382,10 @@
     "primaryCategory": "アクション",
     "rtScore": 91,
     "youtubeId": "xuiiBFxCSF4",
-    "tags": ["アクション", "ノワール"],
+    "tags": [
+      "アクション",
+      "ノワール"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "ニコラス・ケイジ主演・声優によるMCUスピンオフ。1930年代ニューヨークの暗黒街を舞台に活躍するスパイダーマン（グリザルド）のノワール活劇。往年のフィルム・ノワールへの愛が滲む、他に類を見ない異色ヒーロードラマ。Prime Video配信中。全5話。",
@@ -333,7 +396,8 @@
       "since": "2026年5月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "beef-s2",
@@ -343,7 +407,10 @@
     "primaryCategory": "犯罪ドラマ",
     "rtScore": 88,
     "youtubeId": "ZtQoofDhJOM",
-    "tags": ["犯罪ドラマ", "ブラックコメディ"],
+    "tags": [
+      "犯罪ドラマ",
+      "ブラックコメディ"
+    ],
     "yearTag": null,
     "seasonTag": "S2",
     "description": "エミー賞席巻作の続編。怒りとすれ違いが連鎖する「ビーフ（口論）」をテーマに、今作も新キャラクターの絡み合う人生が交差する。스티ーブン・ユンとプロデューサーのリー・サン・ジン再タッグ。ブラックコメディ×心理スリラーの融合は健在。Netflix配信中。",
@@ -354,7 +421,8 @@
       "since": "2026年4月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "house-of-the-dragon-s3",
@@ -364,7 +432,10 @@
     "primaryCategory": "アクション",
     "rtScore": 82,
     "youtubeId": "gCna2m-dKEE",
-    "tags": ["ファンタジー", "アクション"],
+    "tags": [
+      "ファンタジー",
+      "アクション"
+    ],
     "yearTag": null,
     "seasonTag": "S3",
     "description": "「ゲーム・オブ・スローンズ」前日譚のクライマックスへ突入。ターガリエン家の継承戦争「双竜の舞踏」が最大局面を迎え、壮絶な海上戦「ガレットの海戦」など史上最大スケールの展開が幕を開ける。U-NEXT独占、6月22日より配信開始。",
@@ -375,7 +446,8 @@
       "since": "2026年6月（6/22〜）"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "sugar-s2",
@@ -385,7 +457,10 @@
     "primaryCategory": "サスペンス・ミステリー",
     "rtScore": 81,
     "youtubeId": "WJMbHySi5eQ",
-    "tags": ["ハードボイルド", "サスペンス"],
+    "tags": [
+      "ハードボイルド",
+      "サスペンス"
+    ],
     "yearTag": null,
     "seasonTag": "S2",
     "description": "コリン・ファレル主演の現代ハードボイルド探偵ドラマ続編。S1でSF的な衝撃の秘密が明かされたジョン・シュガーが、新たな謎に挑む。S1の81%からさらなる進化に期待大。Apple TV+にて6月19日より配信開始。（RT: S1 81%、S2公開直前）",
@@ -396,7 +471,8 @@
       "since": "2026年6月（6/19〜）"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   },
   {
     "slug": "mj-the-verdict",
@@ -406,7 +482,10 @@
     "primaryCategory": "ドキュメンタリー",
     "rtScore": 78,
     "youtubeId": "KcvpLYMpxGY",
-    "tags": ["ドキュメンタリー", "実話"],
+    "tags": [
+      "ドキュメンタリー",
+      "実話"
+    ],
     "yearTag": "2026",
     "seasonTag": null,
     "description": "2005年のマイケル・ジャクソン裁判を全3話で徹底解剖するNetflixドキュメンタリー。陪審員・目撃者・報道記者へのインタビューと膨大なアーカイブ映像で12週間の審理の真相に迫る。公開初週に世界61か国でNo.1、1780万人が視聴。Netflix配信中。",
@@ -417,6 +496,7 @@
       "since": "2026年6月"
     },
     "pickedAt": "2026-06-12",
-    "pickedLabel": "2026年6月12日ピックアップ"
+    "pickedLabel": "2026年6月12日ピックアップ",
+    "reviewNote": null
   }
 ]
