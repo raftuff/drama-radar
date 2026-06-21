@@ -409,6 +409,7 @@ main {
   padding: 5px 9px;
   display: flex; align-items: center; gap: 5px;
   border: 1px solid rgba(255,255,255,0.12);
+  z-index: 2; /* オーバーレイの上に表示 */
 }
 .rt-badge .tomato { font-size: 13px; line-height: 1; }
 .rt-badge .score { font-size: 13px; font-weight: 800; color: #ff6b35; line-height: 1; }
@@ -454,6 +455,39 @@ main {
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 .card-detail-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ===== サムネイル画像リンク（詳細ページあり作品のみ） ===== */
+.card-image-link {
+  display: block;
+  width: 100%; height: 100%;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.card-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.36);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.card-image-overlay-text {
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.22);
+}
+.card-image-link:hover .card-image-overlay {
+  opacity: 1;
+}
 
 /* 配信フッター */
 .card-footer {
@@ -966,11 +1000,16 @@ function buildCard(show, pickedLabel) {
     ? '<div class="card-picked-label"><span class="picked-dot"></span>' + esc(pickedLabel) + '</div>'
     : '';
 
+  var hasDetail = show.hasDetailPage || show.detailUrl;
+  var detailHref = esc(show.detailUrl || ('./titles/' + slug + '.html'));
+  var thumbInner = hasDetail
+    ? `<a class="card-image-link" href="${detailHref}" aria-label="${esc(show.title)} の詳細を見る"><img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg" alt="${esc(show.title)}" loading="lazy"><span class="card-image-overlay"><span class="card-image-overlay-text">詳しく見る →</span></span></a>`
+    : `<img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg" alt="${esc(show.title)}" loading="lazy">`;
+
   return `
 <article class="card" id="${slug}" data-genre="${esc(show.genre)}">
   <div class="card-thumb">
-    <img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg"
-         alt="${esc(show.title)}" loading="lazy">
+    ${thumbInner}
     <div class="rt-badge">
       <span class="tomato">🍅</span>
       <span class="score">${show.rtScore}%</span>
