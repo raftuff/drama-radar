@@ -986,7 +986,7 @@ function buildCard(show, pickedLabel) {
     <p class="card-desc">${esc(show.description)}</p>
     ${show.highlight ? `<p class="card-highlight">▶ ${esc(show.highlight)}</p>` : ''}
   </div>
-  ${show.hasDetailPage ? `<div class="card-detail-wrap"><a class="card-detail-link" href="./titles/${slug}.html">詳しく見る →</a></div>` : ''}
+  ${(show.hasDetailPage || show.detailUrl) ? `<div class="card-detail-wrap"><a class="card-detail-link" href="${esc(show.detailUrl || './titles/' + slug + '.html')}">詳しく見る →</a></div>` : ''}
   <div class="card-footer">
     <div class="streaming-meta">
       <span class="streaming-label">🇯🇵 日本配信</span>
