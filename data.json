@@ -41,7 +41,8 @@
         "since": "2026年4月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/widows-bay-s1.html"
+      "detailUrl": "./titles/widows-bay-s1.html",
+      "seriesOverview": null
     },
     {
       "slug": "margos-got-money-troubles-s1",
@@ -83,7 +84,8 @@
         "since": "2026年4月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/margos-got-money-troubles-s1.html"
+      "detailUrl": "./titles/margos-got-money-troubles-s1.html",
+      "seriesOverview": null
     },
     {
       "slug": "the-diplomat-s3",
@@ -125,7 +127,8 @@
         "since": "2025年10月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/the-diplomat-s3.html"
+      "detailUrl": "./titles/the-diplomat-s3.html",
+      "seriesOverview": "国際政治の表舞台と舞台裏を描く政治スリラー。米国大使として赴任した外交官ケイト・ワイラーを中心に、国家間の駆け引き、夫婦の綱引き、権力闘争が交錯する。S2はクリフハンガーで幕を閉じており、S3はその直後から始まる。"
     },
     {
       "slug": "star-city-s1",
@@ -167,7 +170,8 @@
         "since": "2026年5月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/star-city-s1.html"
+      "detailUrl": "./titles/star-city-s1.html",
+      "seriesOverview": "「フォー・オール・マンカインド」の歴史改変世界を舞台にしたスピンオフ。原シリーズはNASAがアポロ11号の月面着陸に失敗したというifから始まる歴史改変SF。本作はその世界でのソ連側の視点を描く、単独で楽しめる独立作品。"
     },
     {
       "slug": "invincible-s4",
@@ -209,7 +213,8 @@
         "since": "2026年3月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/invincible-s4.html"
+      "detailUrl": "./titles/invincible-s4.html",
+      "seriesOverview": "ロバート・カークマン原作のアメコミをアニメ化したシリーズ。スーパーヒーローの父を持つ17歳のマークが、自らも力を得ながら成長していく。家族の絆、暴力の代償、そして宇宙規模の戦いを重厚に描く。"
     },
     {
       "slug": "one-piece-s2",
@@ -251,7 +256,8 @@
         "since": "2026年3月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/one-piece-s2.html"
+      "detailUrl": "./titles/one-piece-s2.html",
+      "seriesOverview": "尾田栄一郎の人気漫画を実写化したNetflixシリーズ。海賊王を目指す少年モンキー・D・ルフィが仲間を集めながら大海原を渡る冒険活劇。S1では「東の海」篇を9話で描き、批評家・ファン双方から高評価を得た。"
     },
     {
       "slug": "a-good-girls-guide-to-murder-s2",
@@ -293,7 +299,8 @@
         "since": "2026年5月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/a-good-girls-guide-to-murder-s2.html"
+      "detailUrl": "./titles/a-good-girls-guide-to-murder-s2.html",
+      "seriesOverview": "ホリー・ジャクソンのYA小説を原作とした英国ミステリー。高校生のピップが過去のコールドケースを独自に調査するという骨格で進む。S1では解決されたかに見えた事件の真相が露わになり、大きな反響を呼んだ。"
     },
     {
       "slug": "the-legend-of-vox-machina-s4",
@@ -335,7 +342,8 @@
         "since": "2026年6月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/the-legend-of-vox-machina-s4.html"
+      "detailUrl": "./titles/the-legend-of-vox-machina-s4.html",
+      "seriesOverview": "「クリティカル・ロール」のキャスト9人が実際にプレイしたテーブルRPGを原作とするアニメシリーズ。冒険者チーム「ヴォックス・マキナ」が危機に立ち向かう旅を描く。声優はキャスト本人たちが全員担当している。"
     },
     {
       "slug": "deadloch-s2",
@@ -377,7 +385,8 @@
         "since": "2026年3月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/deadloch-s2.html"
+      "detailUrl": "./titles/deadloch-s2.html",
+      "seriesOverview": "オーストラリア発の犯罪コメディシリーズ。几帳面なダルシーと豪快なエディという凸凹女性刑事コンビが連続殺人事件を捜査するS1が大ヒット。笑いと本格ミステリーを高いレベルで融合させた、独自路線の傑作。"
     },
     {
       "slug": "maximum-pleasure-guaranteed-s1",
@@ -419,7 +428,8 @@
         "since": "2026年5月"
       },
       "hasDetailPage": true,
-      "detailUrl": "./titles/maximum-pleasure-guaranteed-s1.html"
+      "detailUrl": "./titles/maximum-pleasure-guaranteed-s1.html",
+      "seriesOverview": null
     }
   ]
 }
