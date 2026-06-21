@@ -60,7 +60,6 @@
   --tag-bg:     #eef2ff;
   --tag-text:   #3730a3;
   --shadow:     0 2px 14px rgba(0,0,0,0.09);
-  --radius:     14px;
 }
 *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
 body {
@@ -81,9 +80,7 @@ body {
   padding: 13px 24px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.header-brand {
-  display: flex; align-items: center; gap: 8px; text-decoration: none;
-}
+.header-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
 .brand-bar {
   display: block; width: 3px; height: 18px;
   background: var(--accent); border-radius: 2px; flex-shrink: 0;
@@ -94,16 +91,13 @@ body {
 }
 .back-link {
   font-size: 12px; font-weight: 600;
-  color: rgba(255,255,255,0.42); text-decoration: none;
-  transition: color 0.15s;
+  color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.15s;
 }
 .back-link:hover { color: rgba(255,255,255,0.8); }
 
 /* ===== HERO ===== */
 .detail-hero { background: #0c0c10; padding-bottom: 0; }
-.detail-hero-inner {
-  max-width: 900px; margin: 0 auto; padding: 24px 24px 0;
-}
+.detail-hero-inner { max-width: 900px; margin: 0 auto; padding: 24px 24px 0; }
 .thumb-wrap {
   position: relative; border-radius: 12px 12px 0 0;
   overflow: hidden; aspect-ratio: 16/9; background: #1a1a24;
@@ -147,96 +141,112 @@ body {
 
 /* ===== MAIN ===== */
 .detail-main {
-  max-width: 900px; margin: 0 auto; padding: 36px 24px 72px;
+  max-width: 860px; margin: 0 auto; padding: 44px 24px 80px;
 }
 
-/* Recommendation */
+/* 推薦文ブロック */
 .rec-block {
-  background: linear-gradient(135deg, rgba(230,57,70,0.04) 0%, rgba(230,57,70,0.01) 100%);
+  background: linear-gradient(135deg, rgba(230,57,70,0.045) 0%, rgba(230,57,70,0.01) 100%);
   border: 1px solid rgba(230,57,70,0.16);
-  border-radius: 12px; padding: 24px 28px; margin-bottom: 36px;
+  border-radius: 12px; padding: 28px 32px; margin-bottom: 48px;
 }
 .rec-text {
-  font-size: 17px; font-weight: 700; line-height: 1.75;
+  font-size: 19px; font-weight: 700; line-height: 1.85;
   color: var(--text); letter-spacing: 0.01em;
 }
 
-/* Sections */
-.detail-section { margin-bottom: 36px; }
+/* セクション */
+.detail-section { margin-bottom: 44px; }
+
 .section-title {
-  font-size: 10px; font-weight: 800; letter-spacing: 2.5px;
-  text-transform: uppercase; color: var(--accent);
-  margin-bottom: 12px; padding-bottom: 9px;
+  font-size: 19px; font-weight: 800;
+  color: var(--text); letter-spacing: -0.01em;
+  margin-bottom: 18px; padding-bottom: 13px;
   border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
 }
-.section-body {
-  font-size: 14.5px; color: var(--text-muted); line-height: 1.85;
-}
-.note-body {
-  font-size: 13px; color: #9ca3af; line-height: 1.9;
-  border-left: 2px solid var(--border); padding-left: 14px;
+.section-title::before {
+  content: '';
+  display: block; flex-shrink: 0;
+  width: 4px; height: 22px;
+  background: var(--accent); border-radius: 2px;
 }
 
-/* Highlight */
+/* 本文 */
+.section-body {
+  font-size: 16.5px; color: #383d48; line-height: 1.9;
+}
+
+/* 見どころ */
 .highlight-box {
   background: rgba(230,57,70,0.055);
   border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0; padding: 14px 18px;
+  border-radius: 0 10px 10px 0; padding: 20px 24px;
 }
 .highlight-text {
-  font-size: 14px; font-weight: 600;
-  color: var(--accent); line-height: 1.75;
+  font-size: 16px; font-weight: 700;
+  color: var(--accent); line-height: 1.85;
 }
 
-/* Chips */
-.chips-group { margin-bottom: 18px; }
+/* 編集メモ */
+.note-wrap {
+  border-left: 3px solid var(--border);
+  padding: 2px 0 2px 22px;
+}
+.note-para {
+  font-size: 15px; color: #4b5563; line-height: 2.0;
+  margin-bottom: 1.2em;
+}
+.note-para:last-child { margin-bottom: 0; }
+
+/* チップ */
+.chips-group { margin-bottom: 20px; }
 .chips-label {
-  font-size: 11px; color: var(--text-muted); font-weight: 600; margin-bottom: 8px;
+  font-size: 11px; color: var(--text-muted); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
 }
 .chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .chip {
   background: var(--bg); border: 1px solid var(--border);
-  font-size: 12px; font-weight: 600; padding: 4px 13px;
+  font-size: 12.5px; font-weight: 600; padding: 5px 14px;
   border-radius: 20px; color: var(--text);
 }
 .mood-chip {
   background: rgba(230,57,70,0.06);
-  border-color: rgba(230,57,70,0.22);
-  color: var(--accent);
+  border-color: rgba(230,57,70,0.22); color: var(--accent);
 }
 
-/* Streaming CTA */
-.streaming-cta { margin: 36px 0 16px; text-align: center; }
+/* 配信ボタン */
+.streaming-cta { margin: 40px 0 20px; text-align: center; }
 .streaming-btn {
   display: inline-block; font-size: 15px; font-weight: 700;
-  padding: 15px 36px; border-radius: 9px;
+  padding: 16px 40px; border-radius: 9px;
   color: #fff; text-decoration: none; background: #e50914;
   transition: opacity 0.15s, transform 0.15s;
   box-shadow: 0 4px 18px rgba(0,0,0,0.18);
 }
 .streaming-btn:hover { opacity: 0.85; transform: translateY(-2px); }
 
-/* Back nav */
+/* 戻るナビ */
 .back-nav {
   display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-  margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);
+  margin-top: 52px; padding-top: 30px; border-top: 1px solid var(--border);
 }
 .back-btn {
   font-size: 13px; font-weight: 700; color: var(--accent);
   text-decoration: none; border: 1px solid rgba(230,57,70,0.32);
-  padding: 9px 22px; border-radius: 20px;
-  transition: background 0.15s, color 0.15s;
+  padding: 10px 24px; border-radius: 20px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 .back-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .back-btn-sub {
   font-size: 13px; font-weight: 600; color: var(--text-muted);
   text-decoration: none; border: 1px solid var(--border);
-  padding: 9px 22px; border-radius: 20px;
-  transition: background 0.15s;
+  padding: 10px 24px; border-radius: 20px; transition: background 0.15s;
 }
 .back-btn-sub:hover { background: var(--surface); }
 
-/* Footer */
+/* フッター */
 footer {
   text-align: center; padding: 24px 24px 32px;
   font-size: 12px; color: var(--text-muted);
@@ -245,16 +255,21 @@ footer {
 footer a { color: var(--accent); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
-/* Responsive */
+/* レスポンシブ */
 @media (max-width: 640px) {
   .header-inner { padding: 12px 16px; }
   .brand-name { font-size: 11px; letter-spacing: 3px; }
   .detail-hero-inner { padding: 14px 14px 0; }
   .detail-meta { padding: 16px 18px 20px; }
-  .detail-main { padding: 24px 16px 56px; }
-  .rec-text { font-size: 15px; }
-  .section-body { font-size: 14px; }
-  .streaming-btn { font-size: 14px; padding: 14px 28px; width: 100%; text-align: center; }
+  .detail-main { padding: 28px 18px 60px; }
+  .rec-block { padding: 20px 22px; margin-bottom: 36px; }
+  .rec-text { font-size: 17px; }
+  .detail-section { margin-bottom: 36px; }
+  .section-title { font-size: 17px; }
+  .section-body { font-size: 15.5px; }
+  .highlight-text { font-size: 15px; }
+  .note-para { font-size: 14.5px; }
+  .streaming-btn { font-size: 14px; padding: 14px 28px; width: 100%; text-align: center; display: block; }
   .back-nav { flex-direction: column; align-items: center; }
   .back-btn, .back-btn-sub { text-align: center; width: 100%; max-width: 280px; }
 }
@@ -337,16 +352,21 @@ footer a:hover { text-decoration: underline; }
     <p class="section-body">S1視聴が前提。S2ではピップ自身が精神的に追い詰められていく描写が加わり、単純な謎解きドラマとは異なる重さが出てくる。その変化こそがS2の真髄で、軽いミステリーを期待すると面食らうかもしれない。</p>
   </section>
 
-      <section class="detail-section">
-        <h2 class="section-title">編集メモ</h2>
-        <p class="section-body note-body">ホリー・ジャクソンのYA小説が原作で、TikTokを中心に英国Z世代の間でブームになりS2製作が即決定した。単なる「また謎を解く」ストーリーではなく、事件を深追いするうちにピップ自身が変容していく心理描写が丁寧で重厚。親友失踪事件の真相を追ううちに、ピップが予期せぬ危険に巻き込まれていく展開はS1以上のダークさ。ダーク×ツイスト系ミステリーとして英国で大ヒット。RT 91%。</p>
-      </section>
+  <!-- 編集メモ -->
+  <section class="detail-section">
+    <h2 class="section-title">編集メモ</h2>
+    <div class="note-wrap">
+        <p class="note-para">ホリー・ジャクソンのYA小説が原作で、TikTokを中心に英国Z世代の間でブームになりS2製作が即決定した。単なる「また謎を解く」ストーリーではなく、事件を深追いするうちにピップ自身が変容していく心理描写が丁寧で重厚。親友失踪事件の真相を追ううちに、ピップが予期せぬ危険に巻き込まれていく展開はS1以上のダークさ。</p>
+        <p class="note-para">ダーク×ツイスト系ミステリーとして英国で大ヒット。RT 91%。</p>
+    </div>
+  </section>
 
-      <section class="detail-section">
-        <h2 class="section-title">ムード & タグ</h2>
-        <div class="chips-group"><p class="chips-label">作品の空気感</p><div class="chips"><span class="chip mood-chip">緊張感</span><span class="chip mood-chip">ダーク</span><span class="chip mood-chip">青春</span><span class="chip mood-chip">心理的</span></div></div>
-        <div class="chips-group"><p class="chips-label">魅力タグ</p><div class="chips"><span class="chip">YAミステリー</span><span class="chip">高校生探偵</span><span class="chip">心理サスペンス</span><span class="chip">Netflix</span><span class="chip">英国ドラマ</span></div></div>
-      </section>
+  <!-- ムード & タグ -->
+  <section class="detail-section">
+    <h2 class="section-title">ムード &amp; タグ</h2>
+    <div class="chips-group"><p class="chips-label">作品の空気感</p><div class="chips"><span class="chip mood-chip">緊張感</span><span class="chip mood-chip">ダーク</span><span class="chip mood-chip">青春</span><span class="chip mood-chip">心理的</span></div></div>
+    <div class="chips-group"><p class="chips-label">魅力タグ</p><div class="chips"><span class="chip">YAミステリー</span><span class="chip">高校生探偵</span><span class="chip">心理サスペンス</span><span class="chip">Netflix</span><span class="chip">英国ドラマ</span></div></div>
+  </section>
 
   <!-- 配信リンク -->
   <div class="streaming-cta">
