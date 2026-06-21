@@ -444,6 +444,17 @@ main {
 .card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; }
 .card-highlight { font-size: 11.5px; font-weight: 600; color: var(--accent); padding: 5px 10px; background: rgba(230,57,70,0.055); border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0; line-height: 1.6; }
 
+/* 詳細ページリンク */
+.card-detail-wrap { padding: 0 18px 8px; }
+.card-detail-link {
+  display: inline-block; font-size: 11.5px; font-weight: 700;
+  color: var(--accent); text-decoration: none;
+  border: 1px solid rgba(230,57,70,0.28);
+  padding: 5px 14px; border-radius: 16px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.card-detail-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
 /* 配信フッター */
 .card-footer {
   border-top: 1px solid var(--border);
@@ -975,6 +986,7 @@ function buildCard(show, pickedLabel) {
     <p class="card-desc">${esc(show.description)}</p>
     ${show.highlight ? `<p class="card-highlight">▶ ${esc(show.highlight)}</p>` : ''}
   </div>
+  ${show.hasDetailPage ? `<div class="card-detail-wrap"><a class="card-detail-link" href="./titles/${slug}.html">詳しく見る →</a></div>` : ''}
   <div class="card-footer">
     <div class="streaming-meta">
       <span class="streaming-label">🇯🇵 日本配信</span>
