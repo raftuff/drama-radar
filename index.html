@@ -761,7 +761,7 @@ function _findShow(slug) {
 
 function _shareText(show) {
   var url = BASE_URL + '#' + show.slug;
-  return '『' + show.title + '』｜次に観たい海外ドラマ\n'
+  return '『' + show.titleJa + '』｜次に観たい海外ドラマ\n'
        + 'スコア：' + show.rtScore + '%\n'
        + '配信：' + show.streaming.service + '\n'
        + url;
@@ -833,7 +833,7 @@ function drama_share(slug, btn) {
   if (!show) return;
   if (navigator.share) {
     navigator.share({
-      title: '『' + show.title + '』｜次に観たい海外ドラマ',
+      title: '『' + show.titleJa + '』｜次に観たい海外ドラマ',
       text:  'スコア：' + show.rtScore + '%　配信：' + show.streaming.service,
       url:   BASE_URL + '#' + show.slug
     }).catch(function() {});
@@ -1018,8 +1018,8 @@ function buildCard(show, pickedLabel) {
   </div>
   <div class="card-body">
     <div>
-      <div class="card-title">${esc(show.title)}</div>
-      <div class="card-title-ja">${esc(show.titleJa)}</div>
+      <div class="card-title">${esc(show.titleJa)}</div>
+      <div class="card-title-ja">${esc(show.title)}</div>
     </div>
     <div class="card-tags">${tags}${yearTag}${seasonTag}</div>
     ${pickedHtml}
