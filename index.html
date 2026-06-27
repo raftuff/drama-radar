@@ -41,24 +41,22 @@
   "description": "海外レビューと日本配信情報をもとに、次に観たい海外ドラマを毎週ピックアップ。"
 }
 </script>
-<!-- 構造化データ: ItemList（今週の注目作品10選） -->
+<!-- 構造化データ: ItemList（今週の注目作品） -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "今週の注目作品10選",
+  "name": "今週の注目作品",
   "url": "https://raftuff.github.io/drama-radar/",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1,  "name": "Widow's Bay S1",                        "url": "https://raftuff.github.io/drama-radar/#widows-bay-s1"},
-    {"@type": "ListItem", "position": 2,  "name": "Margo's Got Money Troubles S1",         "url": "https://raftuff.github.io/drama-radar/#margos-got-money-troubles-s1"},
-    {"@type": "ListItem", "position": 3,  "name": "The Diplomat S3",                       "url": "https://raftuff.github.io/drama-radar/#the-diplomat-s3"},
-    {"@type": "ListItem", "position": 4,  "name": "Star City S1",                          "url": "https://raftuff.github.io/drama-radar/#star-city-s1"},
-    {"@type": "ListItem", "position": 5,  "name": "Invincible S4",                         "url": "https://raftuff.github.io/drama-radar/#invincible-s4"},
-    {"@type": "ListItem", "position": 6,  "name": "One Piece S2",                          "url": "https://raftuff.github.io/drama-radar/#one-piece-s2"},
-    {"@type": "ListItem", "position": 7,  "name": "A Good Girl's Guide to Murder S2",      "url": "https://raftuff.github.io/drama-radar/#a-good-girls-guide-to-murder-s2"},
-    {"@type": "ListItem", "position": 8,  "name": "The Legend of Vox Machina S4",          "url": "https://raftuff.github.io/drama-radar/#the-legend-of-vox-machina-s4"},
-    {"@type": "ListItem", "position": 9,  "name": "Deadloch S2",                           "url": "https://raftuff.github.io/drama-radar/#deadloch-s2"},
-    {"@type": "ListItem", "position": 10, "name": "Maximum Pleasure Guaranteed S1",        "url": "https://raftuff.github.io/drama-radar/#maximum-pleasure-guaranteed-s1"}
+    {"@type": "ListItem", "position": 1, "name": "Widow's Bay S1",                   "url": "https://raftuff.github.io/drama-radar/#widows-bay-s1"},
+    {"@type": "ListItem", "position": 2, "name": "Margo's Got Money Troubles S1",    "url": "https://raftuff.github.io/drama-radar/#margos-got-money-troubles-s1"},
+    {"@type": "ListItem", "position": 3, "name": "The Diplomat S3",                  "url": "https://raftuff.github.io/drama-radar/#the-diplomat-s3"},
+    {"@type": "ListItem", "position": 4, "name": "Star City S1",                     "url": "https://raftuff.github.io/drama-radar/#star-city-s1"},
+    {"@type": "ListItem", "position": 5, "name": "A Good Girl's Guide to Murder S2", "url": "https://raftuff.github.io/drama-radar/#a-good-girls-guide-to-murder-s2"},
+    {"@type": "ListItem", "position": 6, "name": "Maximum Pleasure Guaranteed S1",   "url": "https://raftuff.github.io/drama-radar/#maximum-pleasure-guaranteed-s1"},
+    {"@type": "ListItem", "position": 7, "name": "Sugar S2",                         "url": "https://raftuff.github.io/drama-radar/#sugar-s2"},
+    {"@type": "ListItem", "position": 8, "name": "Beef S2",                          "url": "https://raftuff.github.io/drama-radar/#beef-s2"}
   ]
 }
 </script>
@@ -655,7 +653,7 @@ footer a:hover { text-decoration: underline; }
 <nav class="genre-nav" aria-label="タブナビゲーション">
   <div class="genre-nav-inner" role="tablist">
     <button class="tab-btn tab-weekly active" data-tab="weekly" role="tab" aria-selected="true">
-      今週の注目作品10選<span class="tab-new-badge">NEW</span>
+      今週の注目作品<span class="tab-new-badge">NEW</span>
     </button>
     <button class="tab-btn" data-tab="suspense" role="tab" aria-selected="false">サスペンス・ミステリー</button>
     <button class="tab-btn" data-tab="crime" role="tab" aria-selected="false">犯罪ドラマ</button>
@@ -674,7 +672,7 @@ footer a:hover { text-decoration: underline; }
     <span class="editorial-label">PICK UP</span>
     <div class="editorial-heading-row">
       <h2 class="editorial-title">
-        今週の注目作品 <span id="show-count">10</span>選
+        今週の注目作品
       </h2>
       <span class="editorial-count" id="count">—作品</span>
     </div>
@@ -935,8 +933,7 @@ function showTab(tabKey) {
     weeklyHeader.style.display = '';
     genreHeader.style.display  = 'none';
 
-    document.getElementById('show-count').textContent = weeklyShows.length;
-    document.getElementById('count').textContent      = weeklyShows.length + '作品';
+    document.getElementById('count').textContent = weeklyShows.length + '作品';
 
     grid.innerHTML = weeklyShows.map(function(s) { return buildCard(s, null); }).join('');
 
