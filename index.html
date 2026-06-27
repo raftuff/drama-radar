@@ -890,10 +890,10 @@ function render(data, archive) {
     return Object.assign({}, s, { pickedAt: dataDate, pickedLabel: dataLabel });
   });
 
-  /* archive + 今週分をマージ（同一 slug は今週分を優先） */
+  /* 今週分を先に挿入し、archive は今週にない slug だけ追加（週間作品が必ず先頭に来る） */
   var map = new Map();
-  archive.forEach(function(s) { map.set(s.slug, s); });
   weeklyNorm.forEach(function(s) { map.set(s.slug, s); });
+  archive.forEach(function(s) { if (!map.has(s.slug)) map.set(s.slug, s); });
 
   /* showsData = 全作品（シェアボタンが参照） */
   showsData = Array.from(map.values());
