@@ -41,12 +41,12 @@
   "description": "海外レビューと日本配信情報をもとに、次に観たい海外ドラマを毎週ピックアップ。"
 }
 </script>
-<!-- 構造化データ: ItemList（今週の注目作品） -->
+<!-- 構造化データ: ItemList（今週のピックアップ作品） -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "今週の注目作品",
+  "name": "今週のピックアップ作品",
   "url": "https://raftuff.github.io/drama-radar/",
   "itemListElement": [
     {"@type": "ListItem", "position": 1,  "name": "The Bear S5",                      "url": "https://raftuff.github.io/drama-radar/#the-bear-s5"},
@@ -648,7 +648,6 @@ footer a:hover { text-decoration: underline; }
     </div>
     <div class="hero-right">
       <span class="hero-update-date" id="update-date">読み込み中...</span>
-      <span class="hero-update-count" id="update-count">—</span>
     </div>
   </div>
 </header>
@@ -657,7 +656,7 @@ footer a:hover { text-decoration: underline; }
 <nav class="genre-nav" aria-label="タブナビゲーション">
   <div class="genre-nav-inner" role="tablist">
     <button class="tab-btn tab-weekly active" data-tab="weekly" role="tab" aria-selected="true">
-      今週の注目作品<span class="tab-new-badge">NEW</span>
+      今週のピックアップ作品<span class="tab-new-badge">NEW</span>
     </button>
     <button class="tab-btn" data-tab="suspense" role="tab" aria-selected="false">サスペンス・ミステリー</button>
     <button class="tab-btn" data-tab="crime" role="tab" aria-selected="false">犯罪ドラマ</button>
@@ -676,11 +675,11 @@ footer a:hover { text-decoration: underline; }
     <span class="editorial-label">PICK UP</span>
     <div class="editorial-heading-row">
       <h2 class="editorial-title">
-        今週の注目作品
+        今週のピックアップ作品
       </h2>
       <span class="editorial-count" id="count">—作品</span>
     </div>
-    <p class="editorial-desc">海外レビューと日本配信情報をもとに、いま注目の作品をピックアップ。</p>
+    <p class="editorial-desc">海外レビューと日本配信情報をもとに、いま注目の作品や評価の高い近作、管理人が気になった作品などを中心に毎週不定期更新します。</p>
   </div>
 
   <!-- ジャンル別 セクションヘッダー（ジャンルタブ時のみ表示） -->
@@ -900,7 +899,6 @@ function render(data, archive) {
 
   /* ヒーロー更新 */
   document.getElementById('update-date').textContent  = data.updated + '更新';
-  document.getElementById('update-count').textContent = '"今"話題の' + weeklyShows.length + '選';
 
   /* デフォルトタブを表示 */
   showTab('weekly');
