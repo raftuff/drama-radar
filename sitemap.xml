@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raftuff.github.io/drama-radar/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -105,6 +105,24 @@
   <url>
     <loc>https://raftuff.github.io/drama-radar/titles/hijack-s2.html</loc>
     <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/the-bear-s5.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/el-eternauta.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/secrets-we-keep.html</loc>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
