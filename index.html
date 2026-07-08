@@ -607,6 +607,58 @@ footer a:hover { text-decoration: underline; }
   text-decoration: none !important;
 }
 
+/* ===== 特集 SECTION ===== */
+.guides-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.guides-section-inner {
+  max-width: 1100px; margin: 0 auto; padding: 36px 24px 44px;
+}
+.guides-section-head { margin-bottom: 20px; }
+.guides-editorial-label {
+  display: inline-block;
+  background: #374151; color: #fff;
+  font-size: 10px; font-weight: 800; letter-spacing: 2.5px;
+  padding: 4px 11px; border-radius: 3px; margin-bottom: 10px;
+}
+.guides-heading {
+  font-size: clamp(17px, 2.2vw, 21px); font-weight: 900;
+  color: var(--text); line-height: 1.2;
+}
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.guide-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 22px;
+  text-decoration: none; color: var(--text);
+  display: flex; flex-direction: column; gap: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  box-shadow: var(--shadow-sm);
+}
+.guide-card:hover {
+  border-color: rgba(230,57,70,0.35);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.11);
+  transform: translateY(-2px);
+}
+.guide-card-top { display: flex; align-items: center; gap: 8px; }
+.guide-card-svc {
+  display: inline-block; background: #e50914; color: #fff;
+  font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 3px; flex-shrink: 0;
+}
+.guide-card-type {
+  font-size: 10px; font-weight: 700; color: var(--text-muted);
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.guide-card-title {
+  font-size: 15px; font-weight: 800; color: var(--text); line-height: 1.35;
+}
+.guide-card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; }
+.guide-card-cta { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 2px; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
   .hero { min-height: 280px; }
@@ -699,6 +751,27 @@ footer a:hover { text-decoration: underline; }
   </div>
 
 </main>
+
+<!-- ===== 特集 SECTION ===== -->
+<section class="guides-section">
+  <div class="guides-section-inner">
+    <div class="guides-section-head">
+      <span class="guides-editorial-label">FEATURE</span>
+      <h2 class="guides-heading">特集</h2>
+    </div>
+    <div class="guides-grid">
+      <a href="./guides/netflix-best-20.html" class="guide-card">
+        <div class="guide-card-top">
+          <span class="guide-card-svc">Netflix</span>
+          <span class="guide-card-type">まとめ記事</span>
+        </div>
+        <p class="guide-card-title">Netflixで観るべき海外ドラマおすすめ20選【2026年最新版】</p>
+        <p class="guide-card-desc">サスペンス・SF・犯罪ドラマ・ヒューマンドラマから管理人が厳選した20本。Rotten Tomatoesスコアと管理人コメントつき。</p>
+        <span class="guide-card-cta">読む →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
