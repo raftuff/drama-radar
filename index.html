@@ -1084,18 +1084,21 @@ function buildCard(show, pickedLabel) {
 
   var hasDetail = show.hasDetailPage || show.detailUrl;
   var detailHref = esc(show.detailUrl || ('./titles/' + slug + '.html'));
+  var imgSrc = show.youtubeId
+    ? `https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg`
+    : (show.imageUrl || '');
   var thumbInner = hasDetail
-    ? `<a class="card-image-link" href="${detailHref}" aria-label="${esc(show.title)} の詳細を見る"><img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg" alt="${esc(show.title)}" loading="lazy"><span class="card-image-overlay"><span class="card-image-overlay-text">詳しく見る →</span></span></a>`
-    : `<img src="https://img.youtube.com/vi/${esc(show.youtubeId)}/mqdefault.jpg" alt="${esc(show.title)}" loading="lazy">`;
+    ? `<a class="card-image-link" href="${detailHref}" aria-label="${esc(show.title)} の詳細を見る"><img src="${imgSrc}" alt="${esc(show.title)}" loading="lazy"><span class="card-image-overlay"><span class="card-image-overlay-text">詳しく見る →</span></span></a>`
+    : `<img src="${imgSrc}" alt="${esc(show.title)}" loading="lazy">`;
+  var rtBadgeHtml = show.rtScore != null
+    ? `<div class="rt-badge"><span class="tomato">🍅</span><span class="score">${show.rtScore}%</span></div>`
+    : '';
 
   return `
 <article class="card" id="${slug}" data-genre="${esc(show.genre)}">
   <div class="card-thumb">
     ${thumbInner}
-    <div class="rt-badge">
-      <span class="tomato">🍅</span>
-      <span class="score">${show.rtScore}%</span>
-    </div>
+    ${rtBadgeHtml}
   </div>
   <div class="card-body">
     <div>
