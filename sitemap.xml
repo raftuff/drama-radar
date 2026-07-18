@@ -139,9 +139,39 @@
     <priority>0.8</priority>
   </url>
   <url>
-      <loc>https://raftuff.github.io/drama-radar/guides/apple-tv-best-15.html</loc>
-      <lastmod>2026-07-08</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+    <loc>https://raftuff.github.io/drama-radar/guides/apple-tv-best-15.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/steal-s1.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/tongun-s1.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/house-of-the-dragon-s3.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/lucky-s1.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raftuff.github.io/drama-radar/titles/killers-shop-s2.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
