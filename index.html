@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="DRAMA RADAR">
 <meta property="og:title" content="DRAMA RADAR｜海外ドラマの話題作・レビュー・視聴記録">
 <meta property="og:description" content="海外ドラマの話題作・新作情報、管理人の視聴記録・レビュー・年間BESTを紹介する個人サイト。2017年から続く視聴記録アーカイブも公開中。">
-<meta property="og:image" content="https://raftuff.github.io/drama-radar/hero.jpg?v=20260612">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://raftuff.github.io/drama-radar/images/hero-home-theater.jpg?v=20261004">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DRAMA RADAR｜海外ドラマの話題作・レビュー・視聴記録">
 <meta name="twitter:description" content="海外ドラマの話題作・新作情報、管理人の視聴記録・レビュー・年間BESTを紹介する個人サイト。2017年から続く視聴記録アーカイブも公開中。">
-<meta name="twitter:image" content="https://raftuff.github.io/drama-radar/hero.jpg?v=20260612">
+<meta name="twitter:image" content="https://raftuff.github.io/drama-radar/images/hero-home-theater.jpg?v=20261004">
 <!-- Cache control (補助) -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -96,26 +96,26 @@ body {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 360px;
-  display: flex;
-  align-items: flex-end;
   overflow: hidden;
   background-color: #0c0c10;
-  background-image:
-    /* 縦方向: 上部を明るく、テキストのある下部は読みやすさを確保 */
-    linear-gradient(to bottom, rgba(4,4,8,0.10) 0%, rgba(4,4,8,0.52) 50%, rgba(4,4,8,0.90) 100%),
-    /* 横方向: 左（森・窓）は明るく、右（テレビ側）はやや暗め */
-    linear-gradient(to right, transparent 0%, rgba(4,4,8,0.28) 100%),
-    url('hero.jpg');
-  background-size: cover;
-  background-position: center 35%;
-  background-repeat: no-repeat;
+  height: clamp(420px, 52vw, 680px);
 }
-.hero::before {
-  content: '';
+.hero-visual {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* テレビと宇宙人たちが残るよう、やや下寄りでトリミング */
+  object-position: 50% 62%;
+  display: block;
+}
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  /* 文字のある左上だけを自然に沈める（イラスト全体は暗くしない） */
+  background:
+    radial-gradient(ellipse 52% 60% at 18% 26%, rgba(6,6,10,0.62) 0%, rgba(6,6,10,0.30) 55%, transparent 100%);
   pointer-events: none;
 }
 .hero::after {
@@ -131,76 +131,43 @@ body {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 48px 24px 40px;
-  display: flex;
-  align-items: flex-end;
-  gap: 24px;
-  flex-wrap: wrap;
+  padding: clamp(40px, 6vw, 84px) 24px 0;
 }
-.hero-left { flex: 1; min-width: 260px; }
-.hero-brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 18px;
-}
-.hero-brand-bar {
+.hero-title { margin: 0; font-weight: normal; line-height: 1; }
+.hero-logo {
   display: block;
-  width: 3px; height: 20px;
-  background: var(--accent);
-  border-radius: 2px;
-  flex-shrink: 0;
+  width: clamp(300px, 36vw, 500px);
+  height: auto; /* 縦横比を維持 */
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.45));
 }
-.hero-brand-name {
-  font-size: 15px; font-weight: 900;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.70);
-}
-.hero-pickup-label {
-  display: inline-block;
-  background: var(--accent);
+.hero-tagline {
+  display: block;
+  margin-top: clamp(14px, 1.6vw, 22px);
+  font-family: inherit; /* サイト共通のゴシック（body と同じ） */
+  font-size: clamp(19px, 1.9vw, 26px);
+  font-weight: 600;
+  letter-spacing: 0.12em;
   color: #fff;
-  font-size: 10px; font-weight: 800;
-  letter-spacing: 1px;
-  padding: 3px 10px;
-  border-radius: 4px;
-  margin-bottom: 14px;
-}
-.hero-title {
-  font-size: clamp(26px, 4vw, 40px);
-  font-weight: 900;
-  letter-spacing: 0.03em;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 8px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
 }
 .hero-subtitle {
-  font-size: 12px; font-weight: 500;
-  color: rgba(255,255,255,0.58);
-  letter-spacing: 0.5px;
-  margin-top: 4px;
-}
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  flex-shrink: 0;
+  margin-top: 12px;
+  font-size: 12.5px; font-weight: 500;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.68);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
 .hero-update-date {
-  font-size: 11px;
-  color: rgba(255,255,255,0.35);
+  position: absolute;
+  z-index: 1;
+  right: 16px; bottom: 12px;
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.55);
   letter-spacing: 0.3px;
-}
-.hero-update-count {
-  font-size: 11px; font-weight: 700;
-  color: rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 5px 14px;
-  border-radius: 6px;
-  letter-spacing: 0.3px;
+  background: rgba(6,6,10,0.45);
+  padding: 3px 9px;
+  border-radius: 10px;
 }
 
 /* ===== TAB NAV ===== */
@@ -782,10 +749,15 @@ footer a:hover { text-decoration: underline; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
-  .hero { min-height: 280px; }
-  .hero-inner { padding: 36px 20px 32px; gap: 16px; }
-  .hero-title { font-size: 24px; letter-spacing: 0.02em; }
-  .hero-right { display: none; }
+  /* SP: 画像を上、ロゴ・キャッチ・リードを画像の下に置き、文字と画像を重ねない */
+  .hero { height: auto; }
+  .hero-visual { position: relative; height: auto; aspect-ratio: 16 / 10; object-position: 52% 60%; }
+  .hero-shade { display: none; }
+  .hero-inner { padding: 22px 20px 30px; }
+  .hero-logo { width: min(78vw, 300px); filter: none; }
+  .hero-tagline { margin-top: 14px; font-size: 18px; letter-spacing: 0.1em; }
+  .hero-subtitle { margin-top: 8px; font-size: 12px; max-width: 18em; }
+  .hero-update-date { top: 10px; bottom: auto; right: 12px; }
   /* SP: ピルが折り返し2〜3段になる想定。余白・サイズを小さめに */
   .genre-nav-inner { padding: 10px 16px; gap: 7px; }
   .tab-btn { font-size: 12px; padding: 6px 12px; }
@@ -811,19 +783,17 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ===== HERO ===== -->
 <header class="hero">
+  <img class="hero-visual" src="images/hero-home-theater.jpg" width="1672" height="941" fetchpriority="high"
+       alt="夜の未来都市を望むホームシアターで、宇宙人たちがソファに並んで大きなスクリーンのドラマを観ているイラスト">
+  <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-brand">
-        <span class="hero-brand-bar"></span>
-        <span class="hero-brand-name">DRAMA RADAR</span>
-      </div>
-      <h1 class="hero-title">海外ドラマの話題作と、観てきた記録。</h1>
-      <p class="hero-subtitle">新作情報・レビュー・年間BESTを、視聴記録とともに紹介します。</p>
-    </div>
-    <div class="hero-right">
-      <span class="hero-update-date" id="update-date">読み込み中...</span>
-    </div>
+    <h1 class="hero-title">
+      <img class="hero-logo" src="images/logo-drama-radar-white.png" width="1200" height="187" alt="DRAMA RADAR">
+      <span class="hero-tagline">海外ドラマ、良作推薦。</span>
+    </h1>
+    <p class="hero-subtitle">新作情報・レビュー・年間BESTを、視聴記録とともに紹介します。</p>
   </div>
+  <span class="hero-update-date" id="update-date">読み込み中...</span>
 </header>
 
 <!-- ===== TAB NAV ===== -->
