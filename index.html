@@ -158,6 +158,7 @@ body {
   letter-spacing: 0.04em;
   text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
+.hero-phrase { display: inline-block; } /* 文節の途中で改行しない */
 .hero-update-date {
   position: absolute;
   z-index: 1;
@@ -753,10 +754,10 @@ footer a:hover { text-decoration: underline; }
   .hero { height: auto; }
   .hero-visual { position: relative; height: auto; aspect-ratio: 16 / 10; object-position: 52% 60%; }
   .hero-shade { display: none; }
-  .hero-inner { padding: 22px 20px 30px; }
-  .hero-logo { width: min(78vw, 300px); filter: none; }
-  .hero-tagline { margin-top: 14px; font-size: 18px; letter-spacing: 0.1em; }
-  .hero-subtitle { margin-top: 8px; font-size: 12px; max-width: 18em; }
+  .hero-inner { padding: 16px 20px 22px; }
+  .hero-logo { width: min(68vw, 260px); filter: none; }
+  .hero-tagline { margin-top: 11px; font-size: 18px; letter-spacing: 0.1em; }
+  .hero-subtitle { margin-top: 6px; font-size: 12px; }
   .hero-update-date { top: 10px; bottom: auto; right: 12px; }
   /* SP: ピルが折り返し2〜3段になる想定。余白・サイズを小さめに */
   .genre-nav-inner { padding: 10px 16px; gap: 7px; }
@@ -791,7 +792,7 @@ footer a:hover { text-decoration: underline; }
       <img class="hero-logo" src="images/logo-drama-radar-white.png" width="1200" height="187" alt="DRAMA RADAR">
       <span class="hero-tagline">海外ドラマ、良作推薦。</span>
     </h1>
-    <p class="hero-subtitle">新作情報・レビュー・年間BESTを、視聴記録とともに紹介します。</p>
+    <p class="hero-subtitle"><span class="hero-phrase">新作情報・レビュー・年間BESTを、</span><span class="hero-phrase">視聴記録とともに紹介します。</span></p>
   </div>
   <span class="hero-update-date" id="update-date">読み込み中...</span>
 </header>
