@@ -627,6 +627,21 @@ footer a:hover { text-decoration: underline; }
 .guide-card-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.7; }
 .guide-card-cta { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 2px; }
 
+/* ===== FEATURE（ヒーロー直下・サムネイル付き） ===== */
+.feature-section { border-top: none; }
+.feature-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.feature-card { padding: 0; gap: 0; overflow: hidden; }
+.feature-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 612 / 574; /* 3枚とも同じ比率。画像の縦横比のまま表示 */
+  object-fit: cover;
+  background: #0c0c10;
+}
+.feature-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.feature-body .guide-card-cta { margin-top: auto; padding-top: 2px; }
+
 /* ===== 視聴記録インデックス SECTION ===== */
 /* guides-section のスタイルを継承し、追加分だけ定義 */
 .archive-index-year {
@@ -766,6 +781,7 @@ footer a:hover { text-decoration: underline; }
   .card { scroll-margin-top: 160px; }
   main { padding: 28px 16px 48px; }
   .editorial-title { font-size: 19px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 16px; }
   .cards-grid { grid-template-columns: 1fr; gap: 16px; }
   .card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
   .streaming-badges { justify-content: flex-start; }
@@ -797,6 +813,54 @@ footer a:hover { text-decoration: underline; }
   <span class="hero-update-date" id="update-date">読み込み中...</span>
 </header>
 
+<!-- ===== 特集 SECTION ===== -->
+<section class="guides-section feature-section">
+  <div class="guides-section-inner">
+    <div class="guides-section-head">
+      <span class="guides-editorial-label">FEATURE</span>
+      <h2 class="guides-heading">特集</h2>
+    </div>
+    <div class="guides-grid feature-grid">
+      <a href="./guides/pickup-2026-aug-sep.html" class="guide-card feature-card">
+        <img class="feature-thumb" src="images/feature-pickup-2026-aug-sep.png" width="612" height="574" loading="lazy" alt="2026年8〜9月配信 気になる海外ドラマ7選のサムネイル">
+        <div class="feature-body">
+        <div class="guide-card-top">
+          <span class="guide-card-svc" style="background:#374151;">Netflix / Apple TV+ / Prime</span>
+          <span class="guide-card-type">新着 <span style="display:inline-block;background:var(--accent);color:#fff;font-size:8px;font-weight:800;letter-spacing:0.5px;padding:1px 5px;border-radius:2px;line-height:14px;vertical-align:middle;">NEW</span></span>
+        </div>
+        <p class="guide-card-title">2026年8〜9月配信｜気になる海外ドラマ7選</p>
+        <p class="guide-card-desc">Netflix・Apple TV+・Prime Videoから、8〜9月の気になる新作・新シーズンをピックアップ。なかでも『ブラッド・サクリファイス』は今回ぜひ観てほしい一本。</p>
+        <span class="guide-card-cta">読む →</span>
+        </div>
+      </a>
+      <a href="./guides/netflix-best-20.html" class="guide-card feature-card">
+        <img class="feature-thumb" src="images/feature-netflix-20.png" width="612" height="574" loading="lazy" alt="Netflix 海外ドラマ20選のサムネイル">
+        <div class="feature-body">
+        <div class="guide-card-top">
+          <span class="guide-card-svc">Netflix</span>
+          <span class="guide-card-type">まとめ記事</span>
+        </div>
+        <p class="guide-card-title">Netflixで観るべき海外ドラマおすすめ20選【2026年最新版】</p>
+        <p class="guide-card-desc">サスペンス・SF・犯罪ドラマ・ヒューマンドラマから管理人が厳選した20本。Rotten Tomatoesスコアと管理人コメントつき。</p>
+        <span class="guide-card-cta">読む →</span>
+        </div>
+      </a>
+      <a href="./guides/apple-tv-best-15.html" class="guide-card feature-card">
+        <img class="feature-thumb" src="images/feature-appletv-15.png" width="612" height="574" loading="lazy" alt="Apple TV+ 海外ドラマ15選のサムネイル">
+        <div class="feature-body">
+        <div class="guide-card-top">
+          <span class="guide-card-svc" style="background:#1d1d1f;">Apple TV+</span>
+          <span class="guide-card-type">まとめ記事</span>
+        </div>
+        <p class="guide-card-title">Apple TV+で観るべき海外ドラマおすすめ15選【2026年最新版】</p>
+        <p class="guide-card-desc">SF・サスペンス・ヒューマンドラマから管理人が厳選した15本。良作率の高いApple TV+の看板作品を一挙紹介。</p>
+        <span class="guide-card-cta">読む →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== TAB NAV ===== -->
 <nav class="genre-nav" aria-label="タブナビゲーション">
   <div class="genre-nav-inner" role="tablist">
@@ -820,11 +884,11 @@ footer a:hover { text-decoration: underline; }
     <span class="editorial-label">PICK UP</span>
     <div class="editorial-heading-row">
       <h2 class="editorial-title">
-        今週のピックアップ作品
+        ピックアップ作品
       </h2>
       <span class="editorial-count" id="count">—作品</span>
     </div>
-    <p class="editorial-desc">海外レビューと日本配信情報をもとに、いま注目の作品や評価の高い近作、管理人が気になった作品などを中心に毎週不定期更新します。</p>
+    <p class="editorial-desc">海外レビューと日本配信情報をもとに、いま注目の作品や評価の高い近作、DRAMA RADARが注目する作品などを中心に不定期更新します。</p>
   </div>
 
   <!-- ジャンル別 セクションヘッダー（ジャンルタブ時のみ表示） -->
@@ -950,44 +1014,6 @@ footer a:hover { text-decoration: underline; }
   </div>
 </section>
 
-<!-- ===== 特集 SECTION ===== -->
-<section class="guides-section">
-  <div class="guides-section-inner">
-    <div class="guides-section-head">
-      <span class="guides-editorial-label">FEATURE</span>
-      <h2 class="guides-heading">特集</h2>
-    </div>
-    <div class="guides-grid">
-      <a href="./guides/pickup-2026-aug-sep.html" class="guide-card">
-        <div class="guide-card-top">
-          <span class="guide-card-svc" style="background:#374151;">Netflix / Apple TV+ / Prime</span>
-          <span class="guide-card-type">新着 <span style="display:inline-block;background:var(--accent);color:#fff;font-size:8px;font-weight:800;letter-spacing:0.5px;padding:1px 5px;border-radius:2px;line-height:14px;vertical-align:middle;">NEW</span></span>
-        </div>
-        <p class="guide-card-title">2026年8〜9月配信｜気になる海外ドラマ7選</p>
-        <p class="guide-card-desc">Netflix・Apple TV+・Prime Videoから、8〜9月の気になる新作・新シーズンをピックアップ。なかでも『ブラッド・サクリファイス』は今回ぜひ観てほしい一本。</p>
-        <span class="guide-card-cta">読む →</span>
-      </a>
-      <a href="./guides/netflix-best-20.html" class="guide-card">
-        <div class="guide-card-top">
-          <span class="guide-card-svc">Netflix</span>
-          <span class="guide-card-type">まとめ記事</span>
-        </div>
-        <p class="guide-card-title">Netflixで観るべき海外ドラマおすすめ20選【2026年最新版】</p>
-        <p class="guide-card-desc">サスペンス・SF・犯罪ドラマ・ヒューマンドラマから管理人が厳選した20本。Rotten Tomatoesスコアと管理人コメントつき。</p>
-        <span class="guide-card-cta">読む →</span>
-      </a>
-      <a href="./guides/apple-tv-best-15.html" class="guide-card">
-        <div class="guide-card-top">
-          <span class="guide-card-svc" style="background:#1d1d1f;">Apple TV+</span>
-          <span class="guide-card-type">まとめ記事</span>
-        </div>
-        <p class="guide-card-title">Apple TV+で観るべき海外ドラマおすすめ15選【2026年最新版】</p>
-        <p class="guide-card-desc">SF・サスペンス・ヒューマンドラマから管理人が厳選した15本。良作率の高いApple TV+の看板作品を一挙紹介。</p>
-        <span class="guide-card-cta">読む →</span>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
