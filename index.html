@@ -645,6 +645,7 @@ footer a:hover { text-decoration: underline; }
   object-fit: cover;
   background: #0c0c10;
 }
+.feature-grid > .feature-card:nth-child(n+10) { display: none; } /* FEATURE は最大9件（3列×3段）まで表示 */
 .feature-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .feature-body .guide-card-cta { margin-top: auto; padding-top: 2px; }
 
@@ -827,6 +828,18 @@ footer a:hover { text-decoration: underline; }
       <h2 class="guides-heading">特集</h2>
     </div>
     <div class="guides-grid feature-grid">
+      <a href="./guides/pickup-2026-autumn.html" class="guide-card feature-card">
+        <img class="feature-thumb" src="images/feature-pickup-2026-autumn.png" width="612" height="574" loading="lazy" alt="2026年秋に観たい海外ドラマ21選のサムネイル">
+        <div class="feature-body">
+        <div class="guide-card-top">
+          <span class="guide-card-svc" style="background:#374151;">Netflix / Apple TV+ ほか</span>
+          <span class="guide-card-type">新着 <span style="display:inline-block;background:var(--accent);color:#fff;font-size:8px;font-weight:800;letter-spacing:0.5px;padding:1px 5px;border-radius:2px;line-height:14px;vertical-align:middle;">NEW</span></span>
+        </div>
+        <p class="guide-card-title">2026年秋に観たい海外ドラマ21選</p>
+        <p class="guide-card-desc">2026年9月後半〜11月に日本で配信される海外ドラマ・ドキュメンタリーから、DRAMA RADARが注目する21作品をピックアップ。</p>
+        <span class="guide-card-cta">読む →</span>
+        </div>
+      </a>
       <a href="./guides/pickup-2026-aug-sep.html" class="guide-card feature-card">
         <img class="feature-thumb" src="images/feature-pickup-2026-aug-sep.png" width="612" height="574" loading="lazy" alt="2026年8〜9月配信 気になる海外ドラマ7選のサムネイル">
         <div class="feature-body">
