@@ -19,15 +19,15 @@
 <meta property="og:site_name"   content="DRAMA RADAR">
 <meta property="og:title"       content="2026年のエクスペリメンタル・ミュージックを聴く｜世界の実験音楽と重要アルバム33選 | DRAMA RADAR">
 <meta property="og:description" content="2026年の世界の実験音楽を、電子音楽・クラブ、アンビエント、ドローン、ノイズ、地域文化、実験的ポップの6ジャンル33作品で紹介するDRAMA RADARの番外編。シーンの潮流、重要レーベル、まず聴きたい5作品も。">
-<meta property="og:image"       content="https://raftuff.github.io/drama-radar/images/hero-home-theater.jpg?v=20261004">
-<meta property="og:image:width"  content="1672">
-<meta property="og:image:height" content="941">
+<meta property="og:image"       content="https://raftuff.github.io/drama-radar/images/experimental-music-2026-ogp.jpg?v=20261112">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:type"   content="image/jpeg">
 <!-- Twitter Card -->
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:title"       content="2026年のエクスペリメンタル・ミュージックを聴く｜世界の実験音楽と重要アルバム33選 | DRAMA RADAR">
 <meta name="twitter:description" content="2026年の世界の実験音楽を、電子音楽・クラブ、アンビエント、ドローン、ノイズ、地域文化、実験的ポップの6ジャンル33作品で紹介するDRAMA RADARの番外編。シーンの潮流、重要レーベル、まず聴きたい5作品も。">
-<meta name="twitter:image"       content="https://raftuff.github.io/drama-radar/images/hero-home-theater.jpg?v=20261004">
+<meta name="twitter:image"       content="https://raftuff.github.io/drama-radar/images/experimental-music-2026-ogp.jpg?v=20261112">
 <!-- JSON-LD: Article -->
 <script type="application/ld+json">
 {
@@ -136,6 +136,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 .guide-h1 .h1-sub { display: block; font-size: 0.62em; font-weight: 800; color: rgba(255,255,255,0.78); margin-top: 6px; }
 .guide-updated { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 18px; }
+/* ヒーロー画像（16:9）：タイトル・更新日の後、リード文の前 */
+.guide-visual { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; margin: 4px 0 22px; background: #1a1d23; }
 .guide-lead { font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.9; margin-bottom: 8px; }
 .guide-lead:last-child { margin-bottom: 0; }
 
@@ -146,63 +148,74 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .prose p { font-size: 14.5px; color: #383d48; line-height: 1.9; margin-bottom: 10px; }
 .list-note { font-size: 12.5px; color: #4b5563; line-height: 1.75; background: #eceef1; border-radius: 6px; padding: 10px 12px; margin-bottom: 18px; }
 
-/* 6ジャンルの目次（タップしやすい大きさ） */
-.genre-nav { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+/* 6ジャンルの目次（日本語＋英語。見出しが長くて高さが揃わなくても崩れない） */
+.genre-nav { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .genre-nav a {
-  display: flex; align-items: center; gap: 10px; min-height: 48px; text-decoration: none;
-  font-size: 13.5px; font-weight: 800; color: var(--text); line-height: 1.4;
+  display: flex; align-items: center; gap: 12px; min-height: 56px; height: 100%; text-decoration: none; color: var(--text);
   border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 10px 14px;
 }
-.genre-nav a:hover { border-color: rgba(230,57,70,0.45); color: var(--accent); }
-.genre-nav .genre-no { font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 1px; }
-.genre-nav .genre-count { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+.genre-nav a:hover { border-color: rgba(230,57,70,0.45); }
+.genre-nav a:hover .genre-ja { color: var(--accent); }
+.genre-nav .genre-no { font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 1px; flex-shrink: 0; }
+.genre-nav .genre-names { display: flex; flex-direction: column; min-width: 0; }
+.genre-nav .genre-ja { font-size: 13.5px; font-weight: 800; line-height: 1.4; }
+.genre-nav .genre-en { font-size: 10.5px; font-weight: 600; color: #9096a0; line-height: 1.4; margin-top: 1px; }
+.genre-nav .genre-count { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; }
 
 /* ===== セクション ===== */
-.genre-section, .extra-section { padding-top: 34px; margin-top: 24px; border-top: 2px solid var(--text); scroll-margin-top: calc(var(--header-h) + var(--subnav-h) - 2px); }
+.genre-section, .extra-section { padding-top: 34px; margin-top: 28px; border-top: 2px solid var(--text); scroll-margin-top: calc(var(--header-h) + var(--subnav-h) - 2px); }
 .section-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 4px; }
-.section-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.section-h2 { font-size: 22px; font-weight: 900; line-height: 1.3; }
-.section-count { font-size: 12px; font-weight: 700; color: var(--text-muted); }
+.section-h2 { font-size: 22px; font-weight: 900; line-height: 1.35; }
 .section-desc { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+/* ジャンル見出し：01 — 7作品（小）→ 日本語 H2 → 英語（小・グレー）→ 1行説明 */
+.genre-meta { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--accent); margin-bottom: 4px; }
+.genre-en-sub { font-size: 12px; font-weight: 600; color: #9096a0; letter-spacing: 0.3px; margin-top: 2px; }
 /* 33作品のあとの解説パートは、太い線＋赤のアクセントで区切る */
 #trends { margin-top: 64px; padding-top: 40px; border-top: 4px solid var(--text); position: relative; }
 #trends::before { content: ""; position: absolute; top: -4px; left: 0; width: 64px; height: 4px; background: var(--accent); }
 
-/* ===== アルバム ===== */
+/* ===== アルバム（ジャンルごとのグリッド。PC 2列／狭い画面 1列） ===== */
+.album-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 20px; align-items: start; } /* 高さは文章量なり（隣に合わせて伸ばさない） */
+@media (min-width: 900px) { .album-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .album {
-  display: grid; grid-template-columns: 148px 1fr; grid-template-areas: "cover head" "cover body"; gap: 0 22px; align-content: start;
-  padding: 28px 0 26px; border-bottom: 1px solid var(--border); scroll-margin-top: calc(var(--header-h) + var(--subnav-h) - 14px);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 16px 14px;
+  display: flex; flex-direction: column; min-width: 0;
+  scroll-margin-top: calc(var(--header-h) + var(--subnav-h) + 12px);
 }
-.album:last-child { border-bottom: none; }
-.album-head { grid-area: head; }
-.album-body { grid-area: body; }
+/* 上段：正方形ジャケット＋作品情報 */
+.album-top { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: start; }
+.album-head { min-width: 0; }
 /* ジャケット：各サービスの公式埋め込みプレーヤー（画像は再ホストしない）。下に文字プレースホルダーを敷き、読み込めないときはそれが見える */
-.cover { grid-area: cover; position: relative; aspect-ratio: 1 / 1; border-radius: 6px; overflow: hidden; align-self: start; }
+.cover { position: relative; aspect-ratio: 1 / 1; border-radius: 4px; overflow: hidden; }
 .cover-embed { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.wide-embed { display: block; width: 100%; max-width: 660px; height: 175px; border: 0; border-radius: 10px; overflow: hidden; margin-top: 12px; background: var(--surface); }
 .cover-ph {
   position: absolute; inset: 0;
   background: linear-gradient(145deg, #1d1f26 0%, #2b2f3a 100%); color: #fff;
-  display: flex; flex-direction: column; justify-content: flex-end; padding: 12px;
+  display: flex; align-items: center; justify-content: center;
 }
-.cover-ph::before { content: attr(data-no); position: absolute; top: 10px; left: 12px; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--accent); }
-.cover-ph .ph-album, .cover-ph .ph-artist { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
-.cover-ph .ph-album { font-size: 14px; font-weight: 900; line-height: 1.25; -webkit-line-clamp: 4; }
-.cover-ph .ph-artist { font-size: 10.5px; font-weight: 700; color: rgba(255,255,255,0.6); margin-top: 4px; line-height: 1.35; -webkit-line-clamp: 2; }
-.album-no { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--accent); margin-bottom: 2px; }
-.album-title { font-size: 19px; font-weight: 900; line-height: 1.35; overflow-wrap: anywhere; }
-.album-title .album-artist { display: block; font-size: 13px; font-weight: 800; color: var(--text-muted); margin-bottom: 1px; }
-.album-info { font-size: 12px; font-weight: 600; color: var(--text-muted); line-height: 1.7; margin-top: 4px; }
-.album-mood { list-style: none; display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 2px; }
-.album-mood li { font-size: 11px; font-weight: 700; color: #4b5563; background: #eceef1; border-radius: 3px; padding: 1px 8px; }
-.album-body p { font-size: 14.5px; color: #383d48; line-height: 1.9; margin-top: 10px; }
-.album-cta { margin-top: 12px; }
+.cover-ph::before { content: attr(data-no); font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: var(--accent); }
+.cover-ph .ph-album, .cover-ph .ph-artist { display: none; }
+/* 埋め込みジャケットがない作品（Apple Music）：番号＋作品名の代替カード */
+.cover--text .cover-ph { flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 10px; }
+.cover--text .cover-ph::before { position: absolute; top: 8px; left: 10px; font-size: 11px; letter-spacing: 1px; }
+.cover--text .cover-ph .ph-album { display: block; font-size: 12.5px; font-weight: 900; line-height: 1.25; overflow-wrap: anywhere; }
+.cover--text .cover-ph .ph-artist { display: block; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); margin-top: 3px; line-height: 1.3; overflow-wrap: anywhere; }
+.album-title { font-size: 17px; font-weight: 900; line-height: 1.35; overflow-wrap: anywhere; }
+.album-title .album-artist { display: block; font-size: 12.5px; font-weight: 800; color: var(--text-muted); margin-bottom: 1px; }
+.album-info { font-size: 11.5px; font-weight: 600; color: var(--text-muted); line-height: 1.6; margin-top: 4px; overflow-wrap: anywhere; }
+.album-mood { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+.album-mood li { font-size: 10.5px; font-weight: 700; color: #4b5563; background: #eceef1; border-radius: 3px; padding: 1px 7px; }
+/* 下段：紹介文はカードの全幅・全文 */
+.album-desc { font-size: 14px; color: #383d48; line-height: 1.85; margin-top: 12px; }
+.wide-embed { display: block; width: 100%; height: 175px; border: 0; border-radius: 10px; overflow: hidden; margin-top: 12px; background: #f1f2f4; }
+/* 最下段：試聴先（確認できたサービスだけ） */
+.album-links { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; }
 .listen-btn {
-  display: inline-block; font-size: 12.5px; font-weight: 700; color: var(--text);
-  text-decoration: none; border: 1px solid rgba(26,29,35,0.35);
-  padding: 7px 18px; border-radius: 20px; transition: background 0.15s, color 0.15s;
+  display: inline-block; font-size: 12px; font-weight: 700; color: var(--text); line-height: 1.4;
+  text-decoration: none; border: 1px solid rgba(26,29,35,0.3); background: var(--surface);
+  padding: 6px 13px; border-radius: 20px; transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
-.listen-btn:hover { background: var(--text); color: #fff; }
+.listen-btn:hover { background: var(--text); border-color: var(--text); color: #fff; }
 
 /* ===== 解説・レーベル・入門 ===== */
 .trend { margin-top: 26px; }
@@ -212,15 +225,23 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .label-grid li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
 .label-name { font-size: 14px; font-weight: 900; margin-bottom: 3px; }
 .label-desc { font-size: 12.5px; color: #4b5563; line-height: 1.7; }
-.starter { list-style: none; margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
-.starter a {
-  display: block; text-decoration: none; color: var(--text); background: var(--surface);
-  border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;
+/* まず聴くなら5作品：本文と同じ Bandcamp 埋め込みのジャケット＋作品名＋おすすめ対象（文字部分が本文のカードへのリンク） */
+.starter { list-style: none; margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+@media (min-width: 700px) { .starter { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.starter-card {
+  display: flex; align-items: center; gap: 12px; height: 100%;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
 }
-.starter a:hover { border-color: rgba(230,57,70,0.45); }
-.starter-title { display: block; font-size: 14px; font-weight: 900; line-height: 1.45; }
-.starter a:hover .starter-title { color: var(--accent); }
-.starter-for { display: block; font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+.starter-card:hover { border-color: rgba(230,57,70,0.45); }
+.starter-cover { flex: 0 0 96px; width: 96px; }
+.starter-cover .cover-ph::before { font-size: 15px; }
+@media (max-width: 360px) { .starter-cover { flex-basis: 84px; width: 84px; } }
+.starter-text { display: flex; flex-direction: column; min-width: 0; flex: 1; text-decoration: none; color: var(--text); }
+.starter-artist { font-size: 11.5px; font-weight: 800; color: var(--text-muted); line-height: 1.4; }
+.starter-title { font-size: 14px; font-weight: 900; line-height: 1.4; overflow-wrap: anywhere; }
+.starter-text:hover .starter-title { color: var(--accent); }
+.starter-for { font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.5; }
+.starter-jump { font-size: 11.5px; font-weight: 700; color: var(--accent); margin-top: 4px; }
 .closing { margin-top: 48px; padding-top: 30px; border-top: 1px solid var(--border); }
 
 .back-nav { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
@@ -243,17 +264,18 @@ footer a:hover { text-decoration: underline; }
   .guide-hero-inner { padding: 0 16px; }
   .guide-main { padding: 24px 16px 60px; }
   .guide-lead { font-size: 13.5px; }
-  .genre-nav { grid-template-columns: 1fr; }
+  .guide-visual { margin: 2px 0 18px; }
+  .genre-nav { grid-template-columns: minmax(0, 1fr); }
   .section-h2 { font-size: 19px; }
   #trends { margin-top: 48px; padding-top: 32px; }
-  .album { grid-template-columns: 112px 1fr; grid-template-areas: "cover head" "body body"; gap: 0 14px; padding: 24px 0 22px; }
-  /* スマホは小さいので番号だけ（作品名はすぐ右に出ている） */
-  .cover { border-radius: 4px; }
-  .cover-ph { justify-content: center; align-items: center; padding: 0; }
-  .cover-ph::before { position: static; font-size: 20px; letter-spacing: 0.5px; }
-  .cover-ph .ph-album, .cover-ph .ph-artist { display: none; }
-  .album-title { font-size: 17px; }
-  .album-title .album-artist { font-size: 12px; }
+  .album { padding: 14px 14px 12px; }
+  .album-top { grid-template-columns: 104px minmax(0, 1fr); gap: 12px; }
+  .album-title { font-size: 16px; }
+  .album-desc { font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .album-top { grid-template-columns: 88px minmax(0, 1fr); }
+  .genre-nav a { gap: 10px; padding: 10px 12px; }
 }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -289,6 +311,7 @@ footer a:hover { text-decoration: underline; }
     <span class="guide-svc-badge">SPECIAL / 番外編</span>
     <h1 class="guide-h1">2026年のエクスペリメンタル・ミュージックを聴く<span class="h1-sub">世界の実験音楽と重要アルバム33選</span></h1>
     <p class="guide-updated">最終更新：2026年11月12日</p>
+    <img class="guide-visual" src="../images/experimental-music-2026-hero.webp?v=20261112" width="1600" height="900" fetchpriority="high" decoding="async" alt="The Best Experimental Music of 2026（Experimental・Ambient・Drone・Electronic・Noise）の文字と、波の向こうに沈む太陽のイラスト">
     <p class="guide-lead">映画や海外ドラマの世界観を形づくるのは、映像や物語だけではない。静かに持続する低音、不穏な電子音、現実と夢の境界を曖昧にするアンビエント。音楽や音響表現は、ときに台詞以上に強く、作品の印象を決定づける。</p>
     <p class="guide-lead">そうした映像作品の音響世界とも深く通じ合うのが、エクスペリメンタル・ミュージック（実験音楽）だ。2026年、レイヴ文化の再解釈、声や記憶を取り込んだアンビエント、伝統音楽と電子音響の融合など、多様な試みが広がっている。DRAMA RADARの番外編として、世界の実験音楽の現在地を33作品とともにたどる。</p>
   </div>
@@ -323,572 +346,590 @@ footer a:hover { text-decoration: underline; }
     <h2 class="block-h2" id="albums-h">2026年の重要アルバム33選</h2>
     <p class="list-note">2026年11月12日時点の中間総括。年間ベスト順位ではありません。EPやサウンドトラックも含みます。</p>
     <ul class="genre-nav" aria-label="6ジャンルの目次">
-      <li><a href="#genre-club"><span class="genre-no">01</span>電子音楽・クラブの変容<span class="genre-count">7作品</span></a></li>
-      <li><a href="#genre-ambient"><span class="genre-no">02</span>アンビエント・声・記憶<span class="genre-count">8作品</span></a></li>
-      <li><a href="#genre-drone"><span class="genre-no">03</span>ドローン・ミニマリズム・現代音楽<span class="genre-count">3作品</span></a></li>
-      <li><a href="#genre-noise"><span class="genre-no">04</span>ノイズ・前衛ロック<span class="genre-count">4作品</span></a></li>
-      <li><a href="#genre-regional"><span class="genre-no">05</span>非西洋圏の実験音楽と地域文化<span class="genre-count">2作品</span></a></li>
-      <li><a href="#genre-pop"><span class="genre-no">06</span>実験的ポップ・IDM・サウンドコラージュ<span class="genre-count">9作品</span></a></li>
+      <li><a href="#genre-club"><span class="genre-no">01</span><span class="genre-names"><span class="genre-ja">エクスペリメンタル／クラブ／エレクトロニックの変容</span><span class="genre-en" lang="en">Experimental / Club / Electronic</span></span><span class="genre-count">7作品</span></a></li>
+      <li><a href="#genre-ambient"><span class="genre-no">02</span><span class="genre-names"><span class="genre-ja">アンビエント・声・記憶</span><span class="genre-en" lang="en">Ambient / Vocal / Field Recording</span></span><span class="genre-count">8作品</span></a></li>
+      <li><a href="#genre-drone"><span class="genre-no">03</span><span class="genre-names"><span class="genre-ja">ドローン・ミニマリズム・現代音楽</span><span class="genre-en" lang="en">Drone / Minimalism / Contemporary Classical</span></span><span class="genre-count">3作品</span></a></li>
+      <li><a href="#genre-noise"><span class="genre-no">04</span><span class="genre-names"><span class="genre-ja">ノイズ・前衛ロック</span><span class="genre-en" lang="en">Noise / Experimental Rock / Industrial</span></span><span class="genre-count">4作品</span></a></li>
+      <li><a href="#genre-regional"><span class="genre-no">05</span><span class="genre-names"><span class="genre-ja">非西洋圏の実験音楽と地域文化</span><span class="genre-en" lang="en">Global Experimental / Avant-Folk</span></span><span class="genre-count">2作品</span></a></li>
+      <li><a href="#genre-pop"><span class="genre-no">06</span><span class="genre-names"><span class="genre-ja">実験的ポップ・IDM・サウンドコラージュ</span><span class="genre-en" lang="en">Avant-Pop / IDM / Sound Collage</span></span><span class="genre-count">9作品</span></a></li>
     </ul>
   </section>
 
   <!-- 33作品（6ジャンル） -->
   <section class="genre-section" id="genre-club" aria-labelledby="genre-club-h">
-    <p class="section-eyebrow">33選｜ジャンル 01</p>
-    <div class="section-head"><h2 class="section-h2" id="genre-club-h">電子音楽・クラブの変容</h2><span class="section-count">7作品</span></div>
+    <p class="genre-meta">01 — 7作品</p>
+    <h2 class="section-h2" id="genre-club-h">エクスペリメンタル／クラブ／エレクトロニックの変容</h2>
+    <p class="genre-en-sub" lang="en">Experimental / Club / Electronic</p>
     <p class="section-desc">レイヴ、テクノ、ベースミュージックを再構築する作品群。</p>
-    <article class="album" id="album-01">
-      <div class="cover">
-        <div class="cover-ph" data-no="01" aria-hidden="true"><span class="ph-album">All Ages</span><span class="ph-artist">Lorenzo Senni</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2975292134/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Lorenzo Senni「All Ages」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Lorenzo Senni</span>All Ages</h3>
-        <p class="album-info">2026年11月20日発売予定｜Warp Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>高揚感</li><li>スリリング</li><li>奇天烈</li></ul>
-      </div>
-      <div class="album-body">
-        <p>トランス特有の高揚感をビートやドロップから切り離してきたLorenzo Senni。ハードコア・パンクやスケートボード文化にも接近し、語りやボーカルを交えながらレイヴ文化の感情と共同体を見つめ直す。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://lorenzosenni.bandcamp.com/album/all-ages" target="_blank" rel="noopener noreferrer">Bandcampの作品ページ →</a></p>
-      </div>
-    </article>
+    <div class="album-grid">
+      <article class="album" id="album-01">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="01" aria-hidden="true"><span class="ph-album">All Ages</span><span class="ph-artist">Lorenzo Senni</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2975292134/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Lorenzo Senni「All Ages」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Lorenzo Senni</span>All Ages</h3>
+          <p class="album-info">2026年11月20日発売予定｜Warp Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>高揚感</li><li>スリリング</li><li>奇天烈</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">トランス特有の高揚感をビートやドロップから切り離してきたLorenzo Senni。ハードコア・パンクやスケートボード文化にも接近し、語りやボーカルを交えながらレイヴ文化の感情と共同体を見つめ直す。</p>
+        <p class="album-links" aria-label="All Agesを聴く"><a class="listen-btn" href="https://lorenzosenni.bandcamp.com/album/all-ages" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/all-ages/6802783748" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
 
-    <article class="album" id="album-02">
-      <div class="cover">
-        <div class="cover-ph" data-no="02" aria-hidden="true"><span class="ph-album">XXXXX</span><span class="ph-artist">Arca</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2377587133/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Arca「XXXXX」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Arca</span>XXXXX</h3>
-        <p class="album-info">2026年7月31日｜XL Recordings</p>
-        <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>奇天烈</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>歪んだ電子音、断片化したリズム、加工された声がめまぐるしく入れ替わる。収録曲「Raver」「Taconeando」にも表れるように、異形のクラブサウンドとポップな身振りが衝突する。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://arca1000000.bandcamp.com/album/xxxxx" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-02">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="02" aria-hidden="true"><span class="ph-album">XXXXX</span><span class="ph-artist">Arca</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2377587133/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Arca「XXXXX」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Arca</span>XXXXX</h3>
+          <p class="album-info">2026年7月31日｜XL Recordings</p>
+          <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>奇天烈</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">歪んだ電子音、断片化したリズム、加工された声がめまぐるしく入れ替わる。収録曲「Raver」「Taconeando」にも表れるように、異形のクラブサウンドとポップな身振りが衝突する。</p>
+        <p class="album-links" aria-label="XXXXXを聴く"><a class="listen-btn" href="https://arca1000000.bandcamp.com/album/xxxxx" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/xxxxx/6771049554" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/5L4HUwPtyxAoW27leVlZql" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-03">
-      <div class="cover">
-        <div class="cover-ph" data-no="03" aria-hidden="true"><span class="ph-album">Exhale</span><span class="ph-artist">Batu &amp; Donato Dozzy</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3626330085/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Batu &amp; Donato Dozzy「Exhale」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Batu &amp; Donato Dozzy</span>Exhale</h3>
-        <p class="album-info">2026年6月30日｜!K7 Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>没入感</li><li>知的</li><li>緊張感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>UKベースの革新者Batuと催眠的なテクノを探求するDonato Dozzyによる共作。低音と細かな打楽器、電子音の層がわずかずつ変わり、踊るためのグルーヴと精密な音響設計が共存する。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://batutimedance.bandcamp.com/album/exhale-2" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-03">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="03" aria-hidden="true"><span class="ph-album">Exhale</span><span class="ph-artist">Batu &amp; Donato Dozzy</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3626330085/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Batu &amp; Donato Dozzy「Exhale」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Batu &amp; Donato Dozzy</span>Exhale</h3>
+          <p class="album-info">2026年6月30日｜!K7 Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>没入感</li><li>知的</li><li>緊張感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">UKベースの革新者Batuと催眠的なテクノを探求するDonato Dozzyによる共作。低音と細かな打楽器、電子音の層がわずかずつ変わり、踊るためのグルーヴと精密な音響設計が共存する。</p>
+        <p class="album-links" aria-label="Exhaleを聴く"><a class="listen-btn" href="https://batutimedance.bandcamp.com/album/exhale-2" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/exhale/1890240215" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/22jowoaOweuYui1WgFZvvB" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-04">
-      <div class="cover">
-        <div class="cover-ph" data-no="04" aria-hidden="true"><span class="ph-album">Fold</span><span class="ph-artist">Jump Source</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3892733573/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Jump Source「Fold」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Jump Source</span>Fold</h3>
-        <p class="album-info">2026年4月30日｜NAFF</p>
-        <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>スタイリッシュ</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>PrioriとPatrick Hollandによるカナダのデュオ。電子音の細かな配置と不規則なリズムが絡み合う一方、クラブの機能性も失われない。テクノの反復とIDMの細密さが同居する。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://jumpsource.bandcamp.com/album/fold" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-04">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="04" aria-hidden="true"><span class="ph-album">Fold</span><span class="ph-artist">Jump Source</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3892733573/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Jump Source「Fold」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Jump Source</span>Fold</h3>
+          <p class="album-info">2026年4月30日｜NAFF</p>
+          <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>スタイリッシュ</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">PrioriとPatrick Hollandによるカナダのデュオ。電子音の細かな配置と不規則なリズムが絡み合う一方、クラブの機能性も失われない。テクノの反復とIDMの細密さが同居する。</p>
+        <p class="album-links" aria-label="Foldを聴く"><a class="listen-btn" href="https://jumpsource.bandcamp.com/album/fold" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/fold/1876022817" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/3c3SAUJ4LrCHGvAOySzfW1" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-05">
-      <div class="cover">
-        <div class="cover-ph" data-no="05" aria-hidden="true"><span class="ph-album">Dying Is the Internet</span><span class="ph-artist">Simo Cell &amp; Abdullah Miniawy</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4043153087/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Simo Cell &amp; Abdullah Miniawy「Dying Is the Internet」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Simo Cell &amp; Abdullah Miniawy</span>Dying Is the Internet</h3>
-        <p class="album-info">2026年3月12日｜Dekmantel（UFO）</p>
-        <ul class="album-mood" aria-label="MOOD"><li>緊張感</li><li>ダーク</li><li>スリリング</li></ul>
-      </div>
-      <div class="album-body">
-        <p>フランスのプロデューサーとエジプトの歌手・詩人が、低音の強いクラブサウンドとアラブの声楽表現を衝突させる。単なる異文化の装飾ではなく、リズムの時間感覚や楽曲の緊張感そのものを変える共演。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://simocell.bandcamp.com/album/dying-is-the-internet" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-05">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="05" aria-hidden="true"><span class="ph-album">Dying Is the Internet</span><span class="ph-artist">Simo Cell &amp; Abdullah Miniawy</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4043153087/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Simo Cell &amp; Abdullah Miniawy「Dying Is the Internet」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Simo Cell &amp; Abdullah Miniawy</span>Dying Is the Internet</h3>
+          <p class="album-info">2026年3月12日｜Dekmantel（UFO）</p>
+          <ul class="album-mood" aria-label="MOOD"><li>緊張感</li><li>ダーク</li><li>スリリング</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">フランスのプロデューサーとエジプトの歌手・詩人が、低音の強いクラブサウンドとアラブの声楽表現を衝突させる。単なる異文化の装飾ではなく、リズムの時間感覚や楽曲の緊張感そのものを変える共演。</p>
+        <p class="album-links" aria-label="Dying Is the Internetを聴く"><a class="listen-btn" href="https://simocell.bandcamp.com/album/dying-is-the-internet" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/dying-is-the-internet/1867998295" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/2zyTrlBLi4WVh4tUZXKlIo" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-06">
-      <div class="cover">
-        <div class="cover-ph" data-no="06" aria-hidden="true"><span class="ph-album">Euphoria Bound</span><span class="ph-artist">Shackleton</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4284391582/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Shackleton「Euphoria Bound」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Shackleton</span>Euphoria Bound</h3>
-        <p class="album-info">2026年1月30日｜AD 93</p>
-        <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>催眠的</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>ダブステップ以降のリズムを儀式のような反復へ変えてきたShackleton。重い低音と複雑な打楽器が折り重なり、音楽が進むほど聴き手の時間感覚を揺さぶる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://samshackleton.bandcamp.com/album/euphoria-bound" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-06">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="06" aria-hidden="true"><span class="ph-album">Euphoria Bound</span><span class="ph-artist">Shackleton</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4284391582/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Shackleton「Euphoria Bound」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Shackleton</span>Euphoria Bound</h3>
+          <p class="album-info">2026年1月30日｜AD 93</p>
+          <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>催眠的</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">ダブステップ以降のリズムを儀式のような反復へ変えてきたShackleton。重い低音と複雑な打楽器が折り重なり、音楽が進むほど聴き手の時間感覚を揺さぶる。</p>
+        <p class="album-links" aria-label="Euphoria Boundを聴く"><a class="listen-btn" href="https://samshackleton.bandcamp.com/album/euphoria-bound" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/euphoria-bound/1857976558" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/3JfBVXa85xIuZo6C21CCW4" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-07">
-      <div class="cover">
-        <div class="cover-ph" data-no="07" aria-hidden="true"><span class="ph-album">Bootstrap Paradox</span><span class="ph-artist">Spekki Webu</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3497250093/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Spekki Webu「Bootstrap Paradox」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Spekki Webu</span>Bootstrap Paradox</h3>
-        <p class="album-info">2026年6月5日｜Outer Orbit Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>没入感</li><li>不穏</li><li>知的</li></ul>
-      </div>
-      <div class="album-body">
-        <p>サイケデリック・テクノで知られる作家が、トリップホップやイルビエントの重いビートにも接近。高速のクラブサウンドだけではない、不規則なグルーヴと空間的な電子音を聴かせる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://outerorbitrecords.bandcamp.com/album/bootstrap-paradox-lp" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-07">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="07" aria-hidden="true"><span class="ph-album">Bootstrap Paradox</span><span class="ph-artist">Spekki Webu</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3497250093/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Spekki Webu「Bootstrap Paradox」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Spekki Webu</span>Bootstrap Paradox</h3>
+          <p class="album-info">2026年6月5日｜Outer Orbit Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>没入感</li><li>不穏</li><li>知的</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">サイケデリック・テクノで知られる作家が、トリップホップやイルビエントの重いビートにも接近。高速のクラブサウンドだけではない、不規則なグルーヴと空間的な電子音を聴かせる。</p>
+        <p class="album-links" aria-label="Bootstrap Paradoxを聴く"><a class="listen-btn" href="https://outerorbitrecords.bandcamp.com/album/bootstrap-paradox-lp" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/bootstrap-paradox-feat-cari-lekebusch/6779112108" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
+    </div>
   </section>
 
   <section class="genre-section" id="genre-ambient" aria-labelledby="genre-ambient-h">
-    <p class="section-eyebrow">33選｜ジャンル 02</p>
-    <div class="section-head"><h2 class="section-h2" id="genre-ambient-h">アンビエント・声・記憶</h2><span class="section-count">8作品</span></div>
+    <p class="genre-meta">02 — 8作品</p>
+    <h2 class="section-h2" id="genre-ambient-h">アンビエント・声・記憶</h2>
+    <p class="genre-en-sub" lang="en">Ambient / Vocal / Field Recording</p>
     <p class="section-desc">声やフィールドレコーディングから生まれる親密な音響空間。</p>
-    <article class="album" id="album-08">
-      <div class="cover">
-        <div class="cover-ph" data-no="08" aria-hidden="true"><span class="ph-album">Poem 1</span><span class="ph-artist">Ana Roxanne</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2434629595/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Ana Roxanne「Poem 1」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Ana Roxanne</span>Poem 1</h3>
-        <p class="album-info">2026年5月1日｜kranky</p>
-        <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>幻想的</li><li>内省的</li></ul>
-      </div>
-      <div class="album-body">
-        <p>霞のような電子音と声で親密な空間を作ってきたAna Roxanne。今作ではピアノや歌の輪郭が強まり、アンビエントとソングライティングが自然につながる。静かな音の奥に感情の動きが残る。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://anaroxanne.bandcamp.com/album/poem-1" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+    <div class="album-grid">
+      <article class="album" id="album-08">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="08" aria-hidden="true"><span class="ph-album">Poem 1</span><span class="ph-artist">Ana Roxanne</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2434629595/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Ana Roxanne「Poem 1」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Ana Roxanne</span>Poem 1</h3>
+          <p class="album-info">2026年5月1日｜kranky</p>
+          <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>幻想的</li><li>内省的</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">霞のような電子音と声で親密な空間を作ってきたAna Roxanne。今作ではピアノや歌の輪郭が強まり、アンビエントとソングライティングが自然につながる。静かな音の奥に感情の動きが残る。</p>
+        <p class="album-links" aria-label="Poem 1を聴く"><a class="listen-btn" href="https://anaroxanne.bandcamp.com/album/poem-1" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/poem-1/1876977313" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/4eLf3APm1Cb4vqmJUnDLpr" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-09">
-      <div class="cover">
-        <div class="cover-ph" data-no="09" aria-hidden="true"><span class="ph-album">Tragic Magic</span><span class="ph-artist">Julianna Barwick &amp; Mary Lattimore</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3869158133/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Julianna Barwick &amp; Mary Lattimore「Tragic Magic」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Julianna Barwick &amp; Mary Lattimore</span>Tragic Magic</h3>
-        <p class="album-info">2026年1月16日｜InFiné</p>
-        <ul class="album-mood" aria-label="MOOD"><li>幻想的</li><li>静謐</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>幾重にも重なる歌声とハープが交わる共作アルバム。歴史的楽器を使った制作に加え、映画『ブレードランナー』でも知られるVangelisの「Rachel’s Song」のカバーを収録。映像的な広がりと親密さが共存する。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://juliannabarwick.bandcamp.com/album/tragic-magic" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-09">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="09" aria-hidden="true"><span class="ph-album">Tragic Magic</span><span class="ph-artist">Julianna Barwick &amp; Mary Lattimore</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3869158133/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Julianna Barwick &amp; Mary Lattimore「Tragic Magic」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Julianna Barwick &amp; Mary Lattimore</span>Tragic Magic</h3>
+          <p class="album-info">2026年1月16日｜InFiné</p>
+          <ul class="album-mood" aria-label="MOOD"><li>幻想的</li><li>静謐</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">幾重にも重なる歌声とハープが交わる共作アルバム。歴史的楽器を使った制作に加え、映画『ブレードランナー』でも知られるVangelisの「Rachel’s Song」のカバーを収録。映像的な広がりと親密さが共存する。</p>
+        <p class="album-links" aria-label="Tragic Magicを聴く"><a class="listen-btn" href="https://juliannabarwick.bandcamp.com/album/tragic-magic" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/tragic-magic/1863593849" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/1Y2iL8AjADwMh1EMMnKaQm" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-10">
-      <div class="cover">
-        <div class="cover-ph" data-no="10" aria-hidden="true"><span class="ph-album">Kin</span><span class="ph-artist">KMRU</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2551730478/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="KMRU「Kin」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">KMRU</span>Kin</h3>
-        <p class="album-info">2026年2月13日｜Editions Mego</p>
-        <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>没入感</li><li>静謐</li></ul>
-      </div>
-      <div class="album-body">
-        <p>ナイロビ出身、ベルリンを拠点とするサウンドアーティスト。ドローンの層に、かつて弾いていたギターを思わせる歪みやノイズを重ね、静かな音響の奥からざらつきや圧力を浮かび上がらせる。Fenneszとの共作曲「Blurred」も収録。単にリラックスするためではない、深く聴き込むためのアンビエント。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://kmru.bandcamp.com/album/kin" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-10">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="10" aria-hidden="true"><span class="ph-album">Kin</span><span class="ph-artist">KMRU</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2551730478/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="KMRU「Kin」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">KMRU</span>Kin</h3>
+          <p class="album-info">2026年2月13日｜Editions Mego</p>
+          <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>没入感</li><li>静謐</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">ナイロビ出身、ベルリンを拠点とするサウンドアーティスト。ドローンの層に、かつて弾いていたギターを思わせる歪みやノイズを重ね、静かな音響の奥からざらつきや圧力を浮かび上がらせる。Fenneszとの共作曲「Blurred」も収録。単にリラックスするためではない、深く聴き込むためのアンビエント。</p>
+        <p class="album-links" aria-label="Kinを聴く"><a class="listen-btn" href="https://kmru.bandcamp.com/album/kin" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/kin/6805831079" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/0ThQJJSutTGSZESpjqFuHI" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-11">
-      <div class="cover">
-        <div class="cover-ph" data-no="11" aria-hidden="true"><span class="ph-album">Paradessence</span><span class="ph-artist">Visible Cloaks</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3092393266/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Visible Cloaks「Paradessence」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Visible Cloaks</span>Paradessence</h3>
-        <p class="album-info">2026年5月22日｜RVNG Intl.</p>
-        <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>幻想的</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>日本の環境音楽とも交流してきたデュオ。精密に配置した人工音が自然物のような振る舞いを見せ、現実と仮想の境界を曖昧にする。尾島由郎や柴野さつき、Félicia Atkinsonの参加も重要。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://visiblecloaks.bandcamp.com/album/paradessence" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-11">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="11" aria-hidden="true"><span class="ph-album">Paradessence</span><span class="ph-artist">Visible Cloaks</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3092393266/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Visible Cloaks「Paradessence」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Visible Cloaks</span>Paradessence</h3>
+          <p class="album-info">2026年5月22日｜RVNG Intl.</p>
+          <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>幻想的</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">日本の環境音楽とも交流してきたデュオ。精密に配置した人工音が自然物のような振る舞いを見せ、現実と仮想の境界を曖昧にする。尾島由郎や柴野さつき、Félicia Atkinsonの参加も重要。</p>
+        <p class="album-links" aria-label="Paradessenceを聴く"><a class="listen-btn" href="https://visiblecloaks.bandcamp.com/album/paradessence" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/paradessence/1877578511" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
 
-    <article class="album" id="album-12">
-      <div class="cover">
-        <div class="cover-ph" data-no="12" aria-hidden="true"><span class="ph-album">tiarn</span><span class="ph-artist">Hana Stretton</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1120549732/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Hana Stretton「tiarn」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Hana Stretton</span>tiarn</h3>
-        <p class="album-info">2026年8月7日｜Lima Limo Records ほか</p>
-        <ul class="album-mood" aria-label="MOOD"><li>ノスタルジック</li><li>静謐</li><li>内省的</li></ul>
-      </div>
-      <div class="album-body">
-        <p>1990年代のホームビデオに残された音を取り込み、シンセサイザーやかすかな環境音と結びつける。過ぎ去った時間が持つ曖昧な感触と、音の向こうにいる人の気配を聴かせる作品。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://hanastretton.bandcamp.com/album/tiarn-2" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-12">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="12" aria-hidden="true"><span class="ph-album">tiarn</span><span class="ph-artist">Hana Stretton</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1120549732/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Hana Stretton「tiarn」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Hana Stretton</span>tiarn</h3>
+          <p class="album-info">2026年8月7日｜Lima Limo Records ほか</p>
+          <ul class="album-mood" aria-label="MOOD"><li>ノスタルジック</li><li>静謐</li><li>内省的</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">1990年代のホームビデオに残された音を取り込み、シンセサイザーやかすかな環境音と結びつける。過ぎ去った時間が持つ曖昧な感触と、音の向こうにいる人の気配を聴かせる作品。</p>
+        <p class="album-links" aria-label="tiarnを聴く"><a class="listen-btn" href="https://hanastretton.bandcamp.com/album/tiarn-2" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/tiarn/6781275336" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/2Kt7Izz50rQVGCxalT4NQT" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-13">
-      <div class="cover">
-        <div class="cover-ph" data-no="13" aria-hidden="true"><span class="ph-album">Yarrow</span><span class="ph-artist">Patricia Wolf</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1031888005/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Patricia Wolf「Yarrow」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Patricia Wolf</span>Yarrow</h3>
-        <p class="album-info">2026年6月4日｜Music To Watch Seeds Grow By</p>
-        <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>幻想的</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>米コロラド州のロッキー山脈生物学研究所でのアーティスト・レジデンスから着想。植物ヤロウ（セイヨウノコギリソウ）のライフサイクルや生態系との関わりを音楽的な構成に取り込み、普段は耳を向けない小さな生態系の動きへと意識を誘う。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://patriciawolf.bandcamp.com/album/009-patricia-wolf-yarrow" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-13">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="13" aria-hidden="true"><span class="ph-album">Yarrow</span><span class="ph-artist">Patricia Wolf</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1031888005/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Patricia Wolf「Yarrow」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Patricia Wolf</span>Yarrow</h3>
+          <p class="album-info">2026年6月4日｜Music To Watch Seeds Grow By</p>
+          <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>幻想的</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">米コロラド州のロッキー山脈生物学研究所でのアーティスト・レジデンスから着想。植物ヤロウ（セイヨウノコギリソウ）のライフサイクルや生態系との関わりを音楽的な構成に取り込み、普段は耳を向けない小さな生態系の動きへと意識を誘う。</p>
+        <p class="album-links" aria-label="Yarrowを聴く"><a class="listen-btn" href="https://patriciawolf.bandcamp.com/album/009-patricia-wolf-yarrow" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/music-to-watch-seeds-grow-by-009-patricia-wolf-yarrow/6788429447" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/5xwNkg1elWmMgJlXQUQlQX" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-14">
-      <div class="cover">
-        <div class="cover-ph" data-no="14" aria-hidden="true"><span class="ph-album">Reflections Vol. 3: Water Poems</span><span class="ph-artist">Félicia Atkinson &amp; Christina Vantzou</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3523030088/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Félicia Atkinson &amp; Christina Vantzou「Reflections Vol. 3: Water Poems」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Félicia Atkinson &amp; Christina Vantzou</span>Reflections Vol. 3: Water Poems</h3>
-        <p class="album-info">2026年4月10日｜RVNG Intl.</p>
-        <ul class="album-mood" aria-label="MOOD"><li>幻想的</li><li>静謐</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>詩的な語りと映像的な音響構成が出会う。水の流れを思わせる電子音や静かな声、ピアノの響きが、日常の小さな感覚と広大な抽象風景をつなぐ。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://feliciaatkinson.bandcamp.com/album/reflections-vol-3-water-poems" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-14">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="14" aria-hidden="true"><span class="ph-album">Reflections Vol. 3: Water Poems</span><span class="ph-artist">Félicia Atkinson &amp; Christina Vantzou</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3523030088/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Félicia Atkinson &amp; Christina Vantzou「Reflections Vol. 3: Water Poems」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Félicia Atkinson &amp; Christina Vantzou</span>Reflections Vol. 3: Water Poems</h3>
+          <p class="album-info">2026年4月10日｜RVNG Intl.</p>
+          <ul class="album-mood" aria-label="MOOD"><li>幻想的</li><li>静謐</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">詩的な語りと映像的な音響構成が出会う。水の流れを思わせる電子音や静かな声、ピアノの響きが、日常の小さな感覚と広大な抽象風景をつなぐ。</p>
+        <p class="album-links" aria-label="Reflections Vol. 3: Water Poemsを聴く"><a class="listen-btn" href="https://feliciaatkinson.bandcamp.com/album/reflections-vol-3-water-poems" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/reflections-vol-3-water-poems/1870481344" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
 
-    <article class="album" id="album-15">
-      <div class="cover">
-        <div class="cover-ph" data-no="15" aria-hidden="true"><span class="ph-album">Olùsìn [Worshippers]</span><span class="ph-artist">Ibukun Sunday</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=445246122/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Ibukun Sunday「Olùsìn [Worshippers]」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Ibukun Sunday</span>Olùsìn [Worshippers]</h3>
-        <p class="album-info">2026年8月28日｜Phantom Limb</p>
-        <ul class="album-mood" aria-label="MOOD"><li>内省的</li><li>幻想的</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>ナイジェリアの電子音楽家・ヴィオラ奏者。信仰や祈り、共同体の音楽体験から発想し、声や弦楽器的な響き、電子音を重ねる。西アフリカの文化を表層的に引用するのではなく、精神的な時間感覚へ耳を澄ませる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://ibukunsunday.bandcamp.com/album/ol-s-n-worshippers" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-15">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="15" aria-hidden="true"><span class="ph-album">Olùsìn [Worshippers]</span><span class="ph-artist">Ibukun Sunday</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=445246122/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Ibukun Sunday「Olùsìn [Worshippers]」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Ibukun Sunday</span>Olùsìn [Worshippers]</h3>
+          <p class="album-info">2026年8月28日｜Phantom Limb</p>
+          <ul class="album-mood" aria-label="MOOD"><li>内省的</li><li>幻想的</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">ナイジェリアの電子音楽家・ヴィオラ奏者。信仰や祈り、共同体の音楽体験から発想し、声や弦楽器的な響き、電子音を重ねる。西アフリカの文化を表層的に引用するのではなく、精神的な時間感覚へ耳を澄ませる。</p>
+        <p class="album-links" aria-label="Olùsìn [Worshippers]を聴く"><a class="listen-btn" href="https://ibukunsunday.bandcamp.com/album/ol-s-n-worshippers" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/olu-si-n-worshippers/6768613456" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
+    </div>
   </section>
 
   <section class="genre-section" id="genre-drone" aria-labelledby="genre-drone-h">
-    <p class="section-eyebrow">33選｜ジャンル 03</p>
-    <div class="section-head"><h2 class="section-h2" id="genre-drone-h">ドローン・ミニマリズム・現代音楽</h2><span class="section-count">3作品</span></div>
+    <p class="genre-meta">03 — 3作品</p>
+    <h2 class="section-h2" id="genre-drone-h">ドローン・ミニマリズム・現代音楽</h2>
+    <p class="genre-en-sub" lang="en">Drone / Minimalism / Contemporary Classical</p>
     <p class="section-desc">持続音や倍音の変化を通じて時間の感覚を変える作品群。</p>
-    <article class="album" id="album-16">
-      <div class="cover">
-        <div class="cover-ph" data-no="16" aria-hidden="true"><span class="ph-album">Burning Song</span><span class="ph-artist">Kali Malone</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1426255659/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Kali Malone「Burning Song」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Kali Malone</span>Burning Song</h3>
-        <p class="album-info">2026年10月30日｜Ideologic Organ</p>
-        <ul class="album-mood" aria-label="MOOD"><li>重厚</li><li>静謐</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>オルガン、チェロ、ギターの響きを緻密に重ねる。Stephen O’MalleyとLucy Railtonを迎え、従来の長大な持続音から比較的短く旋律的な構成へと表現を広げた。倍音の変化に意識が引き込まれる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://kalimalone.bandcamp.com/album/burning-song" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+    <div class="album-grid">
+      <article class="album" id="album-16">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="16" aria-hidden="true"><span class="ph-album">Burning Song</span><span class="ph-artist">Kali Malone</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1426255659/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Kali Malone「Burning Song」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Kali Malone</span>Burning Song</h3>
+          <p class="album-info">2026年10月30日｜Ideologic Organ</p>
+          <ul class="album-mood" aria-label="MOOD"><li>重厚</li><li>静謐</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">オルガン、チェロ、ギターの響きを緻密に重ねる。Stephen O’MalleyとLucy Railtonを迎え、従来の長大な持続音から比較的短く旋律的な構成へと表現を広げた。倍音の変化に意識が引き込まれる。</p>
+        <p class="album-links" aria-label="Burning Songを聴く"><a class="listen-btn" href="https://kalimalone.bandcamp.com/album/burning-song" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/burning-song/6790817376" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/6rkiieHSmjekjpj5OZ05wQ" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-17">
-      <div class="cover">
-        <div class="cover-ph" data-no="17" aria-hidden="true"><span class="ph-album">The Will of Tongues</span><span class="ph-artist">Sarah Davachi</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1798022475/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Sarah Davachi「The Will of Tongues」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Sarah Davachi</span>The Will of Tongues</h3>
-        <p class="album-info">2026年8月28日｜Late Music</p>
-        <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>重厚</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>2時間を超える長大な音響作品。歴史的な調律のパイプオルガンや弦楽器、管楽器、合唱を用い、響きのわずかな違いを持続的に聴かせる。作品の展開だけでなく、聴く時間そのものが変わっていく。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://sarahdavachi.bandcamp.com/album/the-will-of-tongues" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-17">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="17" aria-hidden="true"><span class="ph-album">The Will of Tongues</span><span class="ph-artist">Sarah Davachi</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1798022475/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Sarah Davachi「The Will of Tongues」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Sarah Davachi</span>The Will of Tongues</h3>
+          <p class="album-info">2026年8月28日｜Late Music</p>
+          <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>重厚</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">2時間を超える長大な音響作品。歴史的な調律のパイプオルガンや弦楽器、管楽器、合唱を用い、響きのわずかな違いを持続的に聴かせる。作品の展開だけでなく、聴く時間そのものが変わっていく。</p>
+        <p class="album-links" aria-label="The Will of Tonguesを聴く"><a class="listen-btn" href="https://sarahdavachi.bandcamp.com/album/the-will-of-tongues" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/the-will-of-tongues/6768430845" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/2i6wgQaPrFvmBm7hZZs0fY" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-18">
-      <div class="cover">
-        <div class="cover-ph" data-no="18" aria-hidden="true"><span class="ph-album">Music for Pulse Meridian Foliation</span><span class="ph-artist">Joshua Abrams</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=232867635/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Joshua Abrams「Music for Pulse Meridian Foliation」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Joshua Abrams</span>Music for Pulse Meridian Foliation</h3>
-        <p class="album-info">2026年3月27日｜Drag City</p>
-        <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>没入感</li><li>内省的</li></ul>
-      </div>
-      <div class="album-body">
-        <p>美術家Lisa Alvaradoの作品との対話から生まれた長尺作。ヴィオラ、ハルモニウム、電子音などが持続する響きを作り、時間と記憶、音と美術の関係を考えさせる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://joshuaabrams.bandcamp.com/album/music-for-pulse-meridian-foliation" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-18">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="18" aria-hidden="true"><span class="ph-album">Music for Pulse Meridian Foliation</span><span class="ph-artist">Joshua Abrams</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=232867635/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Joshua Abrams「Music for Pulse Meridian Foliation」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Joshua Abrams</span>Music for Pulse Meridian Foliation</h3>
+          <p class="album-info">2026年3月27日｜Drag City</p>
+          <ul class="album-mood" aria-label="MOOD"><li>静謐</li><li>没入感</li><li>内省的</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">美術家Lisa Alvaradoの作品との対話から生まれた長尺作。ヴィオラ、ハルモニウム、電子音などが持続する響きを作り、時間と記憶、音と美術の関係を考えさせる。</p>
+        <p class="album-links" aria-label="Music for Pulse Meridian Foliationを聴く"><a class="listen-btn" href="https://joshuaabrams.bandcamp.com/album/music-for-pulse-meridian-foliation" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/music-for-pulse-meridian-foliation/1854878577" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/2mIZnEIHBsBsswHMN8apHR" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
+    </div>
   </section>
 
   <section class="genre-section" id="genre-noise" aria-labelledby="genre-noise-h">
-    <p class="section-eyebrow">33選｜ジャンル 04</p>
-    <div class="section-head"><h2 class="section-h2" id="genre-noise-h">ノイズ・前衛ロック</h2><span class="section-count">4作品</span></div>
+    <p class="genre-meta">04 — 4作品</p>
+    <h2 class="section-h2" id="genre-noise-h">ノイズ・前衛ロック</h2>
+    <p class="genre-en-sub" lang="en">Noise / Experimental Rock / Industrial</p>
     <p class="section-desc">反復と音圧によってロックの身体性を拡張する。</p>
-    <article class="album" id="album-19">
-      <div class="cover">
-        <div class="cover-ph" data-no="19" aria-hidden="true"><span class="ph-album">Pugnello</span><span class="ph-artist">Gilla Band</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4101768925/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Gilla Band「Pugnello」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Gilla Band</span>Pugnello</h3>
-        <p class="album-info">2026年9月25日｜Rough Trade Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>緊張感</li><li>不穏</li></ul>
-      </div>
-      <div class="album-body">
-        <p>アイルランドのノイズロック・バンド。歪んだギター、変則的な打楽器、切迫した声がぶつかるが、踊れるリズムや個人的な歌詞も際立つ。破壊的な音響と身体的なグルーヴが共存する。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://gillaband.bandcamp.com/album/pugnello" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+    <div class="album-grid">
+      <article class="album" id="album-19">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="19" aria-hidden="true"><span class="ph-album">Pugnello</span><span class="ph-artist">Gilla Band</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4101768925/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Gilla Band「Pugnello」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Gilla Band</span>Pugnello</h3>
+          <p class="album-info">2026年9月25日｜Rough Trade Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>緊張感</li><li>不穏</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">アイルランドのノイズロック・バンド。歪んだギター、変則的な打楽器、切迫した声がぶつかるが、踊れるリズムや個人的な歌詞も際立つ。破壊的な音響と身体的なグルーヴが共存する。</p>
+        <p class="album-links" aria-label="Pugnelloを聴く"><a class="listen-btn" href="https://gillaband.bandcamp.com/album/pugnello" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/pugnello/6778540217" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/5pTvVhdMVV24CQep4GA38F" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-20">
-      <div class="cover">
-        <div class="cover-ph" data-no="20" aria-hidden="true"><span class="ph-album">Repair</span><span class="ph-artist">Water Damage</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=188626026/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Water Damage「Repair」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Water Damage</span>Repair</h3>
-        <p class="album-info">2026年10月23日｜12XU</p>
-        <ul class="album-mood" aria-label="MOOD"><li>重厚</li><li>催眠的</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>大編成で単純なリフを長時間繰り返すドローンロック。複数のギターやドラム、ノイズが重なって巨大な音塊となり、微細な変化だけで強烈な没入感を生む。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://waterdamage12xu.bandcamp.com/album/repair" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-20">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="20" aria-hidden="true"><span class="ph-album">Repair</span><span class="ph-artist">Water Damage</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=188626026/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Water Damage「Repair」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Water Damage</span>Repair</h3>
+          <p class="album-info">2026年10月23日｜12XU</p>
+          <ul class="album-mood" aria-label="MOOD"><li>重厚</li><li>催眠的</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">大編成で単純なリフを長時間繰り返すドローンロック。複数のギターやドラム、ノイズが重なって巨大な音塊となり、微細な変化だけで強烈な没入感を生む。</p>
+        <p class="album-links" aria-label="Repairを聴く"><a class="listen-btn" href="https://waterdamage12xu.bandcamp.com/album/repair" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/repair/6798294070" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
 
-    <article class="album" id="album-21">
-      <div class="cover">
-        <div class="cover-ph" data-no="21" aria-hidden="true"><span class="ph-album">Moult Mouth</span><span class="ph-artist">Aja Ireland</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3184008926/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Aja Ireland「Moult Mouth」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Aja Ireland</span>Moult Mouth</h3>
-        <p class="album-info">2026年4月10日｜Infinite Machine｜EP</p>
-        <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>不穏</li><li>緊張感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>歪んだ電子音、激しい声、身体的なパフォーマンスが衝突する作品。不快さや緊張感も含めて、音が身体へ与える力を前面に押し出す。静かなアンビエントとは別の方向から感覚を変える。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://ajaireland.bandcamp.com/album/moult-mouth" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-21">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="21" aria-hidden="true"><span class="ph-album">Moult Mouth</span><span class="ph-artist">Aja Ireland</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3184008926/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Aja Ireland「Moult Mouth」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Aja Ireland</span>Moult Mouth</h3>
+          <p class="album-info">2026年4月10日｜Infinite Machine｜EP</p>
+          <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>不穏</li><li>緊張感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">歪んだ電子音、激しい声、身体的なパフォーマンスが衝突する作品。不快さや緊張感も含めて、音が身体へ与える力を前面に押し出す。静かなアンビエントとは別の方向から感覚を変える。</p>
+        <p class="album-links" aria-label="Moult Mouthを聴く"><a class="listen-btn" href="https://ajaireland.bandcamp.com/album/moult-mouth" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/moult-mouth/1878358628" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/4TmIUPQkcM5V2Fyb0gPzth" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-22">
-      <div class="cover">
-        <div class="cover-ph" data-no="22" aria-hidden="true"><span class="ph-album">Cooked</span><span class="ph-artist">Oren Ambarchi</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3420940403/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Oren Ambarchi「Cooked」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Oren Ambarchi</span>Cooked</h3>
-        <p class="album-info">2026年9月25日｜Drag City</p>
-        <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>没入感</li><li>重厚</li></ul>
-      </div>
-      <div class="album-body">
-        <p>石橋英子、Jim O’Rourkeらとの共同制作。長尺曲を中心に、反復するフレーズと即興、精密なスタジオ構成が重なり、ジャズやクラウトロック、電子音楽の境界を行き来する。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://orenambarchi.bandcamp.com/album/cooked" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-22">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="22" aria-hidden="true"><span class="ph-album">Cooked</span><span class="ph-artist">Oren Ambarchi</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3420940403/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Oren Ambarchi「Cooked」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Oren Ambarchi</span>Cooked</h3>
+          <p class="album-info">2026年9月25日｜Drag City</p>
+          <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>没入感</li><li>重厚</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">石橋英子、Jim O’Rourkeらとの共同制作。長尺曲を中心に、反復するフレーズと即興、精密なスタジオ構成が重なり、ジャズやクラウトロック、電子音楽の境界を行き来する。</p>
+        <p class="album-links" aria-label="Cookedを聴く"><a class="listen-btn" href="https://orenambarchi.bandcamp.com/album/cooked" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/cooked/6776418573" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/0rqyaE19Aj47roRdxNDixw" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
+    </div>
   </section>
 
   <section class="genre-section" id="genre-regional" aria-labelledby="genre-regional-h">
-    <p class="section-eyebrow">33選｜ジャンル 05</p>
-    <div class="section-head"><h2 class="section-h2" id="genre-regional-h">非西洋圏の実験音楽と地域文化</h2><span class="section-count">2作品</span></div>
+    <p class="genre-meta">05 — 2作品</p>
+    <h2 class="section-h2" id="genre-regional-h">非西洋圏の実験音楽と地域文化</h2>
+    <p class="genre-en-sub" lang="en">Global Experimental / Avant-Folk</p>
     <p class="section-desc">地域の伝統と現代の実験的表現が対等に交わる。</p>
-    <article class="album" id="album-23">
-      <div class="cover">
-        <div class="cover-ph" data-no="23" aria-hidden="true"><span class="ph-album">Wak’a</span><span class="ph-artist">Los Thuthanaka</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=718200646/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Los Thuthanaka「Wak’a」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Los Thuthanaka</span>Wak’a</h3>
-        <p class="album-info">2026年4月3日｜EP</p>
-        <ul class="album-mood" aria-label="MOOD"><li>奇天烈</li><li>非現実</li><li>スリリング</li></ul>
-      </div>
-      <div class="album-body">
-        <p>アイマラに伝わる最初の日の出の伝説を3曲で描くEP。ボリビアの伝統楽器のサンプルとサイケデリックな電子音を重ね、2025年のセルフタイトル作よりも穏やかな響きで、地域文化に根ざした独自の実験を続ける。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://losthuthanaka.bandcamp.com/album/waka" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+    <div class="album-grid">
+      <article class="album" id="album-23">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="23" aria-hidden="true"><span class="ph-album">Wak’a</span><span class="ph-artist">Los Thuthanaka</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=718200646/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Los Thuthanaka「Wak’a」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Los Thuthanaka</span>Wak’a</h3>
+          <p class="album-info">2026年4月3日｜EP</p>
+          <ul class="album-mood" aria-label="MOOD"><li>奇天烈</li><li>非現実</li><li>スリリング</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">アイマラに伝わる最初の日の出の伝説を3曲で描くEP。ボリビアの伝統楽器のサンプルとサイケデリックな電子音を重ね、2025年のセルフタイトル作よりも穏やかな響きで、地域文化に根ざした独自の実験を続ける。</p>
+        <p class="album-links" aria-label="Wak’aを聴く"><a class="listen-btn" href="https://losthuthanaka.bandcamp.com/album/waka" target="_blank" rel="noopener noreferrer">Bandcamp</a></p>
+      </article>
 
-    <article class="album" id="album-24">
-      <div class="cover">
-        <div class="cover-ph" data-no="24" aria-hidden="true"><span class="ph-album">Anticuecas Subterráneas (Reconstruidas)</span><span class="ph-artist">Phuyu y la Fantasma</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2549611797/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Phuyu y la Fantasma「Anticuecas Subterráneas (Reconstruidas)」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Phuyu y la Fantasma</span>Anticuecas Subterráneas (Reconstruidas)</h3>
-        <p class="album-info">2026年10月1日｜Registro Móvil</p>
-        <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>奇天烈</li><li>重厚</li></ul>
-      </div>
-      <div class="album-body">
-        <p>チリのバンド。2021年に中心人物のRodrigo Romeroが自室でひとり録音したアルバムを、活動5年を経たバンド編成で再録音。歪んだギターや打楽器を通し、伝統と前衛ロックが交わる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://registromovil.bandcamp.com/album/anticuecas-subterr-neas-reconstruidas" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-24">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="24" aria-hidden="true"><span class="ph-album">Anticuecas Subterráneas (Reconstruidas)</span><span class="ph-artist">Phuyu y la Fantasma</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2549611797/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Phuyu y la Fantasma「Anticuecas Subterráneas (Reconstruidas)」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Phuyu y la Fantasma</span>Anticuecas Subterráneas (Reconstruidas)</h3>
+          <p class="album-info">2026年10月1日｜Registro Móvil</p>
+          <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>奇天烈</li><li>重厚</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">チリのバンド。2021年に中心人物のRodrigo Romeroが自室でひとり録音したアルバムを、活動5年を経たバンド編成で再録音。歪んだギターや打楽器を通し、伝統と前衛ロックが交わる。</p>
+        <p class="album-links" aria-label="Anticuecas Subterráneas (Reconstruidas)を聴く"><a class="listen-btn" href="https://registromovil.bandcamp.com/album/anticuecas-subterr-neas-reconstruidas" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/anticuecas-subterr%C3%A1neas-reconstruidas/6814560478" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
+    </div>
   </section>
 
   <section class="genre-section" id="genre-pop" aria-labelledby="genre-pop-h">
-    <p class="section-eyebrow">33選｜ジャンル 06</p>
-    <div class="section-head"><h2 class="section-h2" id="genre-pop-h">実験的ポップ・IDM・サウンドコラージュ</h2><span class="section-count">9作品</span></div>
+    <p class="genre-meta">06 — 9作品</p>
+    <h2 class="section-h2" id="genre-pop-h">実験的ポップ・IDM・サウンドコラージュ</h2>
+    <p class="genre-en-sub" lang="en">Avant-Pop / IDM / Sound Collage</p>
     <p class="section-desc">声、サンプリング、複雑なリズムとポップが結びつく。</p>
-    <article class="album" id="album-25">
-      <div class="cover">
-        <div class="cover-ph" data-no="25" aria-hidden="true"><span class="ph-album">Inferno</span><span class="ph-artist">Boards of Canada</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=477965531/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Boards of Canada「Inferno」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Boards of Canada</span>Inferno</h3>
-        <p class="album-info">2026年5月29日｜Warp Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>ノスタルジック</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>13年ぶりの新作。古い教育映像を思わせる音色、朧げな旋律、不穏なサンプルが重なり、懐かしさと不安が同居する。電子音楽が映画のような架空の記憶を作り出す。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://boardsofcanada.bandcamp.com/album/inferno" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+    <div class="album-grid">
+      <article class="album" id="album-25">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="25" aria-hidden="true"><span class="ph-album">Inferno</span><span class="ph-artist">Boards of Canada</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=477965531/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Boards of Canada「Inferno」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Boards of Canada</span>Inferno</h3>
+          <p class="album-info">2026年5月29日｜Warp Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>不穏</li><li>ノスタルジック</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">13年ぶりの新作。古い教育映像を思わせる音色、朧げな旋律、不穏なサンプルが重なり、懐かしさと不安が同居する。電子音楽が映画のような架空の記憶を作り出す。</p>
+        <p class="album-links" aria-label="Infernoを聴く"><a class="listen-btn" href="https://boardsofcanada.bandcamp.com/album/inferno" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/inferno/1890015523" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/0mu3EvWYfNwBfISSg0q03p" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-26">
-      <div class="cover">
-        <div class="cover-ph" data-no="26" aria-hidden="true"><span class="ph-album">No Bad Memories</span><span class="ph-artist">The Avalanches</span></div>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">The Avalanches</span>No Bad Memories</h3>
-        <p class="album-info">2026年10月16日</p>
-        <ul class="album-mood" aria-label="MOOD"><li>ノスタルジック</li><li>ワクワク</li><li>幻想的</li></ul>
-      </div>
-      <div class="album-body">
-        <p>大量の音源をコラージュして音楽の記憶を作り替えるデュオ。さまざまな時代の音色が滑らかにつながり、実験的な制作手法とメロディー、ダンスの楽しさが共存する。</p>
-        <iframe class="wide-embed" src="https://embed.music.apple.com/jp/album/6794202148" title="The Avalanches「No Bad Memories」のジャケットと試聴プレーヤー（Apple Music）" loading="lazy" height="175" allow="autoplay *; encrypted-media *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"></iframe>
-        <p class="album-cta"><a class="listen-btn" href="https://music.apple.com/jp/album/6794202148" target="_blank" rel="noopener noreferrer">Apple Musicで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-26">
+        <div class="album-top">
+        <div class="cover cover--text">
+          <div class="cover-ph" data-no="26" aria-hidden="true"><span class="ph-album">No Bad Memories</span><span class="ph-artist">The Avalanches</span></div>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">The Avalanches</span>No Bad Memories</h3>
+          <p class="album-info">2026年10月16日</p>
+          <ul class="album-mood" aria-label="MOOD"><li>ノスタルジック</li><li>ワクワク</li><li>幻想的</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">大量の音源をコラージュして音楽の記憶を作り替えるデュオ。さまざまな時代の音色が滑らかにつながり、実験的な制作手法とメロディー、ダンスの楽しさが共存する。</p>
+        <iframe class="wide-embed" src="https://embed.music.apple.com/jp/album/6794202148" title="The Avalanches「No Bad Memories」のジャケットと試聴プレーヤー（Apple Music）" loading="lazy" height="175" allow="autoplay *; encrypted-media *; clipboard-write" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"></iframe>
+        <p class="album-links" aria-label="No Bad Memoriesを聴く"><a class="listen-btn" href="https://music.apple.com/jp/album/no-bad-memories/6794202148" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/3De7Ues320SIjGCaz5b6fX" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-27">
-      <div class="cover">
-        <div class="cover-ph" data-no="27" aria-hidden="true"><span class="ph-album">Dja Dja</span><span class="ph-artist">Marina Herlop</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=395671848/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Marina Herlop「Dja Dja」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Marina Herlop</span>Dja Dja</h3>
-        <p class="album-info">2026年10月9日</p>
-        <ul class="album-mood" aria-label="MOOD"><li>奇天烈</li><li>幻想的</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>物語の「英雄の旅」を構成のヒントとし、和声やテンポ、拍子を精密に設計。声が旋律であると同時にリズムの素材になり、現実にはない言語や文化の音楽を聴くような感覚を生む。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://marinaherlop.bandcamp.com/album/dja-dja" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-27">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="27" aria-hidden="true"><span class="ph-album">Dja Dja</span><span class="ph-artist">Marina Herlop</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=395671848/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Marina Herlop「Dja Dja」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Marina Herlop</span>Dja Dja</h3>
+          <p class="album-info">2026年10月9日</p>
+          <ul class="album-mood" aria-label="MOOD"><li>奇天烈</li><li>幻想的</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">物語の「英雄の旅」を構成のヒントとし、和声やテンポ、拍子を精密に設計。声が旋律であると同時にリズムの素材になり、現実にはない言語や文化の音楽を聴くような感覚を生む。</p>
+        <p class="album-links" aria-label="Dja Djaを聴く"><a class="listen-btn" href="https://marinaherlop.bandcamp.com/album/dja-dja" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/dja-dja/6793133608" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/2EzFFqkhvaXUaTzcWwWUDZ" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-28">
-      <div class="cover">
-        <div class="cover-ph" data-no="28" aria-hidden="true"><span class="ph-album">MR COBRA</span><span class="ph-artist">Lucy Liyou</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3172424031/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Lucy Liyou「MR COBRA」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Lucy Liyou</span>MR COBRA</h3>
-        <p class="album-info">2026年4月17日｜Orange Milk Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>心理的</li><li>奇天烈</li><li>不穏</li></ul>
-      </div>
-      <div class="album-body">
-        <p>半自伝的な演劇作品をアルバムに展開。語り、歌、電子音、ユーモアが急な場面転換を繰り返し、個人的な記憶を音の物語へ変える。実験音楽と演劇の境界を越える一作。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://lucyliyou.bandcamp.com/album/mr-cobra" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-28">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="28" aria-hidden="true"><span class="ph-album">MR COBRA</span><span class="ph-artist">Lucy Liyou</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3172424031/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Lucy Liyou「MR COBRA」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Lucy Liyou</span>MR COBRA</h3>
+          <p class="album-info">2026年4月17日｜Orange Milk Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>心理的</li><li>奇天烈</li><li>不穏</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">半自伝的な演劇作品をアルバムに展開。語り、歌、電子音、ユーモアが急な場面転換を繰り返し、個人的な記憶を音の物語へ変える。実験音楽と演劇の境界を越える一作。</p>
+        <p class="album-links" aria-label="MR COBRAを聴く"><a class="listen-btn" href="https://lucyliyou.bandcamp.com/album/mr-cobra" target="_blank" rel="noopener noreferrer">Bandcamp</a></p>
+      </article>
 
-    <article class="album" id="album-29">
-      <div class="cover">
-        <div class="cover-ph" data-no="29" aria-hidden="true"><span class="ph-album">new avatar</span><span class="ph-artist">Kelela</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1152584280/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Kelela「new avatar」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Kelela</span>new avatar</h3>
-        <p class="album-info">2026年7月10日｜Warp Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>スタイリッシュ</li><li>内省的</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>R&amp;Bと実験的なクラブ音楽を横断してきたKelelaが、ロック的なギターの質感にも接近。洗練された電子音と歌の強度が共存し、ジャンルを越えることが感情表現を広げる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://kelela.bandcamp.com/album/new-avatar-2" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-29">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="29" aria-hidden="true"><span class="ph-album">new avatar</span><span class="ph-artist">Kelela</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1152584280/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Kelela「new avatar」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Kelela</span>new avatar</h3>
+          <p class="album-info">2026年7月10日｜Warp Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>スタイリッシュ</li><li>内省的</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">R&amp;Bと実験的なクラブ音楽を横断してきたKelelaが、ロック的なギターの質感にも接近。洗練された電子音と歌の強度が共存し、ジャンルを越えることが感情表現を広げる。</p>
+        <p class="album-links" aria-label="new avatarを聴く"><a class="listen-btn" href="https://kelela.bandcamp.com/album/new-avatar-2" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/new-avatar/1888561538" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/0t1I0Ic8IzTND3sesj9tDE" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-30">
-      <div class="cover">
-        <div class="cover-ph" data-no="30" aria-hidden="true"><span class="ph-album">素直な気持ちアルバム</span><span class="ph-artist">長谷川白紙</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=396122734/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="長谷川白紙「素直な気持ちアルバム」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">長谷川白紙</span>素直な気持ちアルバム</h3>
-        <p class="album-info">2026年8月28日｜Brainfeeder</p>
-        <ul class="album-mood" aria-label="MOOD"><li>奇天烈</li><li>知的</li><li>ワクワク</li></ul>
-      </div>
-      <div class="album-body">
-        <p>新バンド「ハハとヘアピンズ」の生演奏を取り込み、ジャズ、J-POP、電子音響、ノイズを高密度に融合。15曲が一続きの流れを形成し、複雑な構造に生演奏の衝動が加わる。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://hakushihasegawa.bandcamp.com/album/honest-feeling-album" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-30">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="30" aria-hidden="true"><span class="ph-album">素直な気持ちアルバム</span><span class="ph-artist">長谷川白紙</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=396122734/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="長谷川白紙「素直な気持ちアルバム」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">長谷川白紙</span>素直な気持ちアルバム</h3>
+          <p class="album-info">2026年8月28日｜Brainfeeder</p>
+          <ul class="album-mood" aria-label="MOOD"><li>奇天烈</li><li>知的</li><li>ワクワク</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">新バンド「ハハとヘアピンズ」の生演奏を取り込み、ジャズ、J-POP、電子音響、ノイズを高密度に融合。15曲が一続きの流れを形成し、複雑な構造に生演奏の衝動が加わる。</p>
+        <p class="album-links" aria-label="素直な気持ちアルバムを聴く"><a class="listen-btn" href="https://hakushihasegawa.bandcamp.com/album/honest-feeling-album" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/honest-feeling-album/6776706477" target="_blank" rel="noopener noreferrer">Apple Music</a></p>
+      </article>
 
-    <article class="album" id="album-31">
-      <div class="cover">
-        <div class="cover-ph" data-no="31" aria-hidden="true"><span class="ph-album">Sol.Hz</span><span class="ph-artist">Seefeel</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3644826589/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Seefeel「Sol.Hz」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Seefeel</span>Sol.Hz</h3>
-        <p class="album-info">2026年5月1日｜Warp Records</p>
-        <ul class="album-mood" aria-label="MOOD"><li>没入感</li><li>不穏</li><li>幻想的</li></ul>
-      </div>
-      <div class="album-body">
-        <p>ギターの反復と電子音響処理でロックとテクノの境界を変えてきたSeefeel。低音、霞んだ声、ダブ的な残響が重なり、音の輪郭と距離感を曖昧にする。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://seefeel.bandcamp.com/album/sol-hz" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-31">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="31" aria-hidden="true"><span class="ph-album">Sol.Hz</span><span class="ph-artist">Seefeel</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=3644826589/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Seefeel「Sol.Hz」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Seefeel</span>Sol.Hz</h3>
+          <p class="album-info">2026年5月1日｜Warp Records</p>
+          <ul class="album-mood" aria-label="MOOD"><li>没入感</li><li>不穏</li><li>幻想的</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">ギターの反復と電子音響処理でロックとテクノの境界を変えてきたSeefeel。低音、霞んだ声、ダブ的な残響が重なり、音の輪郭と距離感を曖昧にする。</p>
+        <p class="album-links" aria-label="Sol.Hzを聴く"><a class="listen-btn" href="https://seefeel.bandcamp.com/album/sol-hz" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/sol-hz/1873945076" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/4itsHfW3VFZ0nob3mqMCsf" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-32">
-      <div class="cover">
-        <div class="cover-ph" data-no="32" aria-hidden="true"><span class="ph-album">Splayed Werks</span><span class="ph-artist">Tyondai Braxton</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1517704717/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Tyondai Braxton「Splayed Werks」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Tyondai Braxton</span>Splayed Werks</h3>
-        <p class="album-info">2026年8月21日｜Erased Tapes</p>
-        <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>奇天烈</li><li>没入感</li></ul>
-      </div>
-      <div class="album-body">
-        <p>Battlesの元メンバー。断片的な電子音、入り組んだリズム、精緻な構造が一体となり、音の配置そのものを聴く楽しさを生み出す。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://tyondai.bandcamp.com/album/splayed-werks" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-32">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="32" aria-hidden="true"><span class="ph-album">Splayed Werks</span><span class="ph-artist">Tyondai Braxton</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1517704717/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Tyondai Braxton「Splayed Werks」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Tyondai Braxton</span>Splayed Werks</h3>
+          <p class="album-info">2026年8月21日｜Erased Tapes</p>
+          <ul class="album-mood" aria-label="MOOD"><li>知的</li><li>奇天烈</li><li>没入感</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">Battlesの元メンバー。断片的な電子音、入り組んだリズム、精緻な構造が一体となり、音の配置そのものを聴く楽しさを生み出す。</p>
+        <p class="album-links" aria-label="Splayed Werksを聴く"><a class="listen-btn" href="https://tyondai.bandcamp.com/album/splayed-werks" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/splayed-werks/6769864403" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/3gralcjkI8QCnIgCmlJ6RP" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
 
-    <article class="album" id="album-33">
-      <div class="cover">
-        <div class="cover-ph" data-no="33" aria-hidden="true"><span class="ph-album">Midnight Zone</span><span class="ph-artist">Laurel Halo</span></div>
-        <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1851093187/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Laurel Halo「Midnight Zone」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy"></iframe>
-      </div>
-      <div class="album-head">
-        <h3 class="album-title"><span class="album-artist">Laurel Halo</span>Midnight Zone</h3>
-        <p class="album-info">2026年3月13日｜Awe｜サウンドトラック</p>
-        <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>不穏</li><li>非現実</li></ul>
-      </div>
-      <div class="album-body">
-        <p>現代美術家Julian Charrièreの映像作品のために制作されたサウンドトラック。深い水中を思わせる電子音と器楽の響きが、未知の風景や生態系への想像を呼び起こす。</p>
-        <p class="album-cta"><a class="listen-btn" href="https://laurelhalo.bandcamp.com/album/midnight-zone-original-soundtrack-to-the-film-by-julian-charri-re" target="_blank" rel="noopener noreferrer">Bandcampで聴く →</a></p>
-      </div>
-    </article>
+      <article class="album" id="album-33">
+        <div class="album-top">
+        <div class="cover">
+          <div class="cover-ph" data-no="33" aria-hidden="true"><span class="ph-album">Midnight Zone</span><span class="ph-artist">Laurel Halo</span></div>
+          <iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=1851093187/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Laurel Halo「Midnight Zone」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="album-head">
+          <h3 class="album-title"><span class="album-artist">Laurel Halo</span>Midnight Zone</h3>
+          <p class="album-info">2026年3月13日｜Awe｜サウンドトラック</p>
+          <ul class="album-mood" aria-label="MOOD"><li>ダーク</li><li>不穏</li><li>非現実</li></ul>
+        </div>
+        </div>
+        <p class="album-desc">現代美術家Julian Charrièreの映像作品のために制作されたサウンドトラック。深い水中を思わせる電子音と器楽の響きが、未知の風景や生態系への想像を呼び起こす。</p>
+        <p class="album-links" aria-label="Midnight Zoneを聴く"><a class="listen-btn" href="https://laurelhalo.bandcamp.com/album/midnight-zone-original-soundtrack-to-the-film-by-julian-charri-re" target="_blank" rel="noopener noreferrer">Bandcamp</a><a class="listen-btn" href="https://music.apple.com/jp/album/midnight-zone-original-soundtrack-to-the-film-by/1860861824" target="_blank" rel="noopener noreferrer">Apple Music</a><a class="listen-btn" href="https://open.spotify.com/album/7DhQSiWvbpfQXrX9X4hsMq" target="_blank" rel="noopener noreferrer">Spotify</a></p>
+      </article>
+    </div>
   </section>
 
   <!-- 6つの潮流 -->
@@ -943,11 +984,11 @@ footer a:hover { text-decoration: underline; }
     <p class="section-eyebrow">START HERE</p>
     <h2 class="section-h2" id="starter-h">まず聴くなら、この5作品</h2>
     <ul class="starter">
-      <li><a href="#album-08"><span class="starter-title">Ana Roxanne — Poem 1</span><span class="starter-for">静かな音楽から入りたい人へ</span></a></li>
-      <li><a href="#album-25"><span class="starter-title">Boards of Canada — Inferno</span><span class="starter-for">映画的で不穏な世界観を好む人へ</span></a></li>
-      <li><a href="#album-10"><span class="starter-title">KMRU — Kin</span><span class="starter-for">深い音響空間に浸りたい人へ</span></a></li>
-      <li><a href="#album-05"><span class="starter-title">Simo Cell &amp; Abdullah Miniawy — Dying Is the Internet</span><span class="starter-for">新しいリズムや音の衝突を楽しみたい人へ</span></a></li>
-      <li><a href="#album-27"><span class="starter-title">Marina Herlop — Dja Dja</span><span class="starter-for">ポップの先にある音楽を聴きたい人へ</span></a></li>
+      <li class="starter-card"><div class="cover starter-cover"><div class="cover-ph" data-no="08" aria-hidden="true"></div><iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2434629595/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Ana Roxanne「Poem 1」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><a class="starter-text" href="#album-08"><span class="starter-artist">Ana Roxanne</span><span class="starter-title">Poem 1</span><span class="starter-for">静かな音楽から入りたい人へ</span><span class="starter-jump">本文の紹介を読む ↓</span></a></li>
+      <li class="starter-card"><div class="cover starter-cover"><div class="cover-ph" data-no="25" aria-hidden="true"></div><iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=477965531/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Boards of Canada「Inferno」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><a class="starter-text" href="#album-25"><span class="starter-artist">Boards of Canada</span><span class="starter-title">Inferno</span><span class="starter-for">映画的で不穏な世界観を好む人へ</span><span class="starter-jump">本文の紹介を読む ↓</span></a></li>
+      <li class="starter-card"><div class="cover starter-cover"><div class="cover-ph" data-no="10" aria-hidden="true"></div><iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=2551730478/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="KMRU「Kin」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><a class="starter-text" href="#album-10"><span class="starter-artist">KMRU</span><span class="starter-title">Kin</span><span class="starter-for">深い音響空間に浸りたい人へ</span><span class="starter-jump">本文の紹介を読む ↓</span></a></li>
+      <li class="starter-card"><div class="cover starter-cover"><div class="cover-ph" data-no="05" aria-hidden="true"></div><iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=4043153087/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Simo Cell &amp; Abdullah Miniawy「Dying Is the Internet」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><a class="starter-text" href="#album-05"><span class="starter-artist">Simo Cell &amp; Abdullah Miniawy</span><span class="starter-title">Dying Is the Internet</span><span class="starter-for">新しいリズムや音の衝突を楽しみたい人へ</span><span class="starter-jump">本文の紹介を読む ↓</span></a></li>
+      <li class="starter-card"><div class="cover starter-cover"><div class="cover-ph" data-no="27" aria-hidden="true"></div><iframe class="cover-embed" src="https://bandcamp.com/EmbeddedPlayer/album=395671848/size=large/bgcol=ffffff/linkcol=e63946/minimal=true/transparent=true/" title="Marina Herlop「Dja Dja」のジャケットと試聴プレーヤー（Bandcamp）" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><a class="starter-text" href="#album-27"><span class="starter-artist">Marina Herlop</span><span class="starter-title">Dja Dja</span><span class="starter-for">ポップの先にある音楽を聴きたい人へ</span><span class="starter-jump">本文の紹介を読む ↓</span></a></li>
     </ul>
   </section>
 
