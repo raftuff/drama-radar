@@ -176,6 +176,18 @@ body {
   padding: 3px 9px;
   border-radius: 10px;
 }
+/* 公式X：ヒーロー右上の小さな丸ボタン（PCは右上、更新日は右下） */
+.hero-x {
+  position: absolute; z-index: 2;
+  top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; background: rgba(6,6,10,0.55);
+  border: 1px solid rgba(255,255,255,0.22);
+  transition: background 0.15s, border-color 0.15s;
+}
+.hero-x:hover { background: var(--accent); border-color: var(--accent); }
+.hero-x:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 /* ===== TAB NAV ===== */
 .genre-nav {
@@ -780,7 +792,8 @@ footer a:hover { text-decoration: underline; }
   .hero-logo { width: min(68vw, 260px); filter: none; }
   .hero-tagline { margin-top: 11px; font-size: 18px; letter-spacing: 0.1em; }
   .hero-subtitle { margin-top: 6px; font-size: 12px; }
-  .hero-update-date { top: 10px; bottom: auto; right: 12px; }
+  .hero-update-date { top: 13px; bottom: auto; right: 52px; }
+  .hero-x { top: 10px; right: 12px; width: 32px; height: 32px; }
   /* SP: ピルが折り返し2〜3段になる想定。余白・サイズを小さめに */
   .genre-nav-inner { padding: 10px 16px; gap: 7px; }
   .tab-btn { font-size: 12px; padding: 6px 12px; }
@@ -818,6 +831,7 @@ footer a:hover { text-decoration: underline; }
     <p class="hero-subtitle"><span class="hero-phrase">新作情報・レビュー・年間BESTを、</span><span class="hero-phrase">視聴記録とともに紹介します。</span></p>
   </div>
   <span class="hero-update-date" id="update-date">読み込み中...</span>
+  <a class="hero-x" href="https://x.com/dramaradar_jp" target="_blank" rel="noopener noreferrer" aria-label="DRAMA RADAR 公式X（@dramaradar_jp）新しいタブで開きます" title="公式X（@dramaradar_jp）"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
 </header>
 
 <!-- ===== 特集 SECTION ===== -->
@@ -1052,7 +1066,7 @@ footer a:hover { text-decoration: underline; }
     <a href="about.html" class="footer-about-link">About / Contact</a>
   </div>
   <p class="footer-archive-nav">
-    <a href="archive/">視聴アーカイブ</a> · <a href="best/2022.html">年間BEST</a>
+    <a href="archive/">視聴アーカイブ</a> · <a href="best/2022.html">年間BEST</a> · <a href="https://x.com/dramaradar_jp" target="_blank" rel="noopener noreferrer">公式X（@dramaradar_jp）</a>
   </p>
   スコアは <a href="https://www.rottentomatoes.com" target="_blank" rel="noopener">Rotten Tomatoes</a> の批評家スコアを参考にしています。配信情報は掲載時点のものです。<br>
   リンク先はできるだけ日本語の配信・公式情報へ遷移するようにしていますが、作品によっては検索結果や関連ページへ移動する場合があります。
