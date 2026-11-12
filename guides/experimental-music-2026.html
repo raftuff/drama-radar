@@ -144,6 +144,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* ===== MAIN ===== */
 .guide-main { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
 .nav-block { margin-bottom: 40px; scroll-margin-top: calc(var(--header-h) + var(--subnav-h) + 14px); }
+/* まず聴く5作品の直後に来る33選の見出し：前のセクションとの間をあける */
+.extra-section + .nav-block { margin-top: 64px; }
+@media (max-width: 640px) { .extra-section + .nav-block { margin-top: 48px; } }
 .block-h2 { font-size: 18px; font-weight: 900; margin-bottom: 14px; }
 .prose p { font-size: 14.5px; color: #383d48; line-height: 1.9; margin-bottom: 10px; }
 .list-note { font-size: 12.5px; color: #4b5563; line-height: 1.75; background: #eceef1; border-radius: 6px; padding: 10px 12px; margin-bottom: 18px; }
