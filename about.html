@@ -318,6 +318,19 @@ main {
 .back-link svg { flex-shrink: 0; }
 
 /* ===== FOOTER ===== */
+/* 公式X：ヒーロー右上の小さな丸ボタン（TOPと同じ） */
+.hero-x {
+  position: absolute; z-index: 2;
+  top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.22);
+  transition: background 0.15s, border-color 0.15s;
+}
+.hero-x:hover { background: var(--accent); border-color: var(--accent); }
+.hero-x:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+@media (max-width: 640px) { .hero-x { top: 12px; right: 12px; width: 32px; height: 32px; } }
 footer {
   text-align: center; padding: 28px 24px;
   color: var(--text-muted); font-size: 12px;
@@ -415,6 +428,7 @@ footer a:hover { text-decoration: underline; }
     <h1 class="hero-title">About DRAMA RADAR</h1>
 
   </div>
+  <a class="hero-x" href="https://x.com/dramaradar_jp" target="_blank" rel="noopener noreferrer" aria-label="DRAMA RADAR 公式X（@dramaradar_jp）新しいタブで開きます" title="公式X（@dramaradar_jp）"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
 </header>
 
 <!-- ===== MAIN ===== -->
@@ -568,7 +582,7 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <a href="index.html">DRAMA RADAR</a><br>
+  <a href="index.html">DRAMA RADAR</a> · <a href="https://x.com/dramaradar_jp" target="_blank" rel="noopener noreferrer">公式X（@dramaradar_jp）</a><br>
   2017年からの視聴記録をもとに、話題作とレビューを紹介しています
 </footer>
 
