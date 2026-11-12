@@ -165,17 +165,6 @@ body {
   text-shadow: 0 1px 6px rgba(0,0,0,0.6);
 }
 .hero-phrase { display: inline-block; } /* 文節の途中で改行しない */
-.hero-update-date {
-  position: absolute;
-  z-index: 1;
-  right: 16px; bottom: 12px;
-  font-size: 10.5px;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.3px;
-  background: rgba(6,6,10,0.45);
-  padding: 3px 9px;
-  border-radius: 10px;
-}
 /* 公式X：ヒーロー右上の小さな丸ボタン（PCは右上、更新日は右下） */
 .hero-x {
   position: absolute; z-index: 2;
@@ -792,7 +781,6 @@ footer a:hover { text-decoration: underline; }
   .hero-logo { width: min(68vw, 260px); filter: none; }
   .hero-tagline { margin-top: 11px; font-size: 18px; letter-spacing: 0.1em; }
   .hero-subtitle { margin-top: 6px; font-size: 12px; }
-  .hero-update-date { top: 13px; bottom: auto; right: 52px; }
   .hero-x { top: 10px; right: 12px; width: 32px; height: 32px; }
   /* SP: ピルが折り返し2〜3段になる想定。余白・サイズを小さめに */
   .genre-nav-inner { padding: 10px 16px; gap: 7px; }
@@ -830,7 +818,6 @@ footer a:hover { text-decoration: underline; }
     </h1>
     <p class="hero-subtitle"><span class="hero-phrase">新作情報・レビュー・年間BESTを、</span><span class="hero-phrase">視聴記録とともに紹介します。</span></p>
   </div>
-  <span class="hero-update-date" id="update-date">読み込み中...</span>
   <a class="hero-x" href="https://x.com/dramaradar_jp" target="_blank" rel="noopener noreferrer" aria-label="DRAMA RADAR 公式X（@dramaradar_jp）新しいタブで開きます" title="公式X（@dramaradar_jp）"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
 </header>
 
@@ -1260,9 +1247,6 @@ function render(data, archive) {
 
   /* showsData = 全作品（シェアボタンが参照） */
   showsData = Array.from(map.values());
-
-  /* ヒーロー更新 */
-  document.getElementById('update-date').textContent  = data.updated + '更新';
 
   /* デフォルトタブを表示 */
   showTab('weekly');
